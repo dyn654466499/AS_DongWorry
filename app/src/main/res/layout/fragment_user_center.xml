@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/frame"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.ourwork.views.RoundImageView
+            android:id="@+id/img_user_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user_default_image" />
+        
+        <TextView 
+            android:id="@+id/textView_userID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="未登录"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_weight="2"
+        android:gravity="center|top"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lay_user_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_buttom_line"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/user_layout_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/user_layout_margin"
+                android:text="@string/user_comment"
+                android:textSize="@dimen/user_center_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_user_collect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_buttom_line"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/user_layout_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/user_layout_margin"
+                android:text="@string/user_collect"
+                android:textSize="@dimen/user_center_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_user_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_buttom_line"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/user_layout_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/user_layout_margin"
+                android:text="@string/user_wallet"
+                android:textSize="@dimen/user_center_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_user_strategy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_buttom_line"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/user_layout_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/user_layout_margin"
+                android:text="@string/flow_strategy"
+                android:textSize="@dimen/user_center_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_user_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_buttom_line"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/user_layout_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/user_layout_margin"
+                android:text="@string/more_setting"
+                android:textSize="@dimen/user_center_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

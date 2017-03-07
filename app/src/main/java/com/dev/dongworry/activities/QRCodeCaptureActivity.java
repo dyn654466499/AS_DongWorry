@@ -51,7 +51,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.ImageUtil;
 import com.dev.dongworry.utils.QQUtil;
 import com.dev.dongworry.R;
@@ -420,7 +420,7 @@ public final class QRCodeCaptureActivity extends BaseActivity implements Surface
 	            int start = m.start();
 	            int end = m.end();
 	            if (matchFilter == null || matchFilter.acceptMatch(result, start, end)) {
-	                url = CommonUtil.makeUrl(m.group(0), new String[] { "http://", "https://", "rtsp://" }, m, null);
+	                url = CommonUtils.makeUrl(m.group(0), new String[] { "http://", "https://", "rtsp://" }, m, null);
 	            }
 	        }
 		final boolean isURLEmpty = TextUtils.isEmpty(url);

@@ -12,10 +12,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.location.Address;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
-import com.baidu.location.BDNotifyListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.LocationClientOption.LocationMode;
@@ -24,7 +22,6 @@ import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.InfoWindow;
 import com.baidu.mapapi.map.MapStatus;
-import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MarkerOptions;
@@ -282,7 +279,7 @@ public class BaiduMapUtil {
 	 * @param ll 经纬度
 	 */
 	public static void setPopupOverlay(Context context,BaiduMap mBaiduMap,String title,LatLng ll){
-		title = CommonUtil.ToSBC(title);
+		title = CommonUtils.ToSBC(title);
 		LayoutParams childParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		TextView textView = new TextView(context);
 		textView.setLayoutParams(childParams);

@@ -1,0 +1,157 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/blue" >
+
+        <ImageButton
+            android:id="@+id/imageBtn_evaluate_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/back_btn_disable" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/title_evaluate"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_evaluate_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_alignBaseline="@id/imageBtn_evaluate_back"
+            android:background="@null"
+            android:text="@string/evaluate_edit"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="2.3"
+        android:background="@drawable/layout_frame_nomal"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView_goodsIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@drawable/goods_item_test" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:orientation="vertical"
+            android:paddingLeft="10dp" >
+
+            <TextView
+                android:id="@+id/textView_goodsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="中国移动流量500M，购买马上到账！"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView_evaluate_totalPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="总价：50元"
+                    android:textColor="#8A8A8A"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textView_evaluate_goodsNum"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="数量：1"
+                    android:textColor="#8A8A8A"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_goodsReducePrice"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:text="购买时间：2015-11-30"
+                android:textColor="#8A8A8A"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@drawable/layout_frame_nomal"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:text="总体评价"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar_evaluate_whole"
+            style="@style/evaluateRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:numStars="5"
+            android:rating="4"
+            android:stepSize="1.0" />
+
+        <TextView
+            android:id="@+id/textView_evaluate_wholeNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:textColor="@color/orange"
+            android:text="4.0分"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

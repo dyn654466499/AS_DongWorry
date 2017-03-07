@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    tools:context="com.ourwork.flowmonitor.SearchActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout_search"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/editext_frame"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/imageButton_search_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@null"
+            android:src="@drawable/icon_nav_fanhui_normal" />
+
+        <com.ourwork.customview.CustomEditText
+            android:id="@+id/editText_search_goods"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="9dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="9"
+            android:background="@drawable/editext_frame"
+            android:drawableLeft="@drawable/cityselect_search_icon"
+            android:drawableRight="@drawable/searchbar_icon_voice_normal"
+            android:hint="@string/inputGoodsName"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:tag="isShowIcon"
+            android:textSize="14sp" >
+        </com.ourwork.customview.CustomEditText>
+
+        <Button
+            android:id="@+id/button_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1.6"
+            android:background="#2c92ef"
+            android:gravity="center"
+            android:text="@string/search"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_search_topSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/linearLayout_search"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/topSearch"
+        android:textColor="@color/blue"
+        android:textSize="14sp" />
+
+    <GridView
+        android:id="@+id/gridView_search_topSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView_search_topSearch"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/layout_frame_nomal"
+        android:verticalSpacing="2dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:paddingTop="1px"
+        android:paddingBottom="1px"
+         >
+
+    </GridView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_search_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridView_search_topSearch"
+        android:layout_marginTop="15dp" >
+
+        <TextView
+            android:id="@+id/textView_search_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:text="@string/searchHistory"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+
+        <ListView
+            android:id="@+id/listView_search_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView_search_history"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layout_frame_nomal"
+            android:divider="@drawable/line"
+            android:dividerHeight="1dp" 
+            android:paddingTop="1px"
+            >
+        </ListView>
+
+        <Button
+            android:id="@+id/button_search_clearHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listView_search_history"
+            android:background="@drawable/bg_selector_frame"
+            android:gravity="center"
+            android:text="@string/clearHistory"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

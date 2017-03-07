@@ -1,10 +1,5 @@
 package com.dev.dongworry.activities;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.ComponentName;
@@ -23,26 +18,25 @@ import android.widget.GridView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.dev.dongworry.R;
 import com.dev.dongworry.interfaces.Commands;
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.DialogUtils;
 import com.dev.dongworry.utils.NetUtil;
-import com.dev.dongworry.R;
 import com.tencent.connect.share.QQShare;
 import com.tencent.connect.share.QzoneShare;
-//import com.tencent.mm.sdk.modelbase.BaseReq;
-//import com.tencent.mm.sdk.modelbase.BaseResp;
-//import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-//import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-//import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
-//import com.tencent.mm.sdk.openapi.IWXAPI;
-//import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
-//import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
-import static com.dev.dongworry.consts.Constants.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.dev.dongworry.consts.Constants.APK_LOGO_URL;
+import static com.dev.dongworry.consts.Constants.APK_MOBILE_DOWNLOAD_URL;
+import static com.dev.dongworry.consts.Constants.QQ_APP_ID;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB) 
 public class ShareActivity extends BaseActivity {
@@ -223,7 +217,7 @@ public class ShareActivity extends BaseActivity {
 						// "com.tencent.mobileqq", appMap
 						// .get("com.tencent.mobileqq")));
 						if (NetUtil.isWifiConnected(mContext)) {
-							CommonUtil.sendAPKFromLocal(mContext);
+							CommonUtils.sendAPKFromLocal(mContext);
 						} else {
 							DialogUtils.showDialog(mContext,
 									getString(R.string.share_myApp),
@@ -233,7 +227,7 @@ public class ShareActivity extends BaseActivity {
 										@Override
 										public void executeCommand() {
 											// TODO Auto-generated method stub
-											CommonUtil.sendAPKFromLocal(mContext);
+											CommonUtils.sendAPKFromLocal(mContext);
 										}
 									});
 						}
@@ -299,7 +293,7 @@ public class ShareActivity extends BaseActivity {
 	/**
 	 * 分享到微信里边的内容，其中flag 1是朋友圈，0是好友， 
      * 分享前判断下是否有安装微信，没有就不提示用户 
-	 * @param flag
+	 * @param
 	 */
 //	private void share2weixin(int flag) {  
 //	    // Bitmap bmp = BitmapFactory.decodeResource(getResources(),  

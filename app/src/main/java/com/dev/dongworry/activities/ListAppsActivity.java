@@ -28,7 +28,7 @@ import android.widget.ListView;
 
 import com.dev.dongworry.adapters.ListAppsAdapter;
 import com.dev.dongworry.utils.AutoLoadingUtils;
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.NetUtil;
 import com.dev.dongworry.R;
 import com.haarman.listviewanimations.swinginadapters.prepared.SwingLeftInAnimationAdapter;
@@ -90,7 +90,7 @@ public class ListAppsActivity extends BaseActivity{
 					// 这将会显示所有安装的应用程序，包括系统应用程序
 					map.put("icon", reInfo.activityInfo.loadIcon(pm));// 图标
 					map.put("appName", labelName);// 应用程序名称
-					map.put("version", "版本"+CommonUtil.getVersionName(mContext,pkgName));// 当前版本号
+					map.put("version", "版本"+ CommonUtils.getVersionName(mContext,pkgName));// 当前版本号
 					map.put("packageName", getString(R.string.packageName) + ":"
 							+ pkgName);// 应用程序包名
 					// 循环读取并存到HashMap中，再增加到ArrayList上，一个HashMap就是一项

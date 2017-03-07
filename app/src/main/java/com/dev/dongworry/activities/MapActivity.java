@@ -49,7 +49,6 @@ import com.baidu.mapapi.overlayutil.TransitRouteOverlay;
 import com.baidu.mapapi.overlayutil.WalkingRouteOverlay;
 import com.baidu.mapapi.search.busline.BusLineResult;
 import com.baidu.mapapi.search.busline.BusLineSearch;
-import com.baidu.mapapi.search.busline.BusLineSearchOption;
 import com.baidu.mapapi.search.busline.OnGetBusLineSearchResultListener;
 import com.baidu.mapapi.search.core.PoiInfo;
 import com.baidu.mapapi.search.core.RouteLine;
@@ -58,7 +57,6 @@ import com.baidu.mapapi.search.core.SearchResult.ERRORNO;
 import com.baidu.mapapi.search.route.DrivingRouteLine;
 import com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep;
 import com.baidu.mapapi.search.route.DrivingRoutePlanOption;
-import com.baidu.mapapi.search.route.DrivingRoutePlanOption.DrivingTrafficPolicy;
 import com.baidu.mapapi.search.route.DrivingRouteResult;
 import com.baidu.mapapi.search.route.OnGetRoutePlanResultListener;
 import com.baidu.mapapi.search.route.PlanNode;
@@ -87,7 +85,7 @@ import com.dev.dongworry.adapters.TransitRouteLinesAdapter;
 import com.dev.dongworry.beans.NavigationInfo;
 import com.dev.dongworry.customview.AlwaysMarqueeTextView;
 import com.dev.dongworry.utils.BaiduMapUtil;
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.ImageUtil;
 import com.dev.dongworry.utils.SharedPreferenceUtils;
 import com.dev.dongworry.R;
@@ -694,8 +692,8 @@ public class MapActivity extends BaseActivity {
                	    else title += ","+step.getInstructions();
 				}
 			    map.put(HASHMAP_KEY_ROUTELINES_CONTENT, title);
-			    map.put(HASHMAP_KEY_ROUTELINES_DISTANCE, CommonUtil.getFormatDistance(drivingRouteLine.getDistance()));
-			    map.put(HASHMAP_KEY_ROUTELINES_TIME, CommonUtil.getFormatTime(drivingRouteLine.getDuration()));
+			    map.put(HASHMAP_KEY_ROUTELINES_DISTANCE, CommonUtils.getFormatDistance(drivingRouteLine.getDistance()));
+			    map.put(HASHMAP_KEY_ROUTELINES_TIME, CommonUtils.getFormatTime(drivingRouteLine.getDuration()));
 				lines.add(map);
 			}
 			adapter_temp = new RouteLinesAdapter(mContext,lines);
@@ -734,9 +732,9 @@ public class MapActivity extends BaseActivity {
                 }
                 	
 			    map.put(HASHMAP_KEY_ROUTELINES_CONTENT, title);
-			    map.put(HASHMAP_KEY_ROUTELINES_DISTANCE, CommonUtil.getFormatDistance(transitRouteLine.getDistance()));
-			    map.put(HASHMAP_KEY_ROUTELINES_TIME, CommonUtil.getFormatTime(transitRouteLine.getDuration()));
-			    map.put(HASHMAP_KEY_ROUTELINES_WALK_DISTANCE, CommonUtil.getFormatDistance(walk_distance));
+			    map.put(HASHMAP_KEY_ROUTELINES_DISTANCE, CommonUtils.getFormatDistance(transitRouteLine.getDistance()));
+			    map.put(HASHMAP_KEY_ROUTELINES_TIME, CommonUtils.getFormatTime(transitRouteLine.getDuration()));
+			    map.put(HASHMAP_KEY_ROUTELINES_WALK_DISTANCE, CommonUtils.getFormatDistance(walk_distance));
 				lines.add(map);
 			}
 			adapter_temp = new TransitRouteLinesAdapter(mContext,lines);
@@ -750,8 +748,8 @@ public class MapActivity extends BaseActivity {
                	    else title += ","+step.getInstructions();
 				}
 			    map.put(HASHMAP_KEY_ROUTELINES_CONTENT, title);
-			    map.put(HASHMAP_KEY_ROUTELINES_DISTANCE, CommonUtil.getFormatDistance(walkingRouteLine.getDistance()));
-			    map.put(HASHMAP_KEY_ROUTELINES_TIME, CommonUtil.getFormatTime(walkingRouteLine.getDuration()));
+			    map.put(HASHMAP_KEY_ROUTELINES_DISTANCE, CommonUtils.getFormatDistance(walkingRouteLine.getDistance()));
+			    map.put(HASHMAP_KEY_ROUTELINES_TIME, CommonUtils.getFormatTime(walkingRouteLine.getDuration()));
 				lines.add(map);
 			}
 			adapter_temp = new RouteLinesAdapter(mContext,lines);
@@ -835,8 +833,8 @@ public class MapActivity extends BaseActivity {
 		/**
 		 * 显示时间、路程
 		 */
-		String time = CommonUtil.getFormatTime(routeLine.getDuration());
-		String distance = CommonUtil.getFormatDistance(routeLine.getDistance());
+		String time = CommonUtils.getFormatTime(routeLine.getDuration());
+		String distance = CommonUtils.getFormatDistance(routeLine.getDistance());
 		textView_route_timeAndDistance.setText(time + "/" + distance);
 	}
 	
@@ -870,8 +868,8 @@ public class MapActivity extends BaseActivity {
         /**
 		 * 显示时间、路程
 		 */
-        String time = CommonUtil.getFormatTime(routeLine.getDuration());
-		String distance = CommonUtil.getFormatDistance(routeLine.getDistance());
+        String time = CommonUtils.getFormatTime(routeLine.getDuration());
+		String distance = CommonUtils.getFormatDistance(routeLine.getDistance());
 		textView_route_timeAndDistance.setText(time + "/" + distance);
 	}
 	
@@ -903,8 +901,8 @@ public class MapActivity extends BaseActivity {
         /**
 		 * 显示时间、路程
 		 */
-		String time = CommonUtil.getFormatTime(routeLine.getDuration());
-		String distance = CommonUtil.getFormatDistance(routeLine.getDistance());
+		String time = CommonUtils.getFormatTime(routeLine.getDuration());
+		String distance = CommonUtils.getFormatDistance(routeLine.getDistance());
 		textView_route_timeAndDistance.setText(time + "/"+ distance);
 	}
 	

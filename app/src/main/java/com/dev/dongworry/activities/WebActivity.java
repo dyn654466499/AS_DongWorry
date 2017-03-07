@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import com.dev.dongworry.customview.ProgressWebView;
 import com.dev.dongworry.customview.ProgressWebView.WebViewListener;
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.R;
 
 public class WebActivity extends BaseActivity{
@@ -116,7 +116,7 @@ public class WebActivity extends BaseActivity{
 		            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
 		                if (url != null && url.startsWith("http://")){
 		                	Log.e(getTAG(), "url = "+url+",userAgent="+userAgent+",contentDisposition="+
-		                    contentDisposition+",mimetype="+mimetype+",length="+CommonUtil.getFormatTrafficSize(contentLength));
+		                    contentDisposition+",mimetype="+mimetype+",length="+ CommonUtils.getFormatTrafficSize(contentLength));
 		                    
 		                	Uri uri = Uri.parse(url);  
 		                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);  

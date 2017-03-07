@@ -67,7 +67,7 @@ import com.dev.dongworry.customview.CustomToast;
 import com.dev.dongworry.models.MainModel;
 import com.dev.dongworry.utils.AutoLoadingUtils;
 import com.dev.dongworry.utils.BaiduMapUtil;
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.DataHoldUtil;
 import com.dev.dongworry.utils.ImageUtil;
 import com.dev.dongworry.utils.JsonUtil;
@@ -198,16 +198,6 @@ public class MainActivity extends BaseActivity{
 	 * 设置聊天记录的位置
 	 */
 	private int chatPosition = 0;
-
-	/**
-	 * 菜单选项码
-	 */
-	private final static int menu_delete = 0;
-	private final static int menu_queryApp = 1;
-	private final static int menu_setHeadImage = 2;
-	private final static int menu_help = 3;
-	private final static int menu_detail = 4;
-	private final static int menu_share = 5;
 
 	private static final String USER_HEAD = "userHead";
 	private static final String ROBOT_HEAD = "robotHead";
@@ -600,7 +590,7 @@ public class MainActivity extends BaseActivity{
 	private Handler mHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-			String date = CommonUtil.getFormatDate(System.currentTimeMillis());
+			String date = CommonUtils.getFormatDate(System.currentTimeMillis());
 			Log.v(TAG, "msg.what = " + msg.what);
 			switch (msg.what) {
 			case HANDLE_RESULTS:
@@ -1153,7 +1143,7 @@ public class MainActivity extends BaseActivity{
 						.loadLabel(pm);
 				if (labelName.contains(" "))
 					labelName = labelName.replace(" ", "");
-				labelName = CommonUtil.setUpperCase(labelName);
+				labelName = CommonUtils.setUpperCase(labelName);
 				try {
 					// 无论是繁体或是简体，都将其转换成简体字。
 					labelName = JChineseConvertor.getInstance().t2s(labelName);
@@ -1177,7 +1167,7 @@ public class MainActivity extends BaseActivity{
 		try {
 			int resultIndex = text.indexOf(appAction) + appAction.length() + 1;
 			if (resultIndex < text.length()) {
-				myResult = CommonUtil.middle(text, resultIndex,
+				myResult = CommonUtils.middle(text, resultIndex,
 						text.length());
 			}
 			// 若结果有空格，则将空格去掉
@@ -1266,9 +1256,9 @@ public class MainActivity extends BaseActivity{
 			aManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
 					pIntent);
 			synthetizeInSilence("已经成功为您设定了"
-					+ CommonUtil.getFormatDate(calendar
+					+ CommonUtils.getFormatDate(calendar
 							.get(Calendar.HOUR_OF_DAY)) + ":"
-					+ CommonUtil.getFormatDate(calendar.get(Calendar.MINUTE))
+					+ CommonUtils.getFormatDate(calendar.get(Calendar.MINUTE))
 					+ "的闹钟");
 		} else
 			synthetizeInSilence("您设置了一个过时的闹钟");
@@ -1447,7 +1437,7 @@ public class MainActivity extends BaseActivity{
 		if (text != null && text != "") {
 			Log.e(getTAG(),"handle result:"+text);
 			// 将小写字母设置为大写
-			text = CommonUtil.setUpperCase(text);
+			text = CommonUtils.setUpperCase(text);
 			// 先把text中的句号去掉
 			text = text.replace("。", "");
 			String myResult = "";
@@ -1702,7 +1692,7 @@ public class MainActivity extends BaseActivity{
 									Intent intentFromCapture = new Intent(
 											MediaStore.ACTION_IMAGE_CAPTURE);
 									// 判断存储卡是否可以用，可用进行存储
-									if (CommonUtil.hasSdcard()) {
+									if (CommonUtils.hasSdcard()) {
 										intentFromCapture.putExtra(
 												MediaStore.EXTRA_OUTPUT,
 												Uri.fromFile(new File(mContext
@@ -2151,7 +2141,7 @@ public class MainActivity extends BaseActivity{
 //			break;
 //
 //		case menu_setHeadImage:
-//			if (CommonUtil.hasSdcard()) {
+//			if (CommonUtils.hasSdcard()) {
 //				showHeadPortraitSelectDialog();
 //			} else
 //				Toast.makeText(mContext, setStringID(R.string.checkSDcard),
@@ -2429,7 +2419,7 @@ public class MainActivity extends BaseActivity{
 			 * 设置头像
 			 */
 			if (v == menuItems.get(3)) {
-				if (CommonUtil.hasSdcard()) {
+				if (CommonUtils.hasSdcard()) {
 					showHeadPortraitSelectDialog();
 				} else
 					Toast.makeText(mContext, setStringID(R.string.checkSDcard),

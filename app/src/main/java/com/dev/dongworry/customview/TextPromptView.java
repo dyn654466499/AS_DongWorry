@@ -9,7 +9,7 @@ import android.view.Gravity;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 
 
 public class TextPromptView extends TextView {
@@ -17,10 +17,10 @@ public class TextPromptView extends TextView {
 	public TextPromptView(Context context) {
 		super(context);
 		
-		int left = (int)CommonUtil.dipToPixels(context, 3);//left
-		int top = (int)CommonUtil.dipToPixels(context, 8);//top
-		int right = (int)CommonUtil.dipToPixels(context, 3);//right
-		int bottom = (int)CommonUtil.dipToPixels(context, 3);//bottom
+		int left = (int) CommonUtils.dipToPixels(context, 3);//left
+		int top = (int) CommonUtils.dipToPixels(context, 8);//top
+		int right = (int) CommonUtils.dipToPixels(context, 3);//right
+		int bottom = (int) CommonUtils.dipToPixels(context, 3);//bottom
 		this.setPadding(left, top, right, bottom);
 		
 		this.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));

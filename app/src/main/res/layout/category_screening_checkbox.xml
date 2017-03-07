@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:drawableLeft="@drawable/btn_check_off"
+    android:background="@null"
+    android:tag="uncheck"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:text="hello"
+    android:textSize="15sp"
+    android:textStyle="italic"
+    android:padding="5dp"
+    android:textColor="#727272"
+    >
+    
+
+</TextView>

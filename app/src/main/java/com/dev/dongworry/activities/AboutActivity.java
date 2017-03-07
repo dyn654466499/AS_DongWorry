@@ -17,9 +17,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dev.dongworry.utils.CommonUtil;
-import com.dev.dongworry.utils.ImageUtil;
 import com.dev.dongworry.R;
+import com.dev.dongworry.utils.CommonUtils;
+import com.dev.dongworry.utils.ImageUtil;
+
 /**
  * 关于app的界面
  * @author 邓耀宁
@@ -36,7 +37,7 @@ public class AboutActivity extends BaseActivity{
 		ImageView imageView_about_logo = (ImageView)findViewById(R.id.imageView_about_logo);
 		imageView_about_logo.setImageBitmap(ImageUtil.getRoundedCornerBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.control), 80));
 		TextView textView_about_version = (TextView)findViewById(R.id.textView_about_version);
-		textView_about_version.setText(String.format(getString(R.string.current_version),CommonUtil.getVersionName(this)));
+		textView_about_version.setText(String.format(getString(R.string.current_version), CommonUtils.getVersionName(this)));
 		
 		Button button_about_help = (Button)findViewById(R.id.button_about_help);
 		Button button_about_attention = (Button)findViewById(R.id.button_about_attention);

@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.dev.dongworry.interfaces.Commands;
-import com.dev.dongworry.utils.CommonUtil;
+import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.DataCacheUtils;
 import com.dev.dongworry.utils.DialogUtils;
 import com.dev.dongworry.R;
@@ -142,7 +142,7 @@ public class SettingActivity extends BaseActivity{
 //				Intent intent = new Intent(Intent.ACTION_VIEW,uri);
 //				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //				startActivity(intent);
-				CommonUtil.toScore(this,"");
+				CommonUtils.toScore(this,"");
 				break;
 			/**
 			 * 分享给好友	

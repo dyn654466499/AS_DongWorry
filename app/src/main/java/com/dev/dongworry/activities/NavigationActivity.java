@@ -31,8 +31,7 @@ public class NavigationActivity extends BaseActivity{
 			
 			@Override
 			public void notifyOtherAction(int actionType, int arg1, int arg2, Object obj) {
-				Log.e("NavigationActivity_notifyOtherAction",
-						"actionType:" + actionType + "arg1:" + arg1 + "arg2:" + arg2 + "obj:" + obj.toString());
+
 			}
 			
 		});

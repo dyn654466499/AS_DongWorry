@@ -18,5 +18,40 @@
         <!--<item name="android:windowAnimationStyle">@style/noAnimation</item>-->
     </style>
 
-    
+    <style name="popupTheme" parent="android:Theme">
+        <item name="android:windowAnimationStyle">@style/noAnimation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="searchActivity" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/searchAnimation</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="searchAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_up</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_up</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_down</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_down</item>
+    </style>
+
+    <style name="goodsRatingBar" parent="@android:style/Widget.RatingBar">
+
+        <!-- 指向star_rating_bar_full.xml文件 -->
+        <item name="android:progressDrawable">@drawable/star_rating_bar</item>
+    </style>
+
+    <style name="evaluateRatingBar" parent="@android:style/Widget.RatingBar">
+
+        <!-- 指向star_rating_bar_full.xml文件 -->
+        <item name="android:progressDrawable">@drawable/star_rating_bar_big</item>
+    </style>
+
+    <style name="buttonStyle" parent="@android:style/Widget.Button">
+
+        <!-- 指向star_rating_bar_full.xml文件 -->
+        <item name="android:progressDrawable">@drawable/star_rating_bar</item>
+    </style>
 </resources>

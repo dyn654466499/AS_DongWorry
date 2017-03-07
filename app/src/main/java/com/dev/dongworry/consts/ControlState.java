@@ -6,12 +6,6 @@ package com.dev.dongworry.consts;
  *
  */
 public class ControlState {
-
-	/**
-	 * 
-	 */
-	public static final int MODEL_GET_VCODE = 0;
-	
 	
 	public static final int MODEL_SURE_REGISTER = 1;
 	
@@ -19,11 +13,6 @@ public class ControlState {
 	 * setting model control state
 	 */
 	public static final int MODEL_SETTING_CLEARCACHE = 20;
-	
-	/**
-	 * View 
-	 */
-	public static final int VIEW_VCODE_CHANGE = 100;
 	
 	
 	/**
@@ -35,4 +24,7 @@ public class ControlState {
 	 * View 天气查询 
 	 */
 	public static final int VIEW_WEATHER_QUERY = 300;
+
+	public static final int MODEL_GET_VCODE = 401;
+	public static final int VIEW_VCODE_CHANGE = 402;
 }

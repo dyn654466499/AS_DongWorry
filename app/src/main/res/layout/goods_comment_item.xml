@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="10dp" >
+
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_comment_list_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="广西移动152*****415"
+            android:textColor="#747474"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView_comment_list_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/textView_comment_list_user"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/textView_comment_list_user"
+            android:gravity="center_vertical|bottom"
+            android:text="2015-11-28"
+            android:textColor="#848484"
+            android:textSize="11sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar_comment_list"
+            style="@style/goodsRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignBaseline="@id/textView_comment_list_user"
+            android:layout_alignParentRight="true"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="4"
+            android:stepSize="1.0" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView_comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:singleLine="false"
+        android:text="非常棒，流量一买就马上到账，有需要再来光顾。"
+        android:lineSpacingMultiplier="1.3"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -1,13 +1,12 @@
 package com.dev.dongworry.activities;
 
-import com.dev.dongworry.R;
-
 import android.os.Bundle;
 import android.os.Message;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+
+import com.dev.dongworry.R;
 
 public class ShowHelpActivity extends BaseActivity {
 
@@ -31,13 +30,6 @@ public class ShowHelpActivity extends BaseActivity {
 			webView.loadDataWithBaseURL(null,"暂无内容", "text/html", "utf-8", null);
 		}
 		else webView.loadUrl("file://"+path);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.show_help, menu);
-		return true;
 	}
 
 	@Override

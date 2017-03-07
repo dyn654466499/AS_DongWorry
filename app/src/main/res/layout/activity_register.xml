@@ -1,0 +1,246 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/register_mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#3399df" >
+
+        <TextView
+            android:id="@+id/textView_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/register"
+            android:textColor="#ffffff"
+            android:textSize="23sp" />
+
+        <Button
+            android:id="@+id/button_register_login"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:alpha="20"
+            android:background="@null"
+            android:text="@string/login"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <!--
+       <Button
+            android:id="@+id/button_register_back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:drawable/ic_media_previous"/>
+        -->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_below="@+id/register_mainLayout"
+        
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp" >
+
+           <fragment
+            android:id="@+id/fragment_country"
+            android:name="com.dev.dongworry.fragments.CountryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/frame" />
+        </LinearLayout>
+
+        <fragment
+            android:id="@+id/fragment_phone"
+            android:name="com.dev.dongworry.fragments.PhoneFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame" />
+
+        <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame" >
+
+            <ImageView
+                android:id="@+id/iamgeView_register_phone"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:src="@drawable/phone135" />
+
+            <EditText
+                android:id="@+id/editText_register_phone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:background="@drawable/frame"
+                android:hint="@string/inputPhoneNum"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:paddingLeft="15dp" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+        -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame"
+            android:orientation="horizontal" >
+
+         <fragment
+            android:id="@+id/fragment_pwd"
+            android:name="com.dev.dongworry.fragments.PWDFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/frame" />
+            <!-- 
+            <ImageView
+                android:id="@+id/iamgeView_register_password"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:src="@drawable/love117" />
+
+            <EditText
+                android:id="@+id/editText_register_password"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:background="@drawable/frame"
+                android:hint="@string/inputPwd"
+                android:inputType="textPassword"
+                android:maxLength="12"
+                android:paddingLeft="15dp" >
+
+                <requestFocus />
+            </EditText>
+
+            <ImageButton
+                android:id="@+id/imageButton_register_showPwd"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@null"
+                android:src="@drawable/bd_wallet_pp_icon"
+                android:tag="hidden" />
+                 -->
+        </LinearLayout>
+
+      <fragment
+            android:id="@+id/fragment_vcode"
+            android:name="com.dev.dongworry.fragments.VCodeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/frame" />   
+            
+        <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+       <EditText
+        android:id="@+id/editText_vcode"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:background="@drawable/frame"
+        android:gravity="center"
+        android:hint="@string/inputVcode"
+        android:inputType="number"
+        android:maxLength="6"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/button_register_getVcode"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/frame"
+        android:text="@string/getVcode" />
+        </LinearLayout>
+        -->
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_sureRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_blue_bg"
+        android:padding="15dp"
+        android:textColor="@drawable/btn_textcolor_selector"
+        android:textSize="18sp"
+        android:text="@string/sureRegister" />
+
+    <CheckBox
+        android:id="@+id/checkBox_userProtocol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_sureRegister"
+        android:layout_below="@+id/button_sureRegister"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:textColor="#636363"
+        android:textSize="15sp"
+        android:text="@string/agree" />
+
+    <Button
+        android:id="@+id/button_userProtocol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_sureRegister"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/checkBox_userProtocol"
+        android:background="@null"
+        android:gravity="center"
+        android:text="@string/userProtocol"
+        android:textSize="15sp"
+        android:textColor="#636363" />
+
+</RelativeLayout>
