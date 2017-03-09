@@ -1,80 +1,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-    <RelativeLayout
+    <include layout="@layout/layout_common_title"
         android:id="@+id/login_mainLayout"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#3399df" >
-
-        <TextView
-            android:id="@+id/textView_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/login"
-            android:textColor="#ffffff"
-            android:textSize="23sp" />
-
-        <Button
-            android:id="@+id/button_login_register"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:alpha="20"
-            android:background="@null"
-            android:text="@string/register"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
-
-    </RelativeLayout>
+        />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/login_mainLayout"
-        
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/frame"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp" >
-
-           <fragment
-            android:id="@+id/fragment_country"
-            android:name="com.dev.dongworry.fragments.CountryFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/frame" />
-        </LinearLayout>
-
         <fragment
             android:id="@+id/fragment_phone"
             android:name="com.dev.dongworry.fragments.PhoneFragment"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/frame" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@drawable/frame"
             android:orientation="horizontal" >
 
@@ -82,8 +38,7 @@
             android:id="@+id/fragment_pwd"
             android:name="com.dev.dongworry.fragments.PWDFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/frame" />
+            android:layout_height="wrap_content" />
         </LinearLayout>
 
     </LinearLayout>
@@ -98,7 +53,6 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/btn_blue_bg"
-        android:padding="15dp"
         android:textSize="18sp"
         android:textColor="@drawable/btn_textcolor_selector"
         android:text="@string/sureLogin" />
@@ -108,58 +62,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_sureLogin"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
+        android:layout_alignParentLeft="true"
         android:layout_marginTop="3dp"
+        android:layout_marginLeft="20dp"
         android:background="@null"
         android:gravity="center"
         android:text="@string/forgetPWD"
-        android:textColor="#BFBFBF"
+        android:textColor="#999999"
         android:textSize="15sp"
         android:textStyle="italic"
         />
 
-    <SlidingDrawer
-        android:id="@+id/slidingDrawer"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_alignParentBottom="true"
-        android:content="@+id/slide_layout"
-        android:handle="@+id/slide_more"
-        android:orientation="vertical" >
+    <Button
+        android:id="@+id/button_login_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_sureLogin"
+        android:layout_alignRight="@id/button_sureLogin"
+        android:layout_marginTop="3dp"
+        android:background="@null"
+        android:text="@string/register"
+        android:textColor="#999999"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        />
 
-        <RelativeLayout
-            android:id="@+id/slide_more"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#BFBFBF" >
+    <!--<SlidingDrawer-->
+        <!--android:id="@+id/slidingDrawer"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="120dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:content="@+id/slide_layout"-->
+        <!--android:handle="@+id/slide_more"-->
+        <!--android:orientation="vertical" >-->
 
-            <Button
-                android:id="@+id/button_more_loginOptions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:background="#BFBFBF"
-                android:drawableLeft="@drawable/expander_close_holo_light"
-                android:text="第三方登录选项"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-        </RelativeLayout>
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/slide_more"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:background="#BFBFBF" >-->
 
-        <LinearLayout
-            android:id="@+id/slide_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
-        <GridView 
-            android:id="@+id/gridView_slide"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:numColumns="3">
-            
-        </GridView>
-          
-        </LinearLayout>
-    </SlidingDrawer>
+            <!--<Button-->
+                <!--android:id="@+id/button_more_loginOptions"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:background="#BFBFBF"-->
+                <!--android:drawableLeft="@drawable/expander_close_holo_light"-->
+                <!--android:text="第三方登录选项"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="14sp" />-->
+        <!--</RelativeLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/slide_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--&gt;-->
+        <!--<GridView -->
+            <!--android:id="@+id/gridView_slide"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:numColumns="3">-->
+            <!---->
+        <!--</GridView>-->
+          <!---->
+        <!--</LinearLayout>-->
+    <!--</SlidingDrawer>-->
 </RelativeLayout>

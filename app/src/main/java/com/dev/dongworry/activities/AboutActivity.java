@@ -118,21 +118,21 @@ public class AboutActivity extends BaseActivity{
 			}
 	}
 
-		/**
-		 * 
-		 * @param packageName
-		 */
-		private void startAPP(String packageName) {
-			PackageManager pm = getPackageManager();
-		    Intent i = new Intent(Intent.ACTION_MAIN);
-			i = pm.getLaunchIntentForPackage(packageName);
-			i.addCategory(Intent.CATEGORY_LAUNCHER);
-			startActivity(i);
-		}
+	/**
+	 *
+	 * @param packageName
+	 */
+	private void startAPP(String packageName) {
+		PackageManager pm = getPackageManager();
+		Intent i = new Intent(Intent.ACTION_MAIN);
+		i = pm.getLaunchIntentForPackage(packageName);
+		i.addCategory(Intent.CATEGORY_LAUNCHER);
+		startActivity(i);
+	}
 	@Override
 	public void onViewChange(Message msg) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	
 }

@@ -379,7 +379,7 @@
     <string name="userProtocol">《XXX用户协议》</string>
     <string name="registering">正在注册</string>
     <string name="exitRegisterUI">确定要退出注册界面吗？</string>
-    <string name="register">注册</string>
+    <string name="register">没有账号？立即注册</string>
     <string name="sureRegister">立即注册</string>
     <string name="agree">同意</string>
 
@@ -660,4 +660,7 @@
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_goods_detail">GoodsDetailActivity</string>
     <string name="title_activity_evaluate">EvaluateActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dev.dongworry"
     android:versionCode="0"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.ACCESS_GPS" />
     <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
-    
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
@@ -19,15 +18,11 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
     <uses-permission android:name="android.permission.CAMERA" />
-    
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-    
     <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 添加快捷方式 -->
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
@@ -35,7 +30,6 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
-    
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -45,8 +39,6 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- 查询快捷方式 -->
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
-    
-    
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
@@ -57,19 +49,26 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
 
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/control"
         android:label="@string/local_app_name"
         android:sharedUserId="android.uid.system"
-        android:theme="@style/AppTheme" 
-        android:hardwareAccelerated="true">
-
+        android:theme="@style/AppTheme"
+        >
         <meta-data
             android:name="BDAPPID"
             android:value="7674189" />
@@ -78,35 +77,35 @@
             android:value="nSZQSu1RFWL6VH1kxOcGYkCDFBhWHwCj" />
 
         <uses-library android:name="android.test.runner" />
- <!-- 您从百度网站获取的APP KEY -->
+        <!-- 您从百度网站获取的APP KEY -->
         <!-- abcd1234 -->
         <!-- 渠道商编号 -->
         <meta-data
             android:name="BaiduMobAd_CHANNEL"
             android:value="Baidu Market" />
- <!-- 是否开启错误日志统计，默认为false -->
+        <!-- 是否开启错误日志统计，默认为false -->
         <meta-data
             android:name="BaiduMobAd_EXCEPTION_LOG"
             android:value="true" />
- <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
+        <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
         <meta-data
             android:name="BaiduMobAd_SEND_STRATEGY"
             android:value="APP_START" />
- <!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
+        <!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
         <!-- <meta-data android:name="BaiduMobAd_TIME_INTERVAL" android:value="2" /> -->
         <!-- 日志仅在wifi网络下发送，默认为false -->
         <meta-data
             android:name="BaiduMobAd_ONLY_WIFI"
             android:value="false" />
- <!-- 是否获取基站位置信息 ,默认为true -->
+        <!-- 是否获取基站位置信息 ,默认为true -->
         <meta-data
             android:name="BaiduMobAd_CELL_LOCATION"
             android:value="true" />
- <!-- 是否获取GPS位置信息，默认为true -->
+        <!-- 是否获取GPS位置信息，默认为true -->
         <meta-data
             android:name="BaiduMobAd_GPS_LOCATION"
             android:value="true" />
- <!-- 是否获取WIFI位置信息，默认为true -->
+        <!-- 是否获取WIFI位置信息，默认为true -->
         <meta-data
             android:name="BaiduMobAd_WIFI_LOCATION"
             android:value="true" />
@@ -114,12 +113,11 @@
         <activity
             android:name="com.baidu.autoupdatesdk.ConfirmDialoigActivity"
             android:exported="false"
-            android:screenOrientation="sensor"
-              />
+            android:screenOrientation="sensor" />
 
         <receiver
             android:name="com.baidu.autoupdatesdk.receiver.BDBroadcastReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.baidu.autoupdatesdk.ACTION_NEW_UPDATE" />
                 <action android:name="com.baidu.autoupdatesdk.ACTION_DOWNLOAD_COMPLETE" />
@@ -127,12 +125,11 @@
                 <action android:name="com.baidu.autoupdatesdk.ACTION_AS_DOWNLOAD_COMPLETE" />
             </intent-filter>
         </receiver>
-        
+
         <!-- 百度地图Key -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="LEo9cw2t83gfzoEz33iAL8OY" />
-        
         <meta-data
             android:name="BaiduMobAd_STAT_ID"
             android:value="48ae76de3f" />
@@ -140,16 +137,15 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
-        </service>
+            android:process=":remote"></service>
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.HomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:icon="@drawable/control"
             android:label="@string/local_app_name"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -176,7 +172,6 @@
                 <action android:name="android.intent.action.CAMERA_BUTTON" />
             </intent-filter>
         </receiver>
-
         -->
         <!-- 查看应用 -->
         <activity
@@ -206,6 +201,10 @@
             android:name=".activities.SearchActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait" />
+
         <!-- 设置 -->
         <activity
             android:name=".activities.SettingActivity"
@@ -219,8 +218,7 @@
         <!-- 地图界面 -->
         <activity
             android:name=".activities.MapActivity"
-            android:screenOrientation="portrait" 
-            />
+            android:screenOrientation="portrait" />
 
         <!-- 关于 -->
         <activity
@@ -231,7 +229,7 @@
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -250,39 +248,44 @@
         <!-- 显示导航界面 -->
         <activity
             android:name=".activities.NavigationActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
 
         <!-- 语音设置界面 -->
         <activity
             android:name=".activities.VoiceSettingActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden" />
-        
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+
         <!-- web界面 -->
         <activity
             android:name=".activities.WebActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
         <!-- 二维码扫描界面 -->
         <activity
             android:name=".activities.QRCodeCaptureActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden" 
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden" 
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:launchMode="singleTask"
-            >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.dyn.category.captrue"/>
+
+                <category android:name="com.dyn.category.captrue" />
             </intent-filter>
-          </activity>  
-          
-        
+        </activity>
+
         <!-- push service start -->
-        <!-- Push 服务  -->
+        <!-- Push 服务 -->
         <service
             android:name="com.iflytek.pushclient.manager.PushService"
             android:exported="true"
-            android:process=":xpush"></service>
-        <!--  用于接收系统消息以保证PushService正常运行  -->
+            android:process=":xpush" />
+        <!-- 用于接收系统消息以保证PushService正常运行 -->
         <receiver
             android:name="com.iflytek.pushclient.manager.PushServiceReceiver"
             android:process=":xpush">
@@ -291,10 +294,10 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="com.iflytek.pushclient.action.notification.SHOW" />
             </intent-filter>
-        </receiver><!-- Push服务接收客户端发送的各种请求 -->
+        </receiver> <!-- Push服务接收客户端发送的各种请求 -->
         <receiver
             android:name="com.iflytek.pushclient.manager.RegistrationReceiver"
-            android:process=":xpush" >
+            android:process=":xpush">
             <intent-filter>
                 <action android:name="com.iflytek.pushclient.action.METHOD" />
                 <action android:name="com.iflytek.pushclient.action.BIND_SYNC" />
@@ -309,82 +312,76 @@
         <!-- 科大讯飞appid -->
         <meta-data
             android:name="IFLYTEK_APPKEY"
-            android:value="'53674a76'" />
+            android:value="&apos;53674a76&apos;" />
         <!-- app对应的渠道号(非必填) -->
-        <!--<meta-data
+        <!--
+            <meta-data
             android:name="IFLYTEK_CHANNEL"
             android:value="Android_Demo" />
-            -->
+        -->
         <!-- push service end -->
-   
-   <!-- 客户端的推送接收者 -->     
-<receiver android:name=".recievers.IflytekPushReceiver" >
-    <intent-filter>
-        <!-- 接收 push消息 -->
-        <action android:name="com.iflytek.pushclient.action.MESSAGE" />
-        <!-- 接收 bind、unbind等method 的返回结果 -->
-        <action android:name="com.iflytek.pushclient.action.RECEIVE" />
-        <!-- 可选。接受通知点击事件,删除事件和通知自定义内容 -->
-        <action android:name="com.iflytek.pushclient.action.notification.CLICK" />
-        <action android:name="com.iflytek.pushclient.action.notification.DELETE" />
-    </intent-filter>
-</receiver>
 
-        <!-- 讯飞自动更新功能 -->   
-        <activity android:name="com.iflytek.autoupdate.IFlytekUpdateDialog"
+
+        <!-- 客户端的推送接收者 -->
+        <receiver android:name=".recievers.IflytekPushReceiver">
+            <intent-filter>
+
+                <!-- 接收 push消息 -->
+                <action android:name="com.iflytek.pushclient.action.MESSAGE" />
+                <!-- 接收 bind、unbind等method 的返回结果 -->
+                <action android:name="com.iflytek.pushclient.action.RECEIVE" />
+                <!-- 可选。接受通知点击事件,删除事件和通知自定义内容 -->
+                <action android:name="com.iflytek.pushclient.action.notification.CLICK" />
+                <action android:name="com.iflytek.pushclient.action.notification.DELETE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 讯飞自动更新功能 -->
+        <activity
+            android:name="com.iflytek.autoupdate.IFlytekUpdateDialog"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden" 
-            >
-        </activity>
-        
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+
         <!-- 下载基础服务 -->
         <service
             android:name="com.iflytek.autoupdate.IFlytekDownloadService"
             android:enabled="true"
-			android:process=":IFlytekDownloadService" />
-        
+            android:process=":IFlytekDownloadService" />
+
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".activities.FindPWDActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <!-- <activity -->
+        <!-- android:name=".activities.LoginActivity" -->
+        <!-- android:launchMode="singleTask" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:windowSoftInputMode="adjustPan" > -->
+        <!-- </activity> -->
+
+        <activity
+            android:name=".activities.GoodsActivity"
+            android:label="@string/title_activity_search"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity
+            android:name=".activities.GoodsDetailActivity"
+            android:label="@string/title_activity_goods_detail"
+            android:screenOrientation="portrait"
+            ></activity>
+        <activity
+            android:name=".activities.EvaluateActivity"
+            android:label="@string/title_activity_evaluate"
+            android:screenOrientation="portrait"
+            ></activity>
     </application>
 
-    <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true" />
-
-    <activity
-        android:name=".activities.RegisterActivity"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustPan" >
-    </activity>
-    <activity
-        android:name=".activities.FindPWDActivity"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustPan" >
-    </activity>
-    <activity
-        android:name=".activities.LoginActivity"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="adjustPan" >
-    </activity>
-
-    <activity
-        android:name=".activities.GoodsActivity"
-        android:label="@string/title_activity_search"
-        android:screenOrientation="portrait"
-        android:windowSoftInputMode="stateAlwaysHidden" >
-    </activity>
-
-    <activity
-        android:name=".activities.GoodsDetailActivity"
-        android:label="@string/title_activity_goods_detail" >
-    </activity>
-    <activity
-        android:name=".activities.EvaluateActivity"
-        android:label="@string/title_activity_evaluate" >
-    </activity>
 </manifest>

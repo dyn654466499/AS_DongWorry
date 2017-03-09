@@ -1,6 +1,5 @@
 package com.dev.dongworry.fragments;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.dev.dongworry.R;
 
-public class UserCenterFragment extends Fragment {
+public class UserCenterFragment extends BaseFragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

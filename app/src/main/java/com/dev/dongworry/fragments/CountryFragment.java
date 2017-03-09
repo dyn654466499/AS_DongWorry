@@ -2,6 +2,7 @@ package com.dev.dongworry.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,7 @@ import com.dev.dongworry.R;
  * @author 邓耀宁
  *
  */
-public class CountryFragment extends Fragment{
+public class CountryFragment extends BaseFragment{
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class CountryFragment extends Fragment{
 	}
 
 	@Override
-	public void onAttach(Activity activity) {
+	public void onAttach(Context activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
 	}

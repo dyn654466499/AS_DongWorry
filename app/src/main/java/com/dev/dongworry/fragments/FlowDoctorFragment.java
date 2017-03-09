@@ -1,7 +1,6 @@
 package com.dev.dongworry.fragments;
 
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +18,7 @@ import com.dev.dongworry.activities.LoginActivity;
 import com.dev.dongworry.activities.SettingActivity;
 import com.dev.dongworry.utils.NetUtil;
 
-public class FlowDoctorFragment extends Fragment {
+public class FlowDoctorFragment extends BaseFragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

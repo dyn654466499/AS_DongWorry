@@ -1,4 +1,4 @@
-package com.dev.dongworry.views;
+package com.dev.dongworry.customview;
 
 import android.content.Context;
 import android.util.AttributeSet;

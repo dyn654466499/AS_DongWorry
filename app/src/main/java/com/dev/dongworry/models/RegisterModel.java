@@ -4,7 +4,6 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.dev.dongworry.consts.ControlState;
-import com.dev.dongworry.views.RegisterView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -35,7 +34,7 @@ public class RegisterModel extends BaseModel{
 					Message.obtain(handler, ControlState.VIEW_VCODE_CHANGE, count, 0,
 							null).sendToTarget();
 					//Activity结束时取消线程运作
-					if (count == 0 || RegisterView.isActivityfinish()) {
+					if (count == 0) {
 						cancel();
 					} else {
 						count--;

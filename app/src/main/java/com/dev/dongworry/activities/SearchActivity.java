@@ -51,7 +51,6 @@ public class SearchActivity extends BaseActivity{
 		// TODO Auto-generated method stub
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_search);
-		
 		editText_search_goods = (CustomEditText)findViewById(R.id.editText_search_goods);
 //		editText_search_goods.setText(getIntent().getStringExtra("searchKey"));
 //		/**

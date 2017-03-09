@@ -1,10 +1,5 @@
 package com.dev.dongworry.activities;
 
-import java.util.List;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
@@ -13,12 +8,20 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import android.view.Window;
+import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.dev.dongworry.R;
 import com.dev.dongworry.interfaces.ViewChangeListener;
 import com.dev.dongworry.models.BaseModel;
+
+import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 该Activity作为controler的抽象类，负责向model转发view的业务逻辑计算请求，并通知view改变其状态。
@@ -26,7 +29,6 @@ import com.dev.dongworry.models.BaseModel;
  *
  */
 public abstract class BaseActivity extends Activity implements OnClickListener,ViewChangeListener{
-    
     /**
      * model的代理对象，需要相应的子类设置它（多态）
      */
@@ -67,14 +69,14 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
 					new ThreadPoolExecutor.DiscardOldestPolicy());
 
 		handler = new Handler(getMainLooper()) {
-
 			@Override
 			public void handleMessage(Message msg) {
 				// TODO Auto-generated method stub
 				super.handleMessage(msg);
-				viewChangeListener.onViewChange(msg);
+				if(viewChangeListener != null){
+					viewChangeListener.onViewChange(msg);
+				}
 			}
-
 		};
 		mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
 	}
@@ -111,10 +113,21 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
 		
 	/**
 	 * 设置view状态监听者
-	 * @param viewChangeListener
+	 * @param activity
 	 */
-    public void setViewChangeListener(ViewChangeListener viewChangeListener) {
-		this.viewChangeListener = viewChangeListener;
+    public void setViewChangeListener(final Activity activity) {
+		if(activity instanceof ViewChangeListener) {
+			this.viewChangeListener = (ViewChangeListener)activity;
+		}
+		ImageButton imageBtn_back = (ImageButton)activity.findViewById(R.id.imageBtn_left);
+		if(imageBtn_back != null){
+			imageBtn_back.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					activity.finish();
+				}
+			});
+		}
 	}
 
     /**
@@ -208,6 +221,5 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
             }
             return false;
     }
-    
-    abstract class ButtonListener implements OnClickListener{};
+
 }

@@ -3,6 +3,8 @@ package com.dev.dongworry;
 import android.app.Application;
 import android.util.Log;
 
+import com.dev.dongworry.utils.CrashHandler;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -13,6 +15,7 @@ public class MyApplication extends Application{
 
 	@Override
 	public void onCreate() {
+		CrashHandler.getInstance().init(this);
 		/**
 		 * 将帮助文档写入本地存储
 		 */

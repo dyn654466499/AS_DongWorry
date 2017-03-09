@@ -7,31 +7,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#3399df"
-            android:focusableInTouchMode="true"
-            android:padding="8dp" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="@string/title_goodsDetail"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/text_title" />
-
-            <ImageButton
-                android:id="@+id/imageButton_goods_detail_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:src="@drawable/abc_ic_ab_back_holo_dark" />
-        </RelativeLayout>
+        <include layout="@layout/layout_common_title"
+            />
 
         <!-- scrollView的height不能设置wrap_content，否则会导致下面的购买UI显示不出来 -->
 
@@ -339,14 +316,14 @@
                         android:background="#cfcfcf" />
 
                     <!-- android:listSelector="@android:color/transparent"使得listview点击无效果 -->
-                    <com.ourwork.customview.ListViewForScrollView
+                    <com.dev.dongworry.customview.ListViewForScrollView
                         android:id="@+id/listView_comment_goods_detail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:listSelector="@android:color/transparent"
                         android:divider="@drawable/liner"
                         android:dividerHeight="2dp" >
-                    </com.ourwork.customview.ListViewForScrollView>
+                    </com.dev.dongworry.customview.ListViewForScrollView>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

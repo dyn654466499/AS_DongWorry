@@ -2,12 +2,12 @@ package com.dev.dongworry.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnFocusChangeListener;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,7 +20,7 @@ import com.dev.dongworry.utils.CommonUtils;
  *
  */
 @SuppressLint("NewApi") 
-public class PhoneFragment extends Fragment{
+public class PhoneFragment extends BaseFragment{
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -50,7 +50,7 @@ public class PhoneFragment extends Fragment{
 	}
 
 	@Override
-	public void onAttach(Activity activity) {
+	public void onAttach(Context activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
 	}

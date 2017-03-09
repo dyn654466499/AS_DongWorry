@@ -19,7 +19,7 @@
             android:background="@null"
             android:src="@drawable/icon_nav_fanhui_normal" />
 
-        <com.ourwork.customview.CustomEditText
+        <com.dev.dongworry.customview.CustomEditText
             android:id="@+id/editText_goods_search"
             android:layout_width="0dp"
             android:layout_height="match_parent"

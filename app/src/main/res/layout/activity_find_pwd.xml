@@ -79,7 +79,7 @@
                 android:layout_weight="2"
                  />
 
-            <com.ourwork.customview.CustomEditText
+            <com.dev.dongworry.customview.CustomEditText
                 android:id="@+id/editText_surePWD"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -95,7 +95,7 @@
                 android:paddingLeft="15dp" >
 
                 <requestFocus />
-            </com.ourwork.customview.CustomEditText>
+            </com.dev.dongworry.customview.CustomEditText>
         </LinearLayout>
         
         <Button
