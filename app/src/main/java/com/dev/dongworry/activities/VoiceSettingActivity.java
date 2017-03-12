@@ -26,8 +26,6 @@ public class VoiceSettingActivity extends BaseActivity {
 	private Button button_voicesetting_speaker;
 	private Button button_voicesetting_interruptMusic;
 	private Button button_voicesetting_voiceEnable;
-	
-	private ImageButton imageBtn_voicesetting_back;
 
 	private LinearLayout linearLayout_voicesetting_voiceEnable;
 	private String[] mCloudVoicersEntries,
@@ -43,6 +41,10 @@ public class VoiceSettingActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_voicesetting);
+
+		setTitle(getString(R.string.title_voice_setting));
+		setViewChangeListener(this);
+
 		preferences = getSharedPreferences(VOICE_SETTING, Context.MODE_PRIVATE);
 		editor = preferences.edit();
 		
@@ -65,17 +67,14 @@ public class VoiceSettingActivity extends BaseActivity {
 		button_voicesetting_language = (Button)findViewById(R.id.button_voicesetting_language);
 		button_voicesetting_speaker = (Button)findViewById(R.id.button_voicesetting_speaker);
 		button_voicesetting_interruptMusic = (Button)findViewById(R.id.button_voicesetting_interruptMusic);
-		
-		imageBtn_voicesetting_back = (ImageButton)findViewById(R.id.imageBtn_voicesetting_back);
-		
+
 		linearLayout_voicesetting_voiceEnable = (LinearLayout)findViewById(R.id.linearLayout_voicesetting_voiceEnable);
 		
 		button_voicesetting_voiceEnable.setOnClickListener(this);
 		button_voicesetting_language.setOnClickListener(this);
 		button_voicesetting_speaker.setOnClickListener(this);
 		button_voicesetting_interruptMusic.setOnClickListener(this);
-		
-		imageBtn_voicesetting_back.setOnClickListener(this);
+
 		/**
 		 * 设置语音合成开启状态
 		 */
@@ -200,10 +199,6 @@ public class VoiceSettingActivity extends BaseActivity {
 				editor.putBoolean(VOICE_INTERRUPTED, true);
 				editor.commit();
 			}
-			break;
-			
-		case R.id.imageBtn_voicesetting_back:
-			finish();
 			break;
 
 		default:

@@ -32,6 +32,7 @@ public class RegisterActivity extends BaseActivity {
 
 		setModelDelegate(new RegisterModel(handler));
 		setViewChangeListener(this);
+		setTitle(getString(R.string.title_register));
 
 		button_getVcode = (Button)findViewById(R.id.button_getVcode);
 		button_sureRegister = (Button)findViewById(R.id.button_sureRegister);

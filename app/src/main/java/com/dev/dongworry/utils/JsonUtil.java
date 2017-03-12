@@ -258,7 +258,7 @@ public class JsonUtil {
 			String city_name = joRoot.getJSONObject("semantic")
 					  .getJSONObject("slots")
 					  .getJSONObject("location")
-					  .getString("city");
+					  .getString("raw/city");
 			
 			list.add(city_name);
 			list.add(strDate);
@@ -287,8 +287,8 @@ public class JsonUtil {
 			JSONObject location = joRoot.getJSONObject("semantic")
 			  .getJSONObject("slots")
 			  .getJSONObject("location");
-			if(location.has("city")){
-				list.add(location.getString("city"));
+			if(location.has("raw/city")){
+				list.add(location.getString("raw/city"));
 				String address = "";
 				if(location.has("cityAddr")){
 					address+=location.getString("cityAddr");
@@ -334,8 +334,8 @@ public class JsonUtil {
 			JSONObject startLoc = joRoot.getJSONObject("semantic")
 			  .getJSONObject("slots")
 			  .getJSONObject("startLoc");
-			if(startLoc.has("city")){
-				list.add(startLoc.getString("city"));
+			if(startLoc.has("raw/city")){
+				list.add(startLoc.getString("raw/city"));
 				String address = "";
 				if(startLoc.has("cityAddr")){
 					address+=startLoc.getString("cityAddr");
@@ -360,8 +360,8 @@ public class JsonUtil {
 			JSONObject endLoc = joRoot.getJSONObject("semantic")
 					  .getJSONObject("slots")
 					  .getJSONObject("endLoc");
-					if(endLoc.has("city")){
-						list.add(endLoc.getString("city"));
+					if(endLoc.has("raw/city")){
+						list.add(endLoc.getString("raw/city"));
 						String address = "";
 						if(endLoc.has("cityAddr")){
 							address+=endLoc.getString("cityAddr");

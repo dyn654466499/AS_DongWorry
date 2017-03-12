@@ -34,6 +34,10 @@ public class AboutActivity extends BaseActivity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
+
+		setTitle(getString(R.string.title_about));
+		setViewChangeListener(this);
+
 		ImageView imageView_about_logo = (ImageView)findViewById(R.id.imageView_about_logo);
 		imageView_about_logo.setImageBitmap(ImageUtil.getRoundedCornerBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.control), 80));
 		TextView textView_about_version = (TextView)findViewById(R.id.textView_about_version);
@@ -42,13 +46,10 @@ public class AboutActivity extends BaseActivity{
 		Button button_about_help = (Button)findViewById(R.id.button_about_help);
 		Button button_about_attention = (Button)findViewById(R.id.button_about_attention);
 		Button button_about_userProtocol = (Button)findViewById(R.id.button_about_userProtocol);
-		
-		ImageButton imageBtn_about_back = (ImageButton)findViewById(R.id.imageBtn_about_back);
-		
+
 		button_about_help.setOnClickListener(this);
 		button_about_attention.setOnClickListener(this);
 		button_about_userProtocol.setOnClickListener(this);
-		imageBtn_about_back.setOnClickListener(this);
 	}
 
 	
@@ -107,10 +108,6 @@ public class AboutActivity extends BaseActivity{
 
 			case R.id.button_about_userProtocol:
 
-				break;
-
-			case R.id.imageBtn_about_back:
-				finish();
 				break;
 				
 			default:

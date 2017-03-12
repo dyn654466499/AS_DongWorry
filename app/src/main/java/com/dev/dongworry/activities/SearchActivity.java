@@ -24,7 +24,7 @@ import com.dev.dongworry.adapters.SearchHistoryAdapter;
 import com.dev.dongworry.customview.CustomEditText;
 import com.dev.dongworry.interfaces.Commands;
 import com.dev.dongworry.utils.DialogUtils;
-import com.dev.dongworry.utils.SharedPreferenceUtils;
+import com.dev.dongworry.utils.SPUtils;
 import com.dev.dongworry.R;
 
 import java.util.ArrayList;
@@ -48,8 +48,6 @@ public class SearchActivity extends BaseActivity{
 	}
 
 	private void initView() {
-		// TODO Auto-generated method stub
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_search);
 		editText_search_goods = (CustomEditText)findViewById(R.id.editText_search_goods);
 //		editText_search_goods.setText(getIntent().getStringExtra("searchKey"));
@@ -111,7 +109,7 @@ public class SearchActivity extends BaseActivity{
         /**
          * -------------------------------------------    搜索历史记录列表              --------------------------------------------
          */
-        final ArrayList<String> searchKey = SharedPreferenceUtils.getSearchHistory(mContext);
+        final ArrayList<String> searchKey = SPUtils.getSearchHistory(mContext);
         LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout_search_history);
 		if(searchKey != null){
 			ListView listView = (ListView)findViewById(R.id.listView_search_history);
@@ -144,11 +142,11 @@ public class SearchActivity extends BaseActivity{
 				 */
 				Intent intent = new Intent();
 				if(editText_search_goods.getText().length() == 0){
-					Toast.makeText(mContext, "请输入您想说的话", Toast.LENGTH_SHORT).show();
+					Toast.makeText(mContext, "请输入关键字", Toast.LENGTH_SHORT).show();
 				}else{
 					String searchKey = editText_search_goods.getText().toString();
 					intent.putExtra(SEARCH_KEY, searchKey); 
-					SharedPreferenceUtils.setSearchHistory(mContext, searchKey);
+					SPUtils.setSearchHistory(mContext, searchKey);
 					setResult(Activity.RESULT_OK, intent);
 					finish();
 					overridePendingTransition(0, R.anim.activity_down);
@@ -163,7 +161,7 @@ public class SearchActivity extends BaseActivity{
 						/**
 						 * 清除历史记录并隐藏
 						 */
-						SharedPreferenceUtils.clearSearchHistory(mContext);
+						SPUtils.clearSearchHistory(mContext);
 						LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout_search_history);
 						layout.setVisibility(View.INVISIBLE);
 					}
@@ -182,7 +180,7 @@ public class SearchActivity extends BaseActivity{
 //			 * 将输入结果回调给主界面，同时设置搜索历史记录
 //			 */
 //            String text= editText_search_goods.getText().toString();  
-//            SharedPreferenceUtils.setSearchHistory(mContext, text);
+//            SPUtils.setSearchHistory(mContext, text);
 //			Intent intent = new Intent();
 //		    intent.putExtra("text", text); 
 //			setResult(Activity.RESULT_OK, intent);

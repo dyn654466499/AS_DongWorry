@@ -54,13 +54,14 @@ public class GoodsActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// TODO Auto-generated method stub
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
 		setContentView(R.layout.activity_goods);
 		mContext = this;
 
 		setModelDelegate(new GoodsDetailModel(handler));
 		setViewChangeListener(this);
+
+
 
 		editText_goods_search = (CustomEditText)findViewById(R.id.editText_goods_search);
 		editText_goods_search.setCommand(new Commands() {
@@ -88,6 +89,7 @@ public class GoodsActivity extends BaseActivity {
 
 		ImageButton imageButton_search_back = (ImageButton)findViewById(R.id.imageButton_goods_back);
 		imageButton_search_back.setOnClickListener(this);
+		imageButton_search_back.setColorFilter(R.color.themeColor);
 
 		listView_goods = (ListView) findViewById(R.id.listView_goods);
 		GoodsAdapter adapter = new GoodsAdapter(mContext);

@@ -1,0 +1,157 @@
+package com.dev.dongworry.fragments;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.PopupWindow;
+
+import com.dev.dongworry.R;
+import com.dev.dongworry.activities.SearchActivity;
+import com.dev.dongworry.customview.CustomEditText;
+import com.google.gson.Gson;
+
+import java.io.InputStream;
+
+
+/**
+ * 显示国家和地区的UI片段，可复用
+ * @author 邓耀宁
+ *
+ */
+public class HomeFragment extends BaseFragment implements View.OnClickListener{
+    private PopupWindow popupWindow;
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onActivityCreated(savedInstanceState);
+	}
+
+	@Override
+	public void onAttach(Context activity) {
+		// TODO Auto-generated method stub
+		super.onAttach(activity);
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+		CustomEditText et_home_search = (CustomEditText)view.findViewById(R.id.et_home_search);
+		et_home_search.setOnClickListener(this);
+
+		ImageButton imageBtn_home_more = (ImageButton)view.findViewById(R.id.imageBtn_home_more);
+		imageBtn_home_more.setOnClickListener(this);
+
+		popupWindow = createMenuPopupWindow(getActivity());
+		String cityList = getCityList();
+		Gson gson = new Gson();
+
+		return view;
+	}
+
+	/**
+	 * 生成菜单popupwindow
+	 * @return PopupWindow实例
+	 */
+	private PopupWindow createMenuPopupWindow(Activity activity){
+		ListView listView = new ListView(activity);
+		listView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		listView.setBackgroundColor(activity.getResources().getColor(R.color.themeColor));
+		listView.setAlpha(0.8f);
+
+		DisplayMetrics dm = new DisplayMetrics();
+		activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		int mScreenWidth = dm.widthPixels;// 获取屏幕分辨率宽度
+
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity, R.layout.item_textview, new String[]{"扫一扫","收款","付款","帮助与反馈"});
+		listView.setAdapter(adapter);
+		final PopupWindow popupWindow = new PopupWindow(listView,mScreenWidth / 4, ViewGroup.LayoutParams.WRAP_CONTENT, false);
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+									int position, long id) {
+				// TODO Auto-generated method stub
+				switch (position) {
+					case 0:
+
+						break;
+					case 1:
+
+						break;
+					case 2:
+
+						break;
+					case 3:
+
+						break;
+					default:
+						break;
+				}
+				/**
+				 * 延迟popupwindow消失
+				 */
+				view.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						popupWindow.dismiss();
+					}
+				}, 100);
+			}
+		});
+		popupWindow.setOutsideTouchable(true);
+		popupWindow.setFocusable(true);
+		/**
+		 * 必须设置drawable
+		 */
+		popupWindow.setBackgroundDrawable(new BitmapDrawable());
+		return popupWindow;
+	}
+
+	@Override
+	public void onClick(View v) {
+		Intent intent;
+		switch (v.getId()){
+			case R.id.et_home_search:
+				intent = new Intent(getActivity(), SearchActivity.class);
+				getActivity().startActivity(intent);
+				break;
+			case R.id.imageBtn_home_more:
+				if(popupWindow == null){
+					popupWindow = createMenuPopupWindow(getActivity());
+				}
+				popupWindow.showAsDropDown(v, 999, 10);
+				break;
+		}
+	}
+
+	public String getCityList(){
+		String result = "";
+		try {
+			InputStream in = getResources().openRawResource(R.raw.city);
+			//获取文件的字节数
+			int lenght = in.available();
+			//创建byte数组
+			byte[]  buffer = new byte[lenght];
+			//将文件中的数据读到byte数组中
+			in.read(buffer);
+			result = new String(buffer, "UTF-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+}

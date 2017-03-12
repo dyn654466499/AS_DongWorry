@@ -31,8 +31,6 @@ public class SettingActivity extends BaseActivity{
     button_setting_voice,
     button_setting_update;
     
-    private ImageButton imageBtn_setting_back;
-    
     private Context mContext;
     
 	private SharedPreferences preferences;
@@ -41,15 +39,13 @@ public class SettingActivity extends BaseActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		    
-			// TODO Auto-generated method stub
-			requestWindowFeature(Window.FEATURE_NO_TITLE);
 			setContentView(R.layout.activity_setting);
 			mContext = this;
+		    setTitle(getString(R.string.title_setting));
+			setViewChangeListener(this);
 			
 			preferences = getSharedPreferences(PUSH_SETTING, Context.MODE_PRIVATE);
 			editor = preferences.edit();
-			
 			
 			button_setting_clearCache = (Button)findViewById(R.id.button_setting_clearCache);
 			button_setting_clearCache.setOnClickListener(this);
@@ -64,9 +60,6 @@ public class SettingActivity extends BaseActivity{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			imageBtn_setting_back = (ImageButton)findViewById(R.id.imageBtn_setting_back);
-			imageBtn_setting_back.setOnClickListener(this);
 			
 			button_setting_evaluate = (Button)findViewById(R.id.button_setting_evaluate);
 			button_setting_evaluate.setOnClickListener(this);
@@ -127,12 +120,6 @@ public class SettingActivity extends BaseActivity{
 			 */
 			case R.id.button_setting_voice:
 				startActivity(new Intent(mContext,VoiceSettingActivity.class));
-				break;
-			/**
-			 * 结束当前页面	
-			 */
-			case R.id.imageBtn_setting_back:
-				finish();
 				break;
 			/**
 			 * 去相应的应用市场进行评价	

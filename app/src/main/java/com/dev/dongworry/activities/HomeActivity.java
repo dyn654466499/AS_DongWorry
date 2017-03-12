@@ -10,13 +10,13 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.dev.dongworry.R;
 import com.dev.dongworry.fragments.BaseFragment;
-import com.dev.dongworry.fragments.CountryFragment;
+import com.dev.dongworry.fragments.HomeFragment;
 import com.dev.dongworry.fragments.FlowDoctorFragment;
 import com.dev.dongworry.fragments.UserCenterFragment;
 
 public class HomeActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
     private BottomNavigationBar navigationBar;
-    private CountryFragment countryFragment;
+    private HomeFragment homeFragment;
     private FlowDoctorFragment flowDoctorFragment;
     private UserCenterFragment userCenterFragment;
     @Override
@@ -28,10 +28,11 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
         navigationBar.setMode(BottomNavigationBar.MODE_DEFAULT);//点击模式
         navigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
         navigationBar.setTabSelectedListener(this);
-        navigationBar.addItem(new BottomNavigationItem(R.drawable.abc_ic_menu_share_holo_light, "机构")).
-                addItem(new BottomNavigationItem(R.drawable.navi_bus, "专家")).
-                addItem(new BottomNavigationItem(R.drawable.navi_drive, "中介")).
-                setActiveColor(R.color.blue).
+        navigationBar.addItem(new BottomNavigationItem(R.drawable.abc_ic_menu_share_holo_light, "首页")).
+                addItem(new BottomNavigationItem(R.drawable.navi_bus, "附近")).
+                addItem(new BottomNavigationItem(R.drawable.navi_walk, "发现")).
+                addItem(new BottomNavigationItem(R.drawable.navi_drive, "我的")).
+                setActiveColor(R.color.themeColor).
                 setFirstSelectedPosition(0).initialise();
         setDefaultFragment();
     }
@@ -45,8 +46,8 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
      * 设置默认的
      */
     private void setDefaultFragment() {
-        countryFragment = new CountryFragment();
-        changeFragment(countryFragment);
+        homeFragment = new HomeFragment();
+        changeFragment(homeFragment);
 
     }
 
@@ -55,10 +56,10 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
 
         switch (position) {
             case 0:
-                if(countryFragment == null){
-                    countryFragment = new CountryFragment();
+                if(homeFragment == null){
+                    homeFragment = new HomeFragment();
                 }
-                changeFragment(countryFragment);
+                changeFragment(homeFragment);
                 break;
             case 1:
                 if(flowDoctorFragment == null){

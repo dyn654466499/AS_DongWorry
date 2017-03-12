@@ -83,8 +83,8 @@ public class BaiduMapUtil {
 	            	mLocClient.stop();
 	                return;
 	            }
-	            SharedPreferenceUtils.setCurrentCity(context, location.getCity());
-	            SharedPreferenceUtils.setCurrentAddress(context, location.getAddrStr());
+	            SPUtils.setCurrentCity(context, location.getCity());
+	            SPUtils.setCurrentAddress(context, location.getAddrStr());
 	            if(isShowTip)Toast.makeText(context, "定位成功，您所在的城市是"+location.getCity(), Toast.LENGTH_SHORT).show();
 	            
 	            SharedPreferences preferences = context.getSharedPreferences(CURRENT_LOCATION,Context.MODE_PRIVATE);
@@ -144,8 +144,8 @@ public class BaiduMapUtil {
 	             */
 				 setPopupOverlay(context, mBaiduMap, location.getAddrStr(), ll);
 				
-				 SharedPreferenceUtils.setCurrentCity(context, location.getCity());
-		         SharedPreferenceUtils.setCurrentAddress(context, location.getAddrStr());
+				 SPUtils.setCurrentCity(context, location.getCity());
+		         SPUtils.setCurrentAddress(context, location.getAddrStr());
 		            
 		         SharedPreferences preferences = context.getSharedPreferences(CURRENT_LOCATION,Context.MODE_PRIVATE);
 		         Editor editor = preferences.edit();

@@ -5,12 +5,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,12 +38,11 @@ public class FindPWDActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// TODO Auto-generated method stub
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_find_pwd);
 
 		setModelDelegate(new FindPWDModel(handler));
 		setViewChangeListener(this);
-
+		setTitle(getString(R.string.title_findPWD));
 		mContext = this;
 		// 若要动态添加fragment，第一个fragment必须要是动态加上去，不能用xml，否则第二个fragment将无法动态替换第一个fragment。
 		fragment_phone = new PhoneFragment();
@@ -59,9 +55,6 @@ public class FindPWDActivity extends BaseActivity {
 
 		fragment_findpwd_container = (LinearLayout)findViewById(R.id.fragment_findpwd_container);
 
-		ImageButton imageButton_findpwd_back = (ImageButton)findViewById(R.id.imageButton_findpwd_back);
-		imageButton_findpwd_back.setOnClickListener(this);
-
 		button_findpwd_next = (Button)findViewById(R.id.button_findpwd_next);
 		button_findpwd_next.setOnClickListener(this);
 
@@ -73,9 +66,6 @@ public class FindPWDActivity extends BaseActivity {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
-				case R.id.imageButton_findpwd_back:
-					finish();
-					break;
 				case R.id.button_findpwd_next:
 					/**
 					 *  密码找回功能第一步，如果当前是输入手机号码的fragment，则跳转。
@@ -135,13 +125,6 @@ public class FindPWDActivity extends BaseActivity {
 							textView_findpwd_tips
 									.setText(getString(R.string.verificateSuccessfully));
 
-							// 重新设置大小
-							LinearLayout linearLayout_findpwd = (LinearLayout)findViewById(R.id.linearLayout_findpwd);
-							RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) linearLayout_findpwd
-									.getLayoutParams();
-							params.height = 360;
-							linearLayout_findpwd.setLayoutParams(params);
-
 							// 显示确认密码UI
 							LinearLayout linearLayout_findpwd_surePWD = (LinearLayout)findViewById(R.id.linearLayout_findpwd_surePWD);
 							linearLayout_findpwd_surePWD
@@ -169,12 +152,6 @@ public class FindPWDActivity extends BaseActivity {
 									getString(R.string.pwdIsNotMatched),
 									Toast.LENGTH_SHORT).show();
 						}
-//					}else{
-//						//密码不符合6-12位
-//						Toast.makeText(mActivity,
-//								getString(R.string.pwdIsNotFormat),
-//								Toast.LENGTH_SHORT).show();
-//					}
 					}
 					break;
 

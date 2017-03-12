@@ -9,7 +9,7 @@ import android.content.SharedPreferences;
 
 import static com.dev.dongworry.consts.Constants.*;
 
-public class SharedPreferenceUtils {
+public class SPUtils {
 	
 	public static void setSearchHistory(Context context ,String searchKey){
 		SharedPreferences preferences = context.getSharedPreferences(SEARCH_KEY, Context.MODE_PRIVATE);

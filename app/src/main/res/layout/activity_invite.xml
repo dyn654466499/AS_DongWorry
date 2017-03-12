@@ -1,35 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.dyn.voicecontrol.ShareActivity" >
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/blue" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/title_inviteFriends"
-            android:textColor="#ffffff"
-            android:textSize="@dimen/text_title" />
-
-        <ImageButton
-            android:id="@+id/imageButton_invite_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/imagebtn_back_left"
-            android:background="@null"
-            android:src="@drawable/icon_title_back" />
-
-    </RelativeLayout>
+    <include layout="@layout/layout_common_title" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,7 +13,7 @@
         android:padding="20dp"
         >
 
-        <Button
+        <com.dev.dongworry.customview.CButton
             android:id="@+id/button_invite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

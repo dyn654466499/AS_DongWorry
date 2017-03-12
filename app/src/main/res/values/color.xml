@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="themeColor">@color/blue</color>
+    <color name="themeColor">@color/red_light</color>
+    <color name="red_light">#fc4442</color>
     <color name="blue">#2c92ef</color>
     <color name="green">#00FF00</color>
     <color name="gray">#cfcfcf</color>
-    <color name="bg_gray">#f8f8f8</color>
+    <color name="bg_gray">#f6f6f6</color>
     <color name="white">#ffffff</color>
     <color name="orange">#F4A460</color>
     <color name="red">#FF0000</color>

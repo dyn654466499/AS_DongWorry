@@ -4,6 +4,42 @@
     android:background="@color/bg_gray"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/linearLayout_search"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/editext_frame"
+        android:orientation="horizontal" >
+
+        <com.dev.dongworry.customview.CustomEditText
+            android:id="@+id/editText_search_goods"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="9"
+            android:background="@drawable/editext_frame"
+            android:drawableLeft="@drawable/cityselect_search_icon"
+            android:drawableRight="@drawable/submit_edit_clear_pressed"
+            android:hint="@string/searchHint"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="14sp" >
+        </com.dev.dongworry.customview.CustomEditText>
+
+        <Button
+            android:id="@+id/button_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1.5"
+            android:background="@color/themeColor"
+            android:text="@string/search"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -29,7 +65,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/topSearch"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/themeColor"
                         android:textSize="14sp" />
 
                     <com.dev.dongworry.customview.GridViewForScrollView
@@ -63,7 +99,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_weight="1"
                         android:text="@string/searchHistory"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/themeColor"
                         android:textSize="14sp" />
 
                     <RelativeLayout
@@ -96,42 +132,5 @@
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_search"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/editext_frame"
-            android:orientation="horizontal" >
-
-            <com.dev.dongworry.customview.CustomEditText
-                android:id="@+id/editText_search_goods"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_weight="9"
-                android:background="@drawable/editext_frame"
-                android:drawableLeft="@drawable/cityselect_search_icon"
-                android:drawableRight="@drawable/submit_edit_clear_pressed"
-                android:hint="@string/searchHint"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textSize="14sp" >
-            </com.dev.dongworry.customview.CustomEditText>
-
-            <Button
-                android:id="@+id/button_search"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1.5"
-                android:background="#2c92ef"
-                android:text="@string/search"
-                android:textColor="#ffffff"
-                android:textSize="14sp" />
-        </LinearLayout>
     </LinearLayout>
 

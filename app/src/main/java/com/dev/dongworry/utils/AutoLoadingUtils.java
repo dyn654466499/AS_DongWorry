@@ -1,7 +1,5 @@
 package com.dev.dongworry.utils;
 
-import java.util.ArrayList;
-
 import android.graphics.drawable.AnimationDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +8,8 @@ import android.view.ViewGroup.OnHierarchyChangeListener;
 import android.widget.ImageView;
 
 import com.dev.dongworry.R;
+
+import java.util.ArrayList;
 
 public class AutoLoadingUtils {
 	private static View view;
@@ -20,7 +20,7 @@ public class AutoLoadingUtils {
 		if(rootView != null){
 		AutoLoadingUtils.rootView =rootView;
 		view = LayoutInflater.from(rootView.getContext()).inflate(R.layout.autoloading, rootView, false);
-		saveView = new ArrayList<View>();
+		saveView = new ArrayList<>();
 		
 		ImageView image = (ImageView) view.findViewById(R.id.imageView_autoLoading);  
 		image.setBackgroundResource(R.drawable.autoloading);

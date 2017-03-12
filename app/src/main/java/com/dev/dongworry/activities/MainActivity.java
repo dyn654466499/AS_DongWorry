@@ -442,7 +442,7 @@ public class MainActivity extends BaseActivity{
 		menuItems = new ArrayList<ResideMenuItem>();
 		String[] Item = new String[] {
 				setStringID(R.string.scanQCode),
-				setStringID(R.string.title_settings),
+				setStringID(R.string.title_setting),
 				setStringID(R.string.deleteChat), 
 				setStringID(R.string.setHeadImage),
 				setStringID(R.string.title_listApps),
@@ -529,13 +529,13 @@ public class MainActivity extends BaseActivity{
 			if (headBitmapDrawable.getBitmap() != null) {
 				entity.setDrawable(headImage);
 			} else {
-				if (isComMsg) {
-					robot_Drawable = setDrawable(R.drawable.assistants);
-					entity.setDrawable(setDrawable(R.drawable.assistants));
-				} else {
-					user_Drawable = setDrawable(R.drawable.me);
-					entity.setDrawable(setDrawable(R.drawable.me));
-				}
+//				if (isComMsg) {
+//					robot_Drawable = setDrawable(R.drawable.assistants);
+//					entity.setDrawable(setDrawable(R.drawable.assistants));
+//				} else {
+//					user_Drawable = setDrawable(R.drawable.me);
+//					entity.setDrawable(setDrawable(R.drawable.me));
+//				}
 			}
 
 			mDataArrays.add(entity);
@@ -628,20 +628,20 @@ public class MainActivity extends BaseActivity{
 
 			case SEND:
 				String send_var = (String) msg.obj;
-				if (user_Drawable != null) {
-					setUserMessage(send_var, date,user_Drawable);
-				} else
-					setUserMessage(send_var, date,
-							setDrawable(R.drawable.me));
+//				if (user_Drawable != null) {
+//					setUserMessage(send_var, date,user_Drawable);
+//				} else
+//					setUserMessage(send_var, date,
+//							setDrawable(R.drawable.me));
 				break;
 
 			case RECEIVE:
 				String receive_var = (String) msg.obj;
-				if (robot_Drawable != null) {
-					setMyMessage(receive_var, date, robot_Drawable);
-				} else
-					setMyMessage(receive_var, date,
-							setDrawable(R.drawable.assistants));
+//				if (robot_Drawable != null) {
+//					setMyMessage(receive_var, date, robot_Drawable);
+//				} else
+//					setMyMessage(receive_var, date,
+//							setDrawable(R.drawable.assistants));
  				break;
  			/**
 	          * 解压so成功

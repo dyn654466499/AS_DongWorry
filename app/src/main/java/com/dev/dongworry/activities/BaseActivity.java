@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev.dongworry.R;
@@ -80,7 +81,13 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
 		};
 		mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
 	}
-	
+
+	public void setTitle(String title){
+		TextView tv_common_title = (TextView)findViewById(R.id.tv_common_title);
+		if(tv_common_title != null){
+			tv_common_title.setText(title);
+		}
+	}
 	    /**
 	     * 提示框
 	     * @param str

@@ -22,18 +22,18 @@ import static com.dev.dongworry.consts.Constants.*;
 public class InviteFriendActivity extends BaseActivity {
 
 	private Button button_invite;
-	private ImageButton imageButton_invite_back;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_invite);
+
+		setTitle(getString(R.string.title_inviteFriends));
+		setViewChangeListener(this);
+
 		button_invite = (Button)findViewById(R.id.button_invite);
-		imageButton_invite_back = (ImageButton)findViewById(R.id.imageButton_invite_back);
-		
+
 		button_invite.setOnClickListener(this);
-		imageButton_invite_back.setOnClickListener(this);
-		
+
 		WindowManager wm = this.getWindowManager();
 	    int width = wm.getDefaultDisplay().getWidth()/2;
 	    
@@ -53,10 +53,6 @@ public class InviteFriendActivity extends BaseActivity {
 //				startActivity(sendIntent);
 				startActivity(new Intent(InviteFriendActivity.this, ShareActivity.class));
 				overridePendingTransition(0, 0);
-				break;
-
-			case R.id.imageButton_invite_back:
-				InviteFriendActivity.this.finish();
 				break;
 				
 			default:

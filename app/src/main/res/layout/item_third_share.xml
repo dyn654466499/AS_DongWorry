@@ -21,8 +21,10 @@
         android:layout_width="match_parent"
         android:layout_weight="4"
         android:gravity="center"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:text="QQ好友"
-        android:textSize="11sp" />
+        android:textSize="12sp"
+        android:textColor="@color/font_gray"
+        />
 
 </LinearLayout>

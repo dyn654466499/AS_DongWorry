@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -34,6 +35,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.dev.dongworry.R.id.button_share_cancel;
+import static com.dev.dongworry.R.id.linearLayout_share_blank;
 import static com.dev.dongworry.consts.Constants.APK_LOGO_URL;
 import static com.dev.dongworry.consts.Constants.APK_MOBILE_DOWNLOAD_URL;
 import static com.dev.dongworry.consts.Constants.QQ_APP_ID;
@@ -93,6 +96,10 @@ public class ShareActivity extends BaseActivity {
 		
 		mContext = this;
 		setContentView(R.layout.activity_share);
+
+		LinearLayout linearLayout_share_blank = (LinearLayout)findViewById(R.id.linearLayout_share_blank);
+		linearLayout_share_blank.setOnClickListener(this);
+
 		Button button_share_cancel = (Button) findViewById(R.id.button_share_cancel);
 		button_share_cancel.setOnClickListener(this);
 
@@ -119,7 +126,7 @@ public class ShareActivity extends BaseActivity {
 				R.drawable.bdsocialshare_qqdenglu,
 				R.drawable.bdsocialshare_copylink };
 		// 新建List
-		ArrayList<Map<String, Object>> data_list = new ArrayList<Map<String, Object>>();
+		ArrayList<Map<String, Object>> data_list = new ArrayList<>();
 		// 获取数据
 		for (int i = 0; i < icons.length; i++) {
 			Map<String, Object> map = new HashMap<String, Object>();
@@ -160,11 +167,11 @@ public class ShareActivity extends BaseActivity {
 					if ("QQ好友".equals(shareName)) {
 					    Bundle params = new Bundle();
 					    params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
-					    params.putString(QQShare.SHARE_TO_QQ_TITLE, "快来试试这个语言应用");
+					    params.putString(QQShare.SHARE_TO_QQ_TITLE, "快来试试这个应用");
 					    params.putString(QQShare.SHARE_TO_QQ_SUMMARY,  "");
 					    params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,  APK_MOBILE_DOWNLOAD_URL);
 					    params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,APK_LOGO_URL);
-					    params.putString(QQShare.SHARE_TO_QQ_APP_NAME,  "语音控制");
+					    params.putString(QQShare.SHARE_TO_QQ_APP_NAME,  getString(R.string.local_app_name));
 					    qq_api.shareToQQ(ShareActivity.this, params, baseUiListener);
 					    finish();
 					    return;
@@ -182,15 +189,24 @@ public class ShareActivity extends BaseActivity {
 						return;
 					}
 					if ("短信".equals(shareName)) {
-						shareIntent.setComponent(new ComponentName(
-								"com.android.contacts", appMap
-										.get("com.android.contacts")));
-						shareIntent.setType("text/*");
-						// 这里就是组织内容了，
-						shareIntent.putExtra(Intent.EXTRA_TEXT, APK_MOBILE_DOWNLOAD_URL);
-						shareIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						ShareActivity.this.startActivity(shareIntent);
-						finish();
+						try {
+							String key = "com.android.contacts";
+							String cls = appMap.get(key);
+							if(cls == null){
+								key = "com.android.mms";
+								cls = appMap.get(key);
+							}
+							ComponentName componentName = new ComponentName(key,cls);
+							shareIntent.setComponent(componentName);
+							shareIntent.setType("text/*");
+							// 这里就是组织内容了，
+							shareIntent.putExtra(Intent.EXTRA_TEXT, APK_MOBILE_DOWNLOAD_URL);
+							shareIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+							ShareActivity.this.startActivity(shareIntent);
+							finish();
+						}catch (Exception e){
+							e.printStackTrace();
+						}
 					}
 					if ("新浪微博".equals(shareName)) {
 						Toast.makeText(ShareActivity.this, "亲，不好意思，新浪微博分享功能暂未实现哦！",Toast.LENGTH_SHORT).show();
@@ -199,9 +215,9 @@ public class ShareActivity extends BaseActivity {
 						Toast.makeText(ShareActivity.this, "马上到QQ空间分享，请稍等...",Toast.LENGTH_SHORT).show();
 						Bundle params = new Bundle();
 						params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE,QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT );
-					    params.putString(QzoneShare.SHARE_TO_QQ_TITLE, "语音控制");//必填
-					    params.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, "快来试试这个语言应用");//选填
-					    params.putString(QzoneShare.SHARE_TO_QQ_APP_NAME,  "语音控制");
+					    params.putString(QzoneShare.SHARE_TO_QQ_TITLE, getString(R.string.local_app_name));//必填
+					    params.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, "快来试试这个应用");//选填
+					    params.putString(QzoneShare.SHARE_TO_QQ_APP_NAME,  getString(R.string.local_app_name));
 					    params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL, APK_MOBILE_DOWNLOAD_URL);//必填
 					    
 					    ArrayList<String> imageList = new ArrayList<String>();
@@ -213,9 +229,6 @@ public class ShareActivity extends BaseActivity {
 						return;
 					}
 					if ("发送apk".equals(shareName)) {
-						// shareIntent.setComponent(new ComponentName(
-						// "com.tencent.mobileqq", appMap
-						// .get("com.tencent.mobileqq")));
 						if (NetUtil.isWifiConnected(mContext)) {
 							CommonUtils.sendAPKFromLocal(mContext);
 						} else {
@@ -247,13 +260,11 @@ public class ShareActivity extends BaseActivity {
 	}
 
 	private List<ResolveInfo> getShareApps(Context context) {
-		List<ResolveInfo> mApps = new ArrayList<ResolveInfo>();
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.addCategory(Intent.CATEGORY_DEFAULT);
 		intent.setType("text/*");
 		PackageManager pManager = context.getPackageManager();
-		mApps = pManager.queryIntentActivities(intent,
-				PackageManager.GET_ACTIVITIES);
+		List<ResolveInfo> mApps = pManager.queryIntentActivities(intent, PackageManager.GET_ACTIVITIES);
 		return mApps;
 	}
 
@@ -324,6 +335,8 @@ public class ShareActivity extends BaseActivity {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
+
+		case R.id.linearLayout_share_blank:
 		case R.id.button_share_cancel:
 			finish();
 			break;

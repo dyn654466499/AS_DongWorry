@@ -12,6 +12,7 @@
     <string name="uninstallApp">卸载应用</string>
     <string name="scanQCode">扫一扫</string>
     <string name="tips_setHead">亲，改用头像时，最好选用图库中的照片进行裁剪哦！</string>
+    <string name="home_search_hint">点击这里查询</string>
 
     <!-- 操作应用的action -->
     <string name="open">打开</string>
@@ -215,7 +216,7 @@
     </string-array>
 
     <!-- 更多设置 -->
-    <string name="title_settings">设置</string>
+    <string name="title_setting">设置</string>
     <string name="title_voice_setting">语音设置</string>
     <string name="setNotifications">消息提醒设置</string>
     <string name="showPic">是否仅在Wi-Fi下显示图片</string>
@@ -382,6 +383,7 @@
     <string name="register">没有账号？立即注册</string>
     <string name="sureRegister">立即注册</string>
     <string name="agree">同意</string>
+    <string name="title_register">注册</string>
 
     <!-- 找回密码 -->
     <string name="title_findPWD">找回密码</string>
@@ -407,11 +409,11 @@
     <string name="menuMe">我的</string>
 
     <!-- 用户中心 -->
-    <string name="user_comment">我的评价</string>
-    <string name="user_collect">我的收藏</string>
-    <string name="user_wallet">我的钱包</string>
-    <string name="flow_strategy">流量攻略</string>
-    <string name="more_setting">更多设置</string>
+    <string name="user_ability">我的技能</string>
+    <string name="user_push_info">发布信息</string>
+    <string name="user_task">我的任务</string>
+    <string name="contact_service">联系客服</string>
+    <string name="user_setting">我的设置</string>
 
     <!-- 商品界面 -->
     <string name="allCategories">全部分类</string>

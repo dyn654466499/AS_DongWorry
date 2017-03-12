@@ -87,7 +87,7 @@ import com.dev.dongworry.customview.AlwaysMarqueeTextView;
 import com.dev.dongworry.utils.BaiduMapUtil;
 import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.ImageUtil;
-import com.dev.dongworry.utils.SharedPreferenceUtils;
+import com.dev.dongworry.utils.SPUtils;
 import com.dev.dongworry.R;
 import com.library.decrawso.DecRawso;
 
@@ -214,7 +214,7 @@ public class MapActivity extends BaseActivity {
 			}
 			
 			if("CURRENT_CITY".equals(city))
-				city = SharedPreferenceUtils.getCurrentCity(this);
+				city = SPUtils.getCurrentCity(this);
 			
 			mapView = BaiduMapUtil.locateSearchPlace(this, city, address);
 			setContentView(mapView);
@@ -295,10 +295,10 @@ public class MapActivity extends BaseActivity {
 						
 						if(!TextUtils.isEmpty(startCity)){
 							if("CURRENT_CITY".equals(startCity))
-								startCity = SharedPreferenceUtils.getCurrentCity(mContext);
+								startCity = SPUtils.getCurrentCity(mContext);
 							
 							if("CURRENT_CITY".equals(endCity))
-								endCity = SharedPreferenceUtils.getCurrentCity(mContext);
+								endCity = SPUtils.getCurrentCity(mContext);
 							
 							//Log.e(getTAG(), "startCity = "+startCity+",endCity = "+endCity+",startAddress = "+startAddress+",endAddress = "+endAddress);
 							/**
@@ -307,7 +307,7 @@ public class MapActivity extends BaseActivity {
 							String textView_route_place_startAddress = "",
 									textView_route_place_endAddress = "";
 							if("CURRENT_POI".equals(startAddress)){
-								stNode = PlanNode.withLocation(SharedPreferenceUtils.getCurrentLatLng(mContext));
+								stNode = PlanNode.withLocation(SPUtils.getCurrentLatLng(mContext));
 								textView_route_place_startAddress = "当前位置";
 							}else{
 								stNode = PlanNode.withCityNameAndPlaceName(startCity, startAddress);
@@ -317,7 +317,7 @@ public class MapActivity extends BaseActivity {
 							 * 规划路径终点
 							 */
 							if("CURRENT_POI".equals(endAddress)){
-								enNode = PlanNode.withLocation(SharedPreferenceUtils.getCurrentLatLng(mContext));
+								enNode = PlanNode.withLocation(SPUtils.getCurrentLatLng(mContext));
 								textView_route_place_endAddress = "当前位置";
 							}else{
 								enNode = PlanNode.withCityNameAndPlaceName(endCity, endAddress);
@@ -562,7 +562,7 @@ public class MapActivity extends BaseActivity {
 						// TODO Auto-generated method stub
 						if(stNode!=null && enNode != null){
 			            routeSearch.transitSearch((new TransitRoutePlanOption()).from(stNode)
-			                    .city(SharedPreferenceUtils.getCurrentCity(mContext))
+			                    .city(SPUtils.getCurrentCity(mContext))
 			                    .to(enNode));
 			            setTitleVisibility(false,null);
 			            imageView_route_foot.setImageDrawable(getResources().getDrawable(R.drawable.navi_walk));
@@ -955,7 +955,7 @@ public class MapActivity extends BaseActivity {
 				if(isStart)stNode = PlanNode.withLocation(poiInfos.get(position).location);
 				else enNode = PlanNode.withLocation(poiInfos.get(position).location);
 				
-				if(ROUTE_RESULT_TRANSIT.equals(action))routeSearch.transitSearch((new TransitRoutePlanOption()).from(stNode).city(SharedPreferenceUtils.getCurrentCity(mContext))
+				if(ROUTE_RESULT_TRANSIT.equals(action))routeSearch.transitSearch((new TransitRoutePlanOption()).from(stNode).city(SPUtils.getCurrentCity(mContext))
 	                    .to(enNode));
 				if(ROUTE_RESULT_DRIVE.equals(action))routeSearch.drivingSearch((new DrivingRoutePlanOption()).from(stNode).to(enNode));
 				if(ROUTE_RESULT_WALK.equals(action))routeSearch.walkingSearch((new WalkingRoutePlanOption()).from(stNode).to(enNode));
