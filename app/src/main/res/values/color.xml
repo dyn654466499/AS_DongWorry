@@ -10,6 +10,7 @@
     <color name="white">#ffffff</color>
     <color name="orange">#F4A460</color>
     <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
     <color name="font_gray">#848484</color>
     <color name="font_deep_gray">#545454</color>
     <color name="activitytransparent">#a000</color>

@@ -1,10 +1,8 @@
 {
-    "code": "000000",
-    "data": {
         "cityList": [{
             "cityList": [{
                 "cityID": "5132",
-                "cityPinYin": "AB",
+                "pinyin": "AB",
                 "cityname": "阿坝",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -13,7 +11,7 @@
                 "platePrefix": "川U"
             }, {
                 "cityID": "1529",
-                "cityPinYin": "ALSM",
+                "pinyin": "ALSM",
                 "cityname": "阿拉善盟",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -22,7 +20,7 @@
                 "platePrefix": "蒙M"
             }, {
                 "cityID": "5425",
-                "cityPinYin": "ALDQ",
+                "pinyin": "ALDQ",
                 "cityname": "阿里地区",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -31,7 +29,7 @@
                 "platePrefix": "藏F"
             }, {
                 "cityID": "6109",
-                "cityPinYin": "AK",
+                "pinyin": "AK",
                 "cityname": "安康",
                 "engineLen": "0",
                 "frameLen": "99",
@@ -40,7 +38,7 @@
                 "platePrefix": "陕G"
             }, {
                 "cityID": "6529",
-                "cityPinYin": "AKSDQ",
+                "pinyin": "AKSDQ",
                 "cityname": "阿克苏地区",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -49,7 +47,7 @@
                 "platePrefix": "新N"
             }, {
                 "cityID": "6543",
-                "cityPinYin": "ALTDQ",
+                "pinyin": "ALTDQ",
                 "cityname": "阿勒泰地区",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -58,7 +56,7 @@
                 "platePrefix": "新H"
             }, {
                 "cityID": "3408",
-                "cityPinYin": "AQ",
+                "pinyin": "AQ",
                 "cityname": "安庆",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -67,7 +65,7 @@
                 "platePrefix": "皖H"
             }, {
                 "cityID": "5204",
-                "cityPinYin": "AS",
+                "pinyin": "AS",
                 "cityname": "安顺",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -76,7 +74,7 @@
                 "platePrefix": "贵G"
             }, {
                 "cityID": "4105",
-                "cityPinYin": "AY",
+                "pinyin": "AY",
                 "cityname": "安阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -85,7 +83,7 @@
                 "platePrefix": "豫E"
             }, {
                 "cityID": "2103",
-                "cityPinYin": "AS",
+                "pinyin": "AS",
                 "cityname": "鞍山",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -97,7 +95,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "BYNE",
+                "pinyin": "BYNE",
                 "cityname": "巴彦淖尔",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -106,7 +104,7 @@
                 "platePrefix": "蒙L"
             }, {
                 "cityID": "1508",
-                "cityPinYin": "BYNEM",
+                "pinyin": "BYNEM",
                 "cityname": "巴彦淖尔盟",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -115,7 +113,7 @@
                 "platePrefix": "蒙L"
             }, {
                 "cityID": "5119",
-                "cityPinYin": "BZ",
+                "pinyin": "BZ",
                 "cityname": "巴中",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -124,7 +122,7 @@
                 "platePrefix": "川Y"
             }, {
                 "cityID": "0",
-                "cityPinYin": "BS",
+                "pinyin": "BS",
                 "cityname": "百色",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -133,7 +131,7 @@
                 "platePrefix": "桂L"
             }, {
                 "cityID": "1502",
-                "cityPinYin": "BT",
+                "pinyin": "BT",
                 "cityname": "包头",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -142,7 +140,7 @@
                 "platePrefix": "蒙B"
             }, {
                 "cityID": "0",
-                "cityPinYin": "BH",
+                "pinyin": "BH",
                 "cityname": "北海",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -151,7 +149,7 @@
                 "platePrefix": "桂E"
             }, {
                 "cityID": "6528",
-                "cityPinYin": "BYGLMGZZZ",
+                "pinyin": "BYGLMGZZZ",
                 "cityname": "巴音郭楞蒙古自治州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -160,7 +158,7 @@
                 "platePrefix": "新M"
             }, {
                 "cityID": "2208",
-                "cityPinYin": "BC",
+                "pinyin": "BC",
                 "cityname": "白城",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -169,7 +167,7 @@
                 "platePrefix": "吉G"
             }, {
                 "cityID": "2206",
-                "cityPinYin": "BS",
+                "pinyin": "BS",
                 "cityname": "白山",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -178,7 +176,7 @@
                 "platePrefix": "吉F"
             }, {
                 "cityID": "6204",
-                "cityPinYin": "BY",
+                "pinyin": "BY",
                 "cityname": "白银",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -187,7 +185,7 @@
                 "platePrefix": "甘D"
             }, {
                 "cityID": "3403",
-                "cityPinYin": "BB",
+                "pinyin": "BB",
                 "cityname": "蚌埠",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -196,7 +194,7 @@
                 "platePrefix": "皖C"
             }, {
                 "cityID": "6103",
-                "cityPinYin": "BJ",
+                "pinyin": "BJ",
                 "cityname": "宝鸡",
                 "engineLen": "99",
                 "frameLen": "4",
@@ -205,7 +203,7 @@
                 "platePrefix": "陕C"
             }, {
                 "cityID": "1306",
-                "cityPinYin": "BD",
+                "pinyin": "BD",
                 "cityname": "保定",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -214,7 +212,7 @@
                 "platePrefix": "冀F"
             }, {
                 "cityID": "5305",
-                "cityPinYin": "BS",
+                "pinyin": "BS",
                 "cityname": "保山",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -223,7 +221,7 @@
                 "platePrefix": "云M"
             }, {
                 "cityID": "11",
-                "cityPinYin": "BJ",
+                "pinyin": "BJ",
                 "cityname": "北京",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -232,7 +230,7 @@
                 "platePrefix": "京"
             }, {
                 "cityID": "2105",
-                "cityPinYin": "BX",
+                "pinyin": "BX",
                 "cityname": "本溪",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -241,7 +239,7 @@
                 "platePrefix": "辽E"
             }, {
                 "cityID": "5205",
-                "cityPinYin": "BJ",
+                "pinyin": "BJ",
                 "cityname": "毕节",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -250,7 +248,7 @@
                 "platePrefix": "贵F"
             }, {
                 "cityID": "3716",
-                "cityPinYin": "BZ",
+                "pinyin": "BZ",
                 "cityname": "滨州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -259,7 +257,7 @@
                 "platePrefix": "鲁M"
             }, {
                 "cityID": "3416",
-                "cityPinYin": "BZ",
+                "pinyin": "BZ",
                 "cityname": "亳州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -268,7 +266,7 @@
                 "platePrefix": "皖S"
             }, {
                 "cityID": "6527",
-                "cityPinYin": "BETLMGZZZ",
+                "pinyin": "BETLMGZZZ",
                 "cityname": "博尔塔拉蒙古自治州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -280,7 +278,7 @@
         }, {
             "cityList": [{
                 "cityID": "5421",
-                "cityPinYin": "CDDQ",
+                "pinyin": "CDDQ",
                 "cityname": "昌都地区",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -289,7 +287,7 @@
                 "platePrefix": "藏B"
             }, {
                 "cityID": "4301",
-                "cityPinYin": "CS",
+                "pinyin": "CS",
                 "cityname": "长沙",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -298,7 +296,7 @@
                 "platePrefix": "湘A"
             }, {
                 "cityID": "4307",
-                "cityPinYin": "CD",
+                "pinyin": "CD",
                 "cityname": "常德",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -307,7 +305,7 @@
                 "platePrefix": "湘J"
             }, {
                 "cityID": "340181",
-                "cityPinYin": "CH",
+                "pinyin": "CH",
                 "cityname": "巢湖",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -316,7 +314,7 @@
                 "platePrefix": "皖Q"
             }, {
                 "cityID": "2113",
-                "cityPinYin": "CY",
+                "pinyin": "CY",
                 "cityname": "朝阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -325,7 +323,7 @@
                 "platePrefix": "辽N"
             }, {
                 "cityID": "4310",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "郴州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -334,7 +332,7 @@
                 "platePrefix": "湘L"
             }, {
                 "cityID": "5101",
-                "cityPinYin": "CD",
+                "pinyin": "CD",
                 "cityname": "成都",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -343,7 +341,7 @@
                 "platePrefix": "川A"
             }, {
                 "cityID": "3417",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "池州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -352,7 +350,7 @@
                 "platePrefix": "皖R"
             }, {
                 "cityID": "1504",
-                "cityPinYin": "CF",
+                "pinyin": "CF",
                 "cityname": "赤峰",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -361,7 +359,7 @@
                 "platePrefix": "蒙D"
             }, {
                 "cityID": "0",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "崇左",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -370,7 +368,7 @@
                 "platePrefix": "桂F"
             }, {
                 "cityID": "3411",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "滁州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -379,7 +377,7 @@
                 "platePrefix": "皖M"
             }, {
                 "cityID": "1309",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "沧州",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -388,7 +386,7 @@
                 "platePrefix": "冀J"
             }, {
                 "cityID": "1312",
-                "cityPinYin": "CZXS",
+                "pinyin": "CZXS",
                 "cityname": "沧州行署",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -397,7 +395,7 @@
                 "platePrefix": "冀S"
             }, {
                 "cityID": "6523",
-                "cityPinYin": "CJHZZZZ",
+                "pinyin": "CJHZZZZ",
                 "cityname": "昌吉回族自治州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -406,7 +404,7 @@
                 "platePrefix": "新B"
             }, {
                 "cityID": "2201",
-                "cityPinYin": "CC",
+                "pinyin": "CC",
                 "cityname": "长春",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -415,7 +413,7 @@
                 "platePrefix": "吉A"
             }, {
                 "cityID": "1404",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "长治",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -424,7 +422,7 @@
                 "platePrefix": "晋D"
             }, {
                 "cityID": "3204",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "常州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -433,7 +431,7 @@
                 "platePrefix": "苏D"
             }, {
                 "cityID": "4451",
-                "cityPinYin": "CZ",
+                "pinyin": "CZ",
                 "cityname": "潮州",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -442,7 +440,7 @@
                 "platePrefix": "粤U"
             }, {
                 "cityID": "1308",
-                "cityPinYin": "CD",
+                "pinyin": "CD",
                 "cityname": "承德",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -451,7 +449,7 @@
                 "platePrefix": "冀H"
             }, {
                 "cityID": "5323",
-                "cityPinYin": "CXYZZZZ",
+                "pinyin": "CXYZZZZ",
                 "cityname": "楚雄彝族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -460,7 +458,7 @@
                 "platePrefix": "云E"
             }, {
                 "cityID": "50",
-                "cityPinYin": "CQ",
+                "pinyin": "CQ",
                 "cityname": "重庆",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -472,7 +470,7 @@
         }, {
             "cityList": [{
                 "cityID": "5117",
-                "cityPinYin": "DZ",
+                "pinyin": "DZ",
                 "cityname": "达州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -481,7 +479,7 @@
                 "platePrefix": "川S"
             }, {
                 "cityID": "5106",
-                "cityPinYin": "DY",
+                "pinyin": "DY",
                 "cityname": "德阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -490,7 +488,7 @@
                 "platePrefix": "川F"
             }, {
                 "cityID": "5329",
-                "cityPinYin": "DLBZZZZ",
+                "pinyin": "DLBZZZZ",
                 "cityname": "大理白族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -499,7 +497,7 @@
                 "platePrefix": "云L"
             }, {
                 "cityID": "2102",
-                "cityPinYin": "DL",
+                "pinyin": "DL",
                 "cityname": "大连",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -508,7 +506,7 @@
                 "platePrefix": "辽B"
             }, {
                 "cityID": "2306",
-                "cityPinYin": "DQ",
+                "pinyin": "DQ",
                 "cityname": "大庆",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -517,7 +515,7 @@
                 "platePrefix": "黑E"
             }, {
                 "cityID": "1402",
-                "cityPinYin": "DT",
+                "pinyin": "DT",
                 "cityname": "大同",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -526,7 +524,7 @@
                 "platePrefix": "晋B"
             }, {
                 "cityID": "2327",
-                "cityPinYin": "DXALDQ",
+                "pinyin": "DXALDQ",
                 "cityname": "大兴安岭地区",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -535,7 +533,7 @@
                 "platePrefix": "黑P"
             }, {
                 "cityID": "2106",
-                "cityPinYin": "DD",
+                "pinyin": "DD",
                 "cityname": "丹东",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -544,7 +542,7 @@
                 "platePrefix": "辽F"
             }, {
                 "cityID": "5331",
-                "cityPinYin": "DHDZJPZZZZ",
+                "pinyin": "DHDZJPZZZZ",
                 "cityname": "德宏傣族景颇族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -553,7 +551,7 @@
                 "platePrefix": "云N"
             }, {
                 "cityID": "3714",
-                "cityPinYin": "DZ",
+                "pinyin": "DZ",
                 "cityname": "德州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -562,7 +560,7 @@
                 "platePrefix": "鲁N"
             }, {
                 "cityID": "5334",
-                "cityPinYin": "DQCZZZZ",
+                "pinyin": "DQCZZZZ",
                 "cityname": "迪庆藏族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -571,7 +569,7 @@
                 "platePrefix": "云R"
             }, {
                 "cityID": "6211",
-                "cityPinYin": "DX",
+                "pinyin": "DX",
                 "cityname": "定西",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -580,7 +578,7 @@
                 "platePrefix": "甘J"
             }, {
                 "cityID": "4419",
-                "cityPinYin": "DW",
+                "pinyin": "DW",
                 "cityname": "东莞",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -589,7 +587,7 @@
                 "platePrefix": "粤S"
             }, {
                 "cityID": "3705",
-                "cityPinYin": "DY",
+                "pinyin": "DY",
                 "cityname": "东营",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -601,7 +599,7 @@
         }, {
             "cityList": [{
                 "cityID": "1506",
-                "cityPinYin": "EEDS",
+                "pinyin": "EEDS",
                 "cityname": "鄂尔多斯",
                 "engineLen": "99",
                 "frameLen": "4",
@@ -610,7 +608,7 @@
                 "platePrefix": "蒙K"
             }, {
                 "cityID": "4207",
-                "cityPinYin": "EZ",
+                "pinyin": "EZ",
                 "cityname": "鄂州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -619,7 +617,7 @@
                 "platePrefix": "鄂G"
             }, {
                 "cityID": "4228",
-                "cityPinYin": "ESTJZMZZZZ",
+                "pinyin": "ESTJZMZZZZ",
                 "cityname": "恩施土家族苗族自治州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -631,7 +629,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "FCG",
+                "pinyin": "FCG",
                 "cityname": "防城港",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -640,7 +638,7 @@
                 "platePrefix": "桂P"
             }, {
                 "cityID": "3501",
-                "cityPinYin": "FZ",
+                "pinyin": "FZ",
                 "cityname": "福州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -649,7 +647,7 @@
                 "platePrefix": "闽A"
             }, {
                 "cityID": "2104",
-                "cityPinYin": "FS",
+                "pinyin": "FS",
                 "cityname": "抚顺",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -658,7 +656,7 @@
                 "platePrefix": "辽D"
             }, {
                 "cityID": "3412",
-                "cityPinYin": "FY",
+                "pinyin": "FY",
                 "cityname": "阜阳",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -667,7 +665,7 @@
                 "platePrefix": "皖K"
             }, {
                 "cityID": "4406",
-                "cityPinYin": "FS",
+                "pinyin": "FS",
                 "cityname": "佛山",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -676,7 +674,7 @@
                 "platePrefix": "粤E"
             }, {
                 "cityID": "4455",
-                "cityPinYin": "FSNHQ",
+                "pinyin": "FSNHQ",
                 "cityname": "佛山南海区",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -685,7 +683,7 @@
                 "platePrefix": "粤Y"
             }, {
                 "cityID": "4454",
-                "cityPinYin": "FSSDQ",
+                "pinyin": "FSSDQ",
                 "cityname": "佛山顺德区",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -694,7 +692,7 @@
                 "platePrefix": "粤X"
             }, {
                 "cityID": "3610",
-                "cityPinYin": "FZ",
+                "pinyin": "FZ",
                 "cityname": "抚州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -703,7 +701,7 @@
                 "platePrefix": "赣F"
             }, {
                 "cityID": "2109",
-                "cityPinYin": "FX",
+                "pinyin": "FX",
                 "cityname": "阜新",
                 "engineLen": "99",
                 "frameLen": "6",
@@ -715,7 +713,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "GN",
+                "pinyin": "GN",
                 "cityname": "甘南",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -724,7 +722,7 @@
                 "platePrefix": "甘P"
             }, {
                 "cityID": "5133",
-                "cityPinYin": "GZ",
+                "pinyin": "GZ",
                 "cityname": "甘孜",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -733,7 +731,7 @@
                 "platePrefix": "川V"
             }, {
                 "cityID": "5116",
-                "cityPinYin": "GA",
+                "pinyin": "GA",
                 "cityname": "广安",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -742,7 +740,7 @@
                 "platePrefix": "川X"
             }, {
                 "cityID": "5108",
-                "cityPinYin": "GY",
+                "pinyin": "GY",
                 "cityname": "广元",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -751,7 +749,7 @@
                 "platePrefix": "川H"
             }, {
                 "cityID": "0",
-                "cityPinYin": "GG",
+                "pinyin": "GG",
                 "cityname": "贵港",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -760,7 +758,7 @@
                 "platePrefix": "桂R"
             }, {
                 "cityID": "0",
-                "cityPinYin": "GL",
+                "pinyin": "GL",
                 "cityname": "桂林",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -769,7 +767,7 @@
                 "platePrefix": "桂C"
             }, {
                 "cityID": "3607",
-                "cityPinYin": "GZ",
+                "pinyin": "GZ",
                 "cityname": "赣州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -778,7 +776,7 @@
                 "platePrefix": "赣B"
             }, {
                 "cityID": "4480",
-                "cityPinYin": "GA",
+                "pinyin": "GA",
                 "cityname": "港澳",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -787,7 +785,7 @@
                 "platePrefix": "粤Z"
             }, {
                 "cityID": "6404",
-                "cityPinYin": "GY",
+                "pinyin": "GY",
                 "cityname": "固原",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -796,7 +794,7 @@
                 "platePrefix": "宁D"
             }, {
                 "cityID": "4401",
-                "cityPinYin": "GZ",
+                "pinyin": "GZ",
                 "cityname": "广州",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -805,7 +803,7 @@
                 "platePrefix": "粤A"
             }, {
                 "cityID": "5201",
-                "cityPinYin": "GY",
+                "pinyin": "GY",
                 "cityname": "贵阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -814,7 +812,7 @@
                 "platePrefix": "贵A"
             }, {
                 "cityID": "6326",
-                "cityPinYin": "GLCZZZZ",
+                "pinyin": "GLCZZZZ",
                 "cityname": "果洛藏族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -826,7 +824,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "HZ",
+                "pinyin": "HZ",
                 "cityname": "汉中",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -835,7 +833,7 @@
                 "platePrefix": "陕F"
             }, {
                 "cityID": "0",
-                "cityPinYin": "HC",
+                "pinyin": "HC",
                 "cityname": "河池",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -844,7 +842,7 @@
                 "platePrefix": "桂M"
             }, {
                 "cityID": "0",
-                "cityPinYin": "HZ",
+                "pinyin": "HZ",
                 "cityname": "贺州",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -853,7 +851,7 @@
                 "platePrefix": "桂J"
             }, {
                 "cityID": "4304",
-                "cityPinYin": "HY",
+                "pinyin": "HY",
                 "cityname": "衡阳",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -862,7 +860,7 @@
                 "platePrefix": "湘D"
             }, {
                 "cityID": "1501",
-                "cityPinYin": "HHHT",
+                "pinyin": "HHHT",
                 "cityname": "呼和浩特",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -871,7 +869,7 @@
                 "platePrefix": "蒙A"
             }, {
                 "cityID": "1507",
-                "cityPinYin": "HLBEM",
+                "pinyin": "HLBEM",
                 "cityname": "呼伦贝尔盟",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -880,7 +878,7 @@
                 "platePrefix": "蒙E"
             }, {
                 "cityID": "4312",
-                "cityPinYin": "HH",
+                "pinyin": "HH",
                 "cityname": "怀化",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -889,7 +887,7 @@
                 "platePrefix": "湘N"
             }, {
                 "cityID": "3406",
-                "cityPinYin": "HB",
+                "pinyin": "HB",
                 "cityname": "淮北",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -898,7 +896,7 @@
                 "platePrefix": "皖F"
             }, {
                 "cityID": "3410",
-                "cityPinYin": "HS",
+                "pinyin": "HS",
                 "cityname": "黄山",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -907,7 +905,7 @@
                 "platePrefix": "皖J"
             }, {
                 "cityID": "2301",
-                "cityPinYin": "HEB",
+                "pinyin": "HEB",
                 "cityname": "哈尔滨",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -916,7 +914,7 @@
                 "platePrefix": "黑A"
             }, {
                 "cityID": "6522",
-                "cityPinYin": "HMDQ",
+                "pinyin": "HMDQ",
                 "cityname": "哈密地区",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -925,7 +923,7 @@
                 "platePrefix": "新L"
             }, {
                 "cityID": "6322",
-                "cityPinYin": "HBCZZZZ",
+                "pinyin": "HBCZZZZ",
                 "cityname": "海北藏族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -934,7 +932,7 @@
                 "platePrefix": "青C"
             }, {
                 "cityID": "6321",
-                "cityPinYin": "HDDQ",
+                "pinyin": "HDDQ",
                 "cityname": "海东地区",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -943,7 +941,7 @@
                 "platePrefix": "青B"
             }, {
                 "cityID": "4601",
-                "cityPinYin": "HK",
+                "pinyin": "HK",
                 "cityname": "海口",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -952,7 +950,7 @@
                 "platePrefix": "琼A"
             }, {
                 "cityID": "6325",
-                "cityPinYin": "HNCZZZZ",
+                "pinyin": "HNCZZZZ",
                 "cityname": "海南藏族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -961,7 +959,7 @@
                 "platePrefix": "青E"
             }, {
                 "cityID": "6328",
-                "cityPinYin": "HXMGZCZZZZ",
+                "pinyin": "HXMGZCZZZZ",
                 "cityname": "海西蒙古族藏族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -970,7 +968,7 @@
                 "platePrefix": "青H"
             }, {
                 "cityID": "1304",
-                "cityPinYin": "HD",
+                "pinyin": "HD",
                 "cityname": "邯郸",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -979,7 +977,7 @@
                 "platePrefix": "冀D"
             }, {
                 "cityID": "3301",
-                "cityPinYin": "HZ",
+                "pinyin": "HZ",
                 "cityname": "杭州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -988,7 +986,7 @@
                 "platePrefix": "浙A"
             }, {
                 "cityID": "3401",
-                "cityPinYin": "HF",
+                "pinyin": "HF",
                 "cityname": "合肥",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -997,7 +995,7 @@
                 "platePrefix": "皖A"
             }, {
                 "cityID": "6532",
-                "cityPinYin": "HTDQ",
+                "pinyin": "HTDQ",
                 "cityname": "和田地区",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1006,7 +1004,7 @@
                 "platePrefix": "新R"
             }, {
                 "cityID": "4416",
-                "cityPinYin": "HY",
+                "pinyin": "HY",
                 "cityname": "河源",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -1015,7 +1013,7 @@
                 "platePrefix": "粤P"
             }, {
                 "cityID": "3717",
-                "cityPinYin": "HZ",
+                "pinyin": "HZ",
                 "cityname": "菏泽",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1024,7 +1022,7 @@
                 "platePrefix": "鲁R"
             }, {
                 "cityID": "4106",
-                "cityPinYin": "HB",
+                "pinyin": "HB",
                 "cityname": "鹤壁",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1033,7 +1031,7 @@
                 "platePrefix": "豫F"
             }, {
                 "cityID": "2304",
-                "cityPinYin": "HG",
+                "pinyin": "HG",
                 "cityname": "鹤岗",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1042,7 +1040,7 @@
                 "platePrefix": "黑H"
             }, {
                 "cityID": "2311",
-                "cityPinYin": "HH",
+                "pinyin": "HH",
                 "cityname": "黑河",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1051,7 +1049,7 @@
                 "platePrefix": "黑N"
             }, {
                 "cityID": "1311",
-                "cityPinYin": "HS",
+                "pinyin": "HS",
                 "cityname": "衡水",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -1060,7 +1058,7 @@
                 "platePrefix": "冀T"
             }, {
                 "cityID": "5325",
-                "cityPinYin": "HHHNZYZZZZ",
+                "pinyin": "HHHNZYZZZZ",
                 "cityname": "红河哈尼族彝族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1069,7 +1067,7 @@
                 "platePrefix": "云G"
             }, {
                 "cityID": "3305",
-                "cityPinYin": "HZ",
+                "pinyin": "HZ",
                 "cityname": "湖州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1078,7 +1076,7 @@
                 "platePrefix": "浙E"
             }, {
                 "cityID": "2114",
-                "cityPinYin": "HLD",
+                "pinyin": "HLD",
                 "cityname": "葫芦岛",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1087,7 +1085,7 @@
                 "platePrefix": "辽P"
             }, {
                 "cityID": "3208",
-                "cityPinYin": "HA",
+                "pinyin": "HA",
                 "cityname": "淮安",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -1096,7 +1094,7 @@
                 "platePrefix": "苏H"
             }, {
                 "cityID": "3404",
-                "cityPinYin": "HN",
+                "pinyin": "HN",
                 "cityname": "淮南",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1105,7 +1103,7 @@
                 "platePrefix": "皖D"
             }, {
                 "cityID": "4211",
-                "cityPinYin": "HG",
+                "pinyin": "HG",
                 "cityname": "黄冈",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1114,7 +1112,7 @@
                 "platePrefix": "鄂J"
             }, {
                 "cityID": "6323",
-                "cityPinYin": "HNCZZZZ",
+                "pinyin": "HNCZZZZ",
                 "cityname": "黄南藏族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1123,7 +1121,7 @@
                 "platePrefix": "青D"
             }, {
                 "cityID": "4202",
-                "cityPinYin": "HS",
+                "pinyin": "HS",
                 "cityname": "黄石",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1132,7 +1130,7 @@
                 "platePrefix": "鄂B"
             }, {
                 "cityID": "4413",
-                "cityPinYin": "HZ",
+                "pinyin": "HZ",
                 "cityname": "惠州",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -1144,7 +1142,7 @@
         }, {
             "cityList": [{
                 "cityID": "2303",
-                "cityPinYin": "JX",
+                "pinyin": "JX",
                 "cityname": "鸡西",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1153,7 +1151,7 @@
                 "platePrefix": "黑G"
             }, {
                 "cityID": "3608",
-                "cityPinYin": "JA",
+                "pinyin": "JA",
                 "cityname": "吉安",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1162,7 +1160,7 @@
                 "platePrefix": "赣D"
             }, {
                 "cityID": "2202",
-                "cityPinYin": "JL",
+                "pinyin": "JL",
                 "cityname": "吉林",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -1171,7 +1169,7 @@
                 "platePrefix": "吉B"
             }, {
                 "cityID": "3701",
-                "cityPinYin": "JN",
+                "pinyin": "JN",
                 "cityname": "济南",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1180,7 +1178,7 @@
                 "platePrefix": "鲁A"
             }, {
                 "cityID": "3708",
-                "cityPinYin": "JN",
+                "pinyin": "JN",
                 "cityname": "济宁",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1189,7 +1187,7 @@
                 "platePrefix": "鲁H"
             }, {
                 "cityID": "419001",
-                "cityPinYin": "JY",
+                "pinyin": "JY",
                 "cityname": "济源",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1198,7 +1196,7 @@
                 "platePrefix": "豫U"
             }, {
                 "cityID": "2308",
-                "cityPinYin": "JMS",
+                "pinyin": "JMS",
                 "cityname": "佳木斯",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1207,7 +1205,7 @@
                 "platePrefix": "黑D"
             }, {
                 "cityID": "3304",
-                "cityPinYin": "JX",
+                "pinyin": "JX",
                 "cityname": "嘉兴",
                 "engineLen": "99",
                 "frameLen": "99",
@@ -1216,7 +1214,7 @@
                 "platePrefix": "浙F"
             }, {
                 "cityID": "6202",
-                "cityPinYin": "JYG",
+                "pinyin": "JYG",
                 "cityname": "嘉峪关",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1225,7 +1223,7 @@
                 "platePrefix": "甘B"
             }, {
                 "cityID": "4407",
-                "cityPinYin": "JM",
+                "pinyin": "JM",
                 "cityname": "江门",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -1234,7 +1232,7 @@
                 "platePrefix": "粤J"
             }, {
                 "cityID": "4108",
-                "cityPinYin": "JZ",
+                "pinyin": "JZ",
                 "cityname": "焦作",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1243,7 +1241,7 @@
                 "platePrefix": "豫H"
             }, {
                 "cityID": "4452",
-                "cityPinYin": "JY",
+                "pinyin": "JY",
                 "cityname": "揭阳",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -1252,7 +1250,7 @@
                 "platePrefix": "粤V"
             }, {
                 "cityID": "6203",
-                "cityPinYin": "JC",
+                "pinyin": "JC",
                 "cityname": "金昌",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1261,7 +1259,7 @@
                 "platePrefix": "甘C"
             }, {
                 "cityID": "3307",
-                "cityPinYin": "JH",
+                "pinyin": "JH",
                 "cityname": "金华",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1270,7 +1268,7 @@
                 "platePrefix": "浙G"
             }, {
                 "cityID": "2107",
-                "cityPinYin": "JZ",
+                "pinyin": "JZ",
                 "cityname": "锦州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1279,7 +1277,7 @@
                 "platePrefix": "辽G"
             }, {
                 "cityID": "1405",
-                "cityPinYin": "JC",
+                "pinyin": "JC",
                 "cityname": "晋城",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1288,7 +1286,7 @@
                 "platePrefix": "晋E"
             }, {
                 "cityID": "1407",
-                "cityPinYin": "JZ",
+                "pinyin": "JZ",
                 "cityname": "晋中",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1297,7 +1295,7 @@
                 "platePrefix": "晋K"
             }, {
                 "cityID": "4208",
-                "cityPinYin": "JM",
+                "pinyin": "JM",
                 "cityname": "荆门",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1306,7 +1304,7 @@
                 "platePrefix": "鄂H"
             }, {
                 "cityID": "4210",
-                "cityPinYin": "JZ",
+                "pinyin": "JZ",
                 "cityname": "荆州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1315,7 +1313,7 @@
                 "platePrefix": "鄂D"
             }, {
                 "cityID": "3602",
-                "cityPinYin": "JDZ",
+                "pinyin": "JDZ",
                 "cityname": "景德镇",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1324,7 +1322,7 @@
                 "platePrefix": "赣H"
             }, {
                 "cityID": "3604",
-                "cityPinYin": "JJ",
+                "pinyin": "JJ",
                 "cityname": "九江",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1333,7 +1331,7 @@
                 "platePrefix": "赣G"
             }, {
                 "cityID": "6209",
-                "cityPinYin": "JQ",
+                "pinyin": "JQ",
                 "cityname": "酒泉",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1345,7 +1343,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "KZ",
+                "pinyin": "KZ",
                 "cityname": "克州",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1354,7 +1352,7 @@
                 "platePrefix": "新P"
             }, {
                 "cityID": "6530",
-                "cityPinYin": "KZLSKEKZZZ",
+                "pinyin": "KZLSKEKZZZ",
                 "cityname": "克孜勒苏柯尔克孜自治",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1363,7 +1361,7 @@
                 "platePrefix": "新P"
             }, {
                 "cityID": "6531",
-                "cityPinYin": "KSDQ",
+                "pinyin": "KSDQ",
                 "cityname": "喀什地区",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1372,7 +1370,7 @@
                 "platePrefix": "新Q"
             }, {
                 "cityID": "4102",
-                "cityPinYin": "KF",
+                "pinyin": "KF",
                 "cityname": "开封",
                 "engineLen": "99",
                 "frameLen": "99",
@@ -1381,7 +1379,7 @@
                 "platePrefix": "豫B"
             }, {
                 "cityID": "6502",
-                "cityPinYin": "KLMY",
+                "pinyin": "KLMY",
                 "cityname": "克拉玛依",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1390,7 +1388,7 @@
                 "platePrefix": "新J"
             }, {
                 "cityID": "654003",
-                "cityPinYin": "KT",
+                "pinyin": "KT",
                 "cityname": "奎屯",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1399,7 +1397,7 @@
                 "platePrefix": "新D"
             }, {
                 "cityID": "5301",
-                "cityPinYin": "KM",
+                "pinyin": "KM",
                 "cityname": "昆明",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1411,7 +1409,7 @@
         }, {
             "cityList": [{
                 "cityID": "5401",
-                "cityPinYin": "LS",
+                "pinyin": "LS",
                 "cityname": "拉萨",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1420,7 +1418,7 @@
                 "platePrefix": "藏A"
             }, {
                 "cityID": "0",
-                "cityPinYin": "LB",
+                "pinyin": "LB",
                 "cityname": "来宾",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1429,7 +1427,7 @@
                 "platePrefix": "桂G"
             }, {
                 "cityID": "5111",
-                "cityPinYin": "LS",
+                "pinyin": "LS",
                 "cityname": "乐山",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1438,7 +1436,7 @@
                 "platePrefix": "川L"
             }, {
                 "cityID": "5134",
-                "cityPinYin": "LSYZZZZ",
+                "pinyin": "LSYZZZZ",
                 "cityname": "凉山彝族自治州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1447,7 +1445,7 @@
                 "platePrefix": "川W"
             }, {
                 "cityID": "5426",
-                "cityPinYin": "LZDQ",
+                "pinyin": "LZDQ",
                 "cityname": "林芝地区",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1456,7 +1454,7 @@
                 "platePrefix": "藏G"
             }, {
                 "cityID": "0",
-                "cityPinYin": "LX",
+                "pinyin": "LX",
                 "cityname": "临夏",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1465,7 +1463,7 @@
                 "platePrefix": "甘N"
             }, {
                 "cityID": "0",
-                "cityPinYin": "LZ",
+                "pinyin": "LZ",
                 "cityname": "柳州",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1474,7 +1472,7 @@
                 "platePrefix": "桂B"
             }, {
                 "cityID": "3415",
-                "cityPinYin": "LA",
+                "pinyin": "LA",
                 "cityname": "六安",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1483,7 +1481,7 @@
                 "platePrefix": "皖N"
             }, {
                 "cityID": "0",
-                "cityPinYin": "LY",
+                "pinyin": "LY",
                 "cityname": "龙岩",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1492,7 +1490,7 @@
                 "platePrefix": "闽F"
             }, {
                 "cityID": "4313",
-                "cityPinYin": "LD",
+                "pinyin": "LD",
                 "cityname": "娄底",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -1501,7 +1499,7 @@
                 "platePrefix": "湘K"
             }, {
                 "cityID": "5105",
-                "cityPinYin": "LZ",
+                "pinyin": "LZ",
                 "cityname": "泸州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1510,7 +1508,7 @@
                 "platePrefix": "川E"
             }, {
                 "cityID": "3712",
-                "cityPinYin": "LW",
+                "pinyin": "LW",
                 "cityname": "莱芜",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1519,7 +1517,7 @@
                 "platePrefix": "鲁S"
             }, {
                 "cityID": "6201",
-                "cityPinYin": "LZ",
+                "pinyin": "LZ",
                 "cityname": "兰州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1528,7 +1526,7 @@
                 "platePrefix": "甘A"
             }, {
                 "cityID": "1310",
-                "cityPinYin": "LF",
+                "pinyin": "LF",
                 "cityname": "廊坊",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -1537,7 +1535,7 @@
                 "platePrefix": "冀R"
             }, {
                 "cityID": "5307",
-                "cityPinYin": "LJ",
+                "pinyin": "LJ",
                 "cityname": "丽江",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1546,7 +1544,7 @@
                 "platePrefix": "云P"
             }, {
                 "cityID": "3311",
-                "cityPinYin": "LS",
+                "pinyin": "LS",
                 "cityname": "丽水",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1555,7 +1553,7 @@
                 "platePrefix": "浙K"
             }, {
                 "cityID": "3207",
-                "cityPinYin": "LYG",
+                "pinyin": "LYG",
                 "cityname": "连云港",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -1564,7 +1562,7 @@
                 "platePrefix": "苏G"
             }, {
                 "cityID": "2110",
-                "cityPinYin": "LY",
+                "pinyin": "LY",
                 "cityname": "辽阳",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1573,7 +1571,7 @@
                 "platePrefix": "辽K"
             }, {
                 "cityID": "2204",
-                "cityPinYin": "LY",
+                "pinyin": "LY",
                 "cityname": "辽源",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -1582,7 +1580,7 @@
                 "platePrefix": "吉D"
             }, {
                 "cityID": "3715",
-                "cityPinYin": "LC",
+                "pinyin": "LC",
                 "cityname": "聊城",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1591,7 +1589,7 @@
                 "platePrefix": "鲁P"
             }, {
                 "cityID": "5309",
-                "cityPinYin": "LC",
+                "pinyin": "LC",
                 "cityname": "临沧",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1600,7 +1598,7 @@
                 "platePrefix": "云S"
             }, {
                 "cityID": "1410",
-                "cityPinYin": "LF",
+                "pinyin": "LF",
                 "cityname": "临汾",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1609,7 +1607,7 @@
                 "platePrefix": "晋L"
             }, {
                 "cityID": "3713",
-                "cityPinYin": "LY",
+                "pinyin": "LY",
                 "cityname": "临沂",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1618,7 +1616,7 @@
                 "platePrefix": "鲁Q"
             }, {
                 "cityID": "5202",
-                "cityPinYin": "LPS",
+                "pinyin": "LPS",
                 "cityname": "六盘水",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1627,7 +1625,7 @@
                 "platePrefix": "贵B"
             }, {
                 "cityID": "6212",
-                "cityPinYin": "LN",
+                "pinyin": "LN",
                 "cityname": "陇南",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1636,7 +1634,7 @@
                 "platePrefix": "甘K"
             }, {
                 "cityID": "1411",
-                "cityPinYin": "LL",
+                "pinyin": "LL",
                 "cityname": "吕梁",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1645,7 +1643,7 @@
                 "platePrefix": "晋J"
             }, {
                 "cityID": "4103",
-                "cityPinYin": "LY",
+                "pinyin": "LY",
                 "cityname": "洛阳",
                 "engineLen": "99",
                 "frameLen": "6",
@@ -1654,7 +1652,7 @@
                 "platePrefix": "豫C"
             }, {
                 "cityID": "4111",
-                "cityPinYin": "LH",
+                "pinyin": "LH",
                 "cityname": "漯河",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1666,7 +1664,7 @@
         }, {
             "cityList": [{
                 "cityID": "3405",
-                "cityPinYin": "MAS",
+                "pinyin": "MAS",
                 "cityname": "马鞍山",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1675,7 +1673,7 @@
                 "platePrefix": "皖E"
             }, {
                 "cityID": "5114",
-                "cityPinYin": "MS",
+                "pinyin": "MS",
                 "cityname": "眉山",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1684,7 +1682,7 @@
                 "platePrefix": "川Z"
             }, {
                 "cityID": "5107",
-                "cityPinYin": "MY",
+                "pinyin": "MY",
                 "cityname": "绵阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1693,7 +1691,7 @@
                 "platePrefix": "川B"
             }, {
                 "cityID": "4409",
-                "cityPinYin": "MM",
+                "pinyin": "MM",
                 "cityname": "茂名",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -1702,7 +1700,7 @@
                 "platePrefix": "粤K"
             }, {
                 "cityID": "4414",
-                "cityPinYin": "MZ",
+                "pinyin": "MZ",
                 "cityname": "梅州",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -1711,7 +1709,7 @@
                 "platePrefix": "粤M"
             }, {
                 "cityID": "2310",
-                "cityPinYin": "MDJ",
+                "pinyin": "MDJ",
                 "cityname": "牡丹江",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1723,7 +1721,7 @@
         }, {
             "cityList": [{
                 "cityID": "5110",
-                "cityPinYin": "NJ",
+                "pinyin": "NJ",
                 "cityname": "内江",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1732,7 +1730,7 @@
                 "platePrefix": "川K"
             }, {
                 "cityID": "5424",
-                "cityPinYin": "NQDQ",
+                "pinyin": "NQDQ",
                 "cityname": "那曲地区",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1741,7 +1739,7 @@
                 "platePrefix": "藏E"
             }, {
                 "cityID": "5113",
-                "cityPinYin": "NC",
+                "pinyin": "NC",
                 "cityname": "南充",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1750,7 +1748,7 @@
                 "platePrefix": "川R"
             }, {
                 "cityID": "0",
-                "cityPinYin": "NP",
+                "pinyin": "NP",
                 "cityname": "南平",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1759,7 +1757,7 @@
                 "platePrefix": "闽H"
             }, {
                 "cityID": "0",
-                "cityPinYin": "ND",
+                "pinyin": "ND",
                 "cityname": "宁德",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1768,7 +1766,7 @@
                 "platePrefix": "闽J"
             }, {
                 "cityID": "3601",
-                "cityPinYin": "NC",
+                "pinyin": "NC",
                 "cityname": "南昌",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1777,7 +1775,7 @@
                 "platePrefix": "赣A"
             }, {
                 "cityID": "3612",
-                "cityPinYin": "NCS,SZXT",
+                "pinyin": "NCS,SZXT",
                 "cityname": "南昌市,省直系统",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1786,7 +1784,7 @@
                 "platePrefix": "赣M"
             }, {
                 "cityID": "3201",
-                "cityPinYin": "NJ",
+                "pinyin": "NJ",
                 "cityname": "南京",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -1795,7 +1793,7 @@
                 "platePrefix": "苏A"
             }, {
                 "cityID": "4501",
-                "cityPinYin": "NN",
+                "pinyin": "NN",
                 "cityname": "南宁",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1804,7 +1802,7 @@
                 "platePrefix": "桂A"
             }, {
                 "cityID": "3206",
-                "cityPinYin": "NT",
+                "pinyin": "NT",
                 "cityname": "南通",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -1813,7 +1811,7 @@
                 "platePrefix": "苏F"
             }, {
                 "cityID": "4113",
-                "cityPinYin": "NY",
+                "pinyin": "NY",
                 "cityname": "南阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1822,7 +1820,7 @@
                 "platePrefix": "豫R"
             }, {
                 "cityID": "3302",
-                "cityPinYin": "NB",
+                "pinyin": "NB",
                 "cityname": "宁波",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1831,7 +1829,7 @@
                 "platePrefix": "浙B"
             }, {
                 "cityID": "2329",
-                "cityPinYin": "NKXT",
+                "pinyin": "NKXT",
                 "cityname": "农垦系统",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1840,7 +1838,7 @@
                 "platePrefix": "黑R"
             }, {
                 "cityID": "5333",
-                "cityPinYin": "NJLSZZZZ",
+                "pinyin": "NJLSZZZZ",
                 "cityname": "怒江傈僳族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1852,7 +1850,7 @@
         }, {
             "cityList": [{
                 "cityID": "5104",
-                "cityPinYin": "PZH",
+                "pinyin": "PZH",
                 "cityname": "攀枝花",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1861,7 +1859,7 @@
                 "platePrefix": "川D"
             }, {
                 "cityID": "2111",
-                "cityPinYin": "PJ",
+                "pinyin": "PJ",
                 "cityname": "盘锦",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1870,7 +1868,7 @@
                 "platePrefix": "辽L"
             }, {
                 "cityID": "0",
-                "cityPinYin": "PT",
+                "pinyin": "PT",
                 "cityname": "莆田",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1879,7 +1877,7 @@
                 "platePrefix": "闽B"
             }, {
                 "cityID": "4104",
-                "cityPinYin": "PDS",
+                "pinyin": "PDS",
                 "cityname": "平顶山",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1888,7 +1886,7 @@
                 "platePrefix": "豫D"
             }, {
                 "cityID": "6208",
-                "cityPinYin": "PL",
+                "pinyin": "PL",
                 "cityname": "平凉",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1897,7 +1895,7 @@
                 "platePrefix": "甘L"
             }, {
                 "cityID": "3603",
-                "cityPinYin": "PX",
+                "pinyin": "PX",
                 "cityname": "萍乡",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1906,7 +1904,7 @@
                 "platePrefix": "赣J"
             }, {
                 "cityID": "4109",
-                "cityPinYin": "PY",
+                "pinyin": "PY",
                 "cityname": "濮阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1915,7 +1913,7 @@
                 "platePrefix": "豫J"
             }, {
                 "cityID": "5308",
-                "cityPinYin": "PE",
+                "pinyin": "PE",
                 "cityname": "普洱",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1927,7 +1925,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "QZ",
+                "pinyin": "QZ",
                 "cityname": "钦州",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1936,7 +1934,7 @@
                 "platePrefix": "桂N"
             }, {
                 "cityID": "0",
-                "cityPinYin": "QZ",
+                "pinyin": "QZ",
                 "cityname": "泉州",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -1945,7 +1943,7 @@
                 "platePrefix": "闽C"
             }, {
                 "cityID": "2309",
-                "cityPinYin": "QTH",
+                "pinyin": "QTH",
                 "cityname": "七台河",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1954,7 +1952,7 @@
                 "platePrefix": "黑K"
             }, {
                 "cityID": "2302",
-                "cityPinYin": "QQHE",
+                "pinyin": "QQHE",
                 "cityname": "齐齐哈尔",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -1963,7 +1961,7 @@
                 "platePrefix": "黑B"
             }, {
                 "cityID": "429005",
-                "cityPinYin": "QJ",
+                "pinyin": "QJ",
                 "cityname": "潜江",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -1972,7 +1970,7 @@
                 "platePrefix": "鄂N"
             }, {
                 "cityID": "5226",
-                "cityPinYin": "QDNMZDZZZZ",
+                "pinyin": "QDNMZDZZZZ",
                 "cityname": "黔东南苗族侗族自治州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1981,7 +1979,7 @@
                 "platePrefix": "贵H"
             }, {
                 "cityID": "5227",
-                "cityPinYin": "QNBYZMZZZZ",
+                "pinyin": "QNBYZMZZZZ",
                 "cityname": "黔南布依族苗族自治州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1990,7 +1988,7 @@
                 "platePrefix": "贵J"
             }, {
                 "cityID": "5223",
-                "cityPinYin": "QXNBYZMZZZ",
+                "pinyin": "QXNBYZMZZZ",
                 "cityname": "黔西南布依族苗族自治",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -1999,7 +1997,7 @@
                 "platePrefix": "贵E"
             }, {
                 "cityID": "1303",
-                "cityPinYin": "QHD",
+                "pinyin": "QHD",
                 "cityname": "秦皇岛",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2008,7 +2006,7 @@
                 "platePrefix": "冀C"
             }, {
                 "cityID": "3702",
-                "cityPinYin": "QD",
+                "pinyin": "QD",
                 "cityname": "青岛",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2017,7 +2015,7 @@
                 "platePrefix": "鲁B"
             }, {
                 "cityID": "3718",
-                "cityPinYin": "QDSZB",
+                "pinyin": "QDSZB",
                 "cityname": "青岛市增补",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2026,7 +2024,7 @@
                 "platePrefix": "鲁U"
             }, {
                 "cityID": "6302",
-                "cityPinYin": "QHTSPZ",
+                "pinyin": "QHTSPZ",
                 "cityname": "青海特殊牌照",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2035,7 +2033,7 @@
                 "platePrefix": "青O"
             }, {
                 "cityID": "4418",
-                "cityPinYin": "QY",
+                "pinyin": "QY",
                 "cityname": "清远",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -2044,7 +2042,7 @@
                 "platePrefix": "粤R"
             }, {
                 "cityID": "6210",
-                "cityPinYin": "QY",
+                "pinyin": "QY",
                 "cityname": "庆阳",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2053,7 +2051,7 @@
                 "platePrefix": "甘M"
             }, {
                 "cityID": "469002",
-                "cityPinYin": "QH",
+                "pinyin": "QH",
                 "cityname": "琼海",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2062,7 +2060,7 @@
                 "platePrefix": "琼C"
             }, {
                 "cityID": "5303",
-                "cityPinYin": "QJ",
+                "pinyin": "QJ",
                 "cityname": "曲靖",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2071,7 +2069,7 @@
                 "platePrefix": "云D"
             }, {
                 "cityID": "3308",
-                "cityPinYin": "QZ",
+                "pinyin": "QZ",
                 "cityname": "衢州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2083,7 +2081,7 @@
         }, {
             "cityList": [{
                 "cityID": "5423",
-                "cityPinYin": "RKZDQ",
+                "pinyin": "RKZDQ",
                 "cityname": "日喀则地区",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2092,7 +2090,7 @@
                 "platePrefix": "藏D"
             }, {
                 "cityID": "3711",
-                "cityPinYin": "RZ",
+                "pinyin": "RZ",
                 "cityname": "日照",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2104,7 +2102,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "SM",
+                "pinyin": "SM",
                 "cityname": "三明",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2113,7 +2111,7 @@
                 "platePrefix": "闽G"
             }, {
                 "cityID": "5422",
-                "cityPinYin": "SNDQ",
+                "pinyin": "SNDQ",
                 "cityname": "山南地区",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2122,7 +2120,7 @@
                 "platePrefix": "藏C"
             }, {
                 "cityID": "0",
-                "cityPinYin": "SL",
+                "pinyin": "SL",
                 "cityname": "商洛",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2131,7 +2129,7 @@
                 "platePrefix": "陕H"
             }, {
                 "cityID": "4305",
-                "cityPinYin": "SY",
+                "pinyin": "SY",
                 "cityname": "邵阳",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2140,7 +2138,7 @@
                 "platePrefix": "湘E"
             }, {
                 "cityID": "5109",
-                "cityPinYin": "SN",
+                "pinyin": "SN",
                 "cityname": "遂宁",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2149,7 +2147,7 @@
                 "platePrefix": "川J"
             }, {
                 "cityID": "4112",
-                "cityPinYin": "SMX",
+                "pinyin": "SMX",
                 "cityname": "三门峡",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2158,7 +2156,7 @@
                 "platePrefix": "豫M"
             }, {
                 "cityID": "4602",
-                "cityPinYin": "SY",
+                "pinyin": "SY",
                 "cityname": "三亚",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2167,7 +2165,7 @@
                 "platePrefix": "琼B"
             }, {
                 "cityID": "4405",
-                "cityPinYin": "ST",
+                "pinyin": "ST",
                 "cityname": "汕头",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -2176,7 +2174,7 @@
                 "platePrefix": "粤D"
             }, {
                 "cityID": "4415",
-                "cityPinYin": "SW",
+                "pinyin": "SW",
                 "cityname": "汕尾",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -2185,7 +2183,7 @@
                 "platePrefix": "粤N"
             }, {
                 "cityID": "4114",
-                "cityPinYin": "SQ",
+                "pinyin": "SQ",
                 "cityname": "商丘",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2194,7 +2192,7 @@
                 "platePrefix": "豫N"
             }, {
                 "cityID": "31",
-                "cityPinYin": "SH",
+                "pinyin": "SH",
                 "cityname": "上海",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2203,7 +2201,7 @@
                 "platePrefix": "沪"
             }, {
                 "cityID": "3611",
-                "cityPinYin": "SR",
+                "pinyin": "SR",
                 "cityname": "上饶",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2212,7 +2210,7 @@
                 "platePrefix": "赣E"
             }, {
                 "cityID": "4402",
-                "cityPinYin": "SG",
+                "pinyin": "SG",
                 "cityname": "韶关",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -2221,7 +2219,7 @@
                 "platePrefix": "粤F"
             }, {
                 "cityID": "3306",
-                "cityPinYin": "SX",
+                "pinyin": "SX",
                 "cityname": "绍兴",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2230,7 +2228,7 @@
                 "platePrefix": "浙D"
             }, {
                 "cityID": "4403",
-                "cityPinYin": "SZ",
+                "pinyin": "SZ",
                 "cityname": "深圳",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -2239,7 +2237,7 @@
                 "platePrefix": "粤B"
             }, {
                 "cityID": "429021",
-                "cityPinYin": "SNJLQ",
+                "pinyin": "SNJLQ",
                 "cityname": "神农架林区",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2248,7 +2246,7 @@
                 "platePrefix": "鄂P"
             }, {
                 "cityID": "2101",
-                "cityPinYin": "SY",
+                "pinyin": "SY",
                 "cityname": "沈阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2257,7 +2255,7 @@
                 "platePrefix": "辽A"
             }, {
                 "cityID": "4203",
-                "cityPinYin": "SY",
+                "pinyin": "SY",
                 "cityname": "十堰",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2266,7 +2264,7 @@
                 "platePrefix": "鄂C"
             }, {
                 "cityID": "659001",
-                "cityPinYin": "SHZ",
+                "pinyin": "SHZ",
                 "cityname": "石河子",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2275,7 +2273,7 @@
                 "platePrefix": "新C"
             }, {
                 "cityID": "1301",
-                "cityPinYin": "SJZ",
+                "pinyin": "SJZ",
                 "cityname": "石家庄",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2284,7 +2282,7 @@
                 "platePrefix": "冀A"
             }, {
                 "cityID": "6402",
-                "cityPinYin": "SZS",
+                "pinyin": "SZS",
                 "cityname": "石嘴山",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2293,7 +2291,7 @@
                 "platePrefix": "宁B"
             }, {
                 "cityID": "2305",
-                "cityPinYin": "SYS",
+                "pinyin": "SYS",
                 "cityname": "双鸭山",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2302,7 +2300,7 @@
                 "platePrefix": "黑J"
             }, {
                 "cityID": "1406",
-                "cityPinYin": "SZ",
+                "pinyin": "SZ",
                 "cityname": "朔州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2311,7 +2309,7 @@
                 "platePrefix": "晋F"
             }, {
                 "cityID": "2203",
-                "cityPinYin": "SP",
+                "pinyin": "SP",
                 "cityname": "四平",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2320,7 +2318,7 @@
                 "platePrefix": "吉C"
             }, {
                 "cityID": "2328",
-                "cityPinYin": "SHJDQ",
+                "pinyin": "SHJDQ",
                 "cityname": "松花江地区",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2329,7 +2327,7 @@
                 "platePrefix": "黑L"
             }, {
                 "cityID": "2207",
-                "cityPinYin": "SY",
+                "pinyin": "SY",
                 "cityname": "松原",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2338,7 +2336,7 @@
                 "platePrefix": "吉J"
             }, {
                 "cityID": "3205",
-                "cityPinYin": "SZ",
+                "pinyin": "SZ",
                 "cityname": "苏州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2347,7 +2345,7 @@
                 "platePrefix": "苏E"
             }, {
                 "cityID": "3213",
-                "cityPinYin": "SQ",
+                "pinyin": "SQ",
                 "cityname": "宿迁",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2356,7 +2354,7 @@
                 "platePrefix": "苏N"
             }, {
                 "cityID": "3413",
-                "cityPinYin": "SZ",
+                "pinyin": "SZ",
                 "cityname": "宿州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2365,7 +2363,7 @@
                 "platePrefix": "皖L"
             }, {
                 "cityID": "2312",
-                "cityPinYin": "SH",
+                "pinyin": "SH",
                 "cityname": "绥化",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2374,7 +2372,7 @@
                 "platePrefix": "黑M"
             }, {
                 "cityID": "4213",
-                "cityPinYin": "SZ",
+                "pinyin": "SZ",
                 "cityname": "随州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2386,7 +2384,7 @@
         }, {
             "cityList": [{
                 "cityID": "12",
-                "cityPinYin": "TJ",
+                "pinyin": "TJ",
                 "cityname": "天津",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2395,7 +2393,7 @@
                 "platePrefix": "津"
             }, {
                 "cityID": "0",
-                "cityPinYin": "TL",
+                "pinyin": "TL",
                 "cityname": "铁岭",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2404,7 +2402,7 @@
                 "platePrefix": "辽M"
             }, {
                 "cityID": "1505",
-                "cityPinYin": "TL",
+                "pinyin": "TL",
                 "cityname": "通辽",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2413,7 +2411,7 @@
                 "platePrefix": "蒙G"
             }, {
                 "cityID": "0",
-                "cityPinYin": "TC",
+                "pinyin": "TC",
                 "cityname": "铜川",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2422,7 +2420,7 @@
                 "platePrefix": "陕B"
             }, {
                 "cityID": "3407",
-                "cityPinYin": "TL",
+                "pinyin": "TL",
                 "cityname": "铜陵",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2431,7 +2429,7 @@
                 "platePrefix": "皖G"
             }, {
                 "cityID": "6542",
-                "cityPinYin": "TCDQ",
+                "pinyin": "TCDQ",
                 "cityname": "塔城地区",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2440,7 +2438,7 @@
                 "platePrefix": "新G"
             }, {
                 "cityID": "3310",
-                "cityPinYin": "TZ",
+                "pinyin": "TZ",
                 "cityname": "台州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2449,7 +2447,7 @@
                 "platePrefix": "浙J"
             }, {
                 "cityID": "1401",
-                "cityPinYin": "TY",
+                "pinyin": "TY",
                 "cityname": "太原",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2458,7 +2456,7 @@
                 "platePrefix": "晋A"
             }, {
                 "cityID": "3709",
-                "cityPinYin": "TA",
+                "pinyin": "TA",
                 "cityname": "泰安",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2467,7 +2465,7 @@
                 "platePrefix": "鲁J"
             }, {
                 "cityID": "3212",
-                "cityPinYin": "TZ",
+                "pinyin": "TZ",
                 "cityname": "泰州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2476,7 +2474,7 @@
                 "platePrefix": "苏M"
             }, {
                 "cityID": "1302",
-                "cityPinYin": "TS",
+                "pinyin": "TS",
                 "cityname": "唐山",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2485,7 +2483,7 @@
                 "platePrefix": "冀B"
             }, {
                 "cityID": "429006",
-                "cityPinYin": "TM",
+                "pinyin": "TM",
                 "cityname": "天门",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2494,7 +2492,7 @@
                 "platePrefix": "鄂R"
             }, {
                 "cityID": "6205",
-                "cityPinYin": "TS",
+                "pinyin": "TS",
                 "cityname": "天水",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2503,7 +2501,7 @@
                 "platePrefix": "甘E"
             }, {
                 "cityID": "2205",
-                "cityPinYin": "TH",
+                "pinyin": "TH",
                 "cityname": "通化",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2512,7 +2510,7 @@
                 "platePrefix": "吉E"
             }, {
                 "cityID": "5206",
-                "cityPinYin": "TR",
+                "pinyin": "TR",
                 "cityname": "铜仁",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2521,7 +2519,7 @@
                 "platePrefix": "贵D"
             }, {
                 "cityID": "6521",
-                "cityPinYin": "TLFDQ",
+                "pinyin": "TLFDQ",
                 "cityname": "吐鲁番地区",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2533,7 +2531,7 @@
         }, {
             "cityList": [{
                 "cityID": "0",
-                "cityPinYin": "WN",
+                "pinyin": "WN",
                 "cityname": "渭南",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2542,7 +2540,7 @@
                 "platePrefix": "陕E"
             }, {
                 "cityID": "3303",
-                "cityPinYin": "WZ",
+                "pinyin": "WZ",
                 "cityname": "温州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2551,7 +2549,7 @@
                 "platePrefix": "浙C"
             }, {
                 "cityID": "1503",
-                "cityPinYin": "WH",
+                "pinyin": "WH",
                 "cityname": "乌海",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2560,7 +2558,7 @@
                 "platePrefix": "蒙C"
             }, {
                 "cityID": "1509",
-                "cityPinYin": "WLCBM",
+                "pinyin": "WLCBM",
                 "cityname": "乌兰察布盟",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2569,7 +2567,7 @@
                 "platePrefix": "蒙J"
             }, {
                 "cityID": "3402",
-                "cityPinYin": "WH",
+                "pinyin": "WH",
                 "cityname": "芜湖",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2578,7 +2576,7 @@
                 "platePrefix": "皖B"
             }, {
                 "cityID": "0",
-                "cityPinYin": "WZ",
+                "pinyin": "WZ",
                 "cityname": "梧州",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2587,7 +2585,7 @@
                 "platePrefix": "桂D"
             }, {
                 "cityID": "3710",
-                "cityPinYin": "WH",
+                "pinyin": "WH",
                 "cityname": "威海",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2596,7 +2594,7 @@
                 "platePrefix": "鲁K"
             }, {
                 "cityID": "3707",
-                "cityPinYin": "WF",
+                "pinyin": "WF",
                 "cityname": "潍坊",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2605,7 +2603,7 @@
                 "platePrefix": "鲁G"
             }, {
                 "cityID": "3719",
-                "cityPinYin": "WFSZB",
+                "pinyin": "WFSZB",
                 "cityname": "潍坊市增补",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2614,7 +2612,7 @@
                 "platePrefix": "鲁V"
             }, {
                 "cityID": "5326",
-                "cityPinYin": "WSZZMZZZZ",
+                "pinyin": "WSZZMZZZZ",
                 "cityname": "文山壮族苗族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2623,7 +2621,7 @@
                 "platePrefix": "云H"
             }, {
                 "cityID": "6501",
-                "cityPinYin": "WLMQ",
+                "pinyin": "WLMQ",
                 "cityname": "乌鲁木齐",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2632,7 +2630,7 @@
                 "platePrefix": "新A"
             }, {
                 "cityID": "3202",
-                "cityPinYin": "WX",
+                "pinyin": "WX",
                 "cityname": "无锡",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2641,7 +2639,7 @@
                 "platePrefix": "苏B"
             }, {
                 "cityID": "6403",
-                "cityPinYin": "WZ",
+                "pinyin": "WZ",
                 "cityname": "吴忠",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2650,7 +2648,7 @@
                 "platePrefix": "宁C"
             }, {
                 "cityID": "469001",
-                "cityPinYin": "WZS",
+                "pinyin": "WZS",
                 "cityname": "五指山",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2659,7 +2657,7 @@
                 "platePrefix": "琼D"
             }, {
                 "cityID": "4201",
-                "cityPinYin": "WH",
+                "pinyin": "WH",
                 "cityname": "武汉",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2668,7 +2666,7 @@
                 "platePrefix": "鄂A"
             }, {
                 "cityID": "6206",
-                "cityPinYin": "WW",
+                "pinyin": "WW",
                 "cityname": "武威",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2680,7 +2678,7 @@
         }, {
             "cityList": [{
                 "cityID": "1525",
-                "cityPinYin": "XLGLM",
+                "pinyin": "XLGLM",
                 "cityname": "锡林郭勒盟",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2689,7 +2687,7 @@
                 "platePrefix": "蒙H"
             }, {
                 "cityID": "0",
-                "cityPinYin": "XY",
+                "pinyin": "XY",
                 "cityname": "咸阳",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2698,7 +2696,7 @@
                 "platePrefix": "陕D"
             }, {
                 "cityID": "4303",
-                "cityPinYin": "XT",
+                "pinyin": "XT",
                 "cityname": "湘潭",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2707,7 +2705,7 @@
                 "platePrefix": "湘C"
             }, {
                 "cityID": "4331",
-                "cityPinYin": "XXTJZMZZZZ",
+                "pinyin": "XXTJZMZZZZ",
                 "cityname": "湘西土家族苗族自治州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2716,7 +2714,7 @@
                 "platePrefix": "湘U"
             }, {
                 "cityID": "1522",
-                "cityPinYin": "XAM",
+                "pinyin": "XAM",
                 "cityname": "兴安盟",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2725,7 +2723,7 @@
                 "platePrefix": "蒙F"
             }, {
                 "cityID": "6101",
-                "cityPinYin": "XA",
+                "pinyin": "XA",
                 "cityname": "西安",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2734,7 +2732,7 @@
                 "platePrefix": "陕A"
             }, {
                 "cityID": "6301",
-                "cityPinYin": "XN",
+                "pinyin": "XN",
                 "cityname": "西宁",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2743,7 +2741,7 @@
                 "platePrefix": "青A"
             }, {
                 "cityID": "5328",
-                "cityPinYin": "XSBNDZZZZ",
+                "pinyin": "XSBNDZZZZ",
                 "cityname": "西双版纳傣族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -2752,7 +2750,7 @@
                 "platePrefix": "云K"
             }, {
                 "cityID": "3502",
-                "cityPinYin": "XM",
+                "pinyin": "XM",
                 "cityname": "厦门",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2761,7 +2759,7 @@
                 "platePrefix": "闽D"
             }, {
                 "cityID": "429004",
-                "cityPinYin": "XT",
+                "pinyin": "XT",
                 "cityname": "仙桃",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2770,7 +2768,7 @@
                 "platePrefix": "鄂M"
             }, {
                 "cityID": "4212",
-                "cityPinYin": "XN",
+                "pinyin": "XN",
                 "cityname": "咸宁",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2779,7 +2777,7 @@
                 "platePrefix": "鄂L"
             }, {
                 "cityID": "4206",
-                "cityPinYin": "XY",
+                "pinyin": "XY",
                 "cityname": "襄阳",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2788,7 +2786,7 @@
                 "platePrefix": "鄂F"
             }, {
                 "cityID": "4209",
-                "cityPinYin": "XG",
+                "pinyin": "XG",
                 "cityname": "孝感",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2797,7 +2795,7 @@
                 "platePrefix": "鄂K"
             }, {
                 "cityID": "1409",
-                "cityPinYin": "XZ",
+                "pinyin": "XZ",
                 "cityname": "忻州",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2806,7 +2804,7 @@
                 "platePrefix": "晋H"
             }, {
                 "cityID": "4107",
-                "cityPinYin": "XX",
+                "pinyin": "XX",
                 "cityname": "新乡",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2815,7 +2813,7 @@
                 "platePrefix": "豫G"
             }, {
                 "cityID": "3605",
-                "cityPinYin": "XY",
+                "pinyin": "XY",
                 "cityname": "新余",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2824,7 +2822,7 @@
                 "platePrefix": "赣K"
             }, {
                 "cityID": "4115",
-                "cityPinYin": "XY",
+                "pinyin": "XY",
                 "cityname": "信阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2833,7 +2831,7 @@
                 "platePrefix": "豫S"
             }, {
                 "cityID": "1305",
-                "cityPinYin": "XT",
+                "pinyin": "XT",
                 "cityname": "邢台",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2842,7 +2840,7 @@
                 "platePrefix": "冀E"
             }, {
                 "cityID": "3203",
-                "cityPinYin": "XZ",
+                "pinyin": "XZ",
                 "cityname": "徐州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2851,7 +2849,7 @@
                 "platePrefix": "苏C"
             }, {
                 "cityID": "4110",
-                "cityPinYin": "XC",
+                "pinyin": "XC",
                 "cityname": "许昌",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2860,7 +2858,7 @@
                 "platePrefix": "豫K"
             }, {
                 "cityID": "3418",
-                "cityPinYin": "XC",
+                "pinyin": "XC",
                 "cityname": "宣城",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2872,7 +2870,7 @@
         }, {
             "cityList": [{
                 "cityID": "5118",
-                "cityPinYin": "YA",
+                "pinyin": "YA",
                 "cityname": "雅安",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2881,7 +2879,7 @@
                 "platePrefix": "川T"
             }, {
                 "cityID": "6106",
-                "cityPinYin": "YA",
+                "pinyin": "YA",
                 "cityname": "延安",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2890,7 +2888,7 @@
                 "platePrefix": "陕J"
             }, {
                 "cityID": "6125",
-                "cityPinYin": "YLGXNYSFQ",
+                "pinyin": "YLGXNYSFQ",
                 "cityname": "杨凌高新农业示范区",
                 "engineLen": "99",
                 "frameLen": "0",
@@ -2899,7 +2897,7 @@
                 "platePrefix": "陕V"
             }, {
                 "cityID": "5115",
-                "cityPinYin": "YB",
+                "pinyin": "YB",
                 "cityname": "宜宾",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -2908,7 +2906,7 @@
                 "platePrefix": "川Q"
             }, {
                 "cityID": "4309",
-                "cityPinYin": "YY",
+                "pinyin": "YY",
                 "cityname": "益阳",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2917,7 +2915,7 @@
                 "platePrefix": "湘H"
             }, {
                 "cityID": "4311",
-                "cityPinYin": "YZ",
+                "pinyin": "YZ",
                 "cityname": "永州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2926,7 +2924,7 @@
                 "platePrefix": "湘M"
             }, {
                 "cityID": "0",
-                "cityPinYin": "YL",
+                "pinyin": "YL",
                 "cityname": "榆林",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2935,7 +2933,7 @@
                 "platePrefix": "陕K"
             }, {
                 "cityID": "0",
-                "cityPinYin": "YL",
+                "pinyin": "YL",
                 "cityname": "玉林",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -2944,7 +2942,7 @@
                 "platePrefix": "桂K"
             }, {
                 "cityID": "4306",
-                "cityPinYin": "YY",
+                "pinyin": "YY",
                 "cityname": "岳阳",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2953,7 +2951,7 @@
                 "platePrefix": "湘F"
             }, {
                 "cityID": "3706",
-                "cityPinYin": "YT",
+                "pinyin": "YT",
                 "cityname": "烟台",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2962,7 +2960,7 @@
                 "platePrefix": "鲁F"
             }, {
                 "cityID": "3720",
-                "cityPinYin": "YTSZB",
+                "pinyin": "YTSZB",
                 "cityname": "烟台市增补",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2971,7 +2969,7 @@
                 "platePrefix": "鲁Y"
             }, {
                 "cityID": "2224",
-                "cityPinYin": "YBCXZZZZ",
+                "pinyin": "YBCXZZZZ",
                 "cityname": "延边朝鲜族自治州",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -2980,7 +2978,7 @@
                 "platePrefix": "吉H"
             }, {
                 "cityID": "3209",
-                "cityPinYin": "YC",
+                "pinyin": "YC",
                 "cityname": "盐城",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -2989,7 +2987,7 @@
                 "platePrefix": "苏J"
             }, {
                 "cityID": "1423",
-                "cityPinYin": "YB",
+                "pinyin": "YB",
                 "cityname": "雁北",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -2998,7 +2996,7 @@
                 "platePrefix": "晋G"
             }, {
                 "cityID": "3210",
-                "cityPinYin": "YZ",
+                "pinyin": "YZ",
                 "cityname": "扬州",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -3007,7 +3005,7 @@
                 "platePrefix": "苏K"
             }, {
                 "cityID": "4417",
-                "cityPinYin": "YJ",
+                "pinyin": "YJ",
                 "cityname": "阳江",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -3016,7 +3014,7 @@
                 "platePrefix": "粤Q"
             }, {
                 "cityID": "1403",
-                "cityPinYin": "YQ",
+                "pinyin": "YQ",
                 "cityname": "阳泉",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -3025,7 +3023,7 @@
                 "platePrefix": "晋C"
             }, {
                 "cityID": "4606",
-                "cityPinYin": "YPKFQ",
+                "pinyin": "YPKFQ",
                 "cityname": "洋浦开发区",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -3034,7 +3032,7 @@
                 "platePrefix": "琼E"
             }, {
                 "cityID": "2307",
-                "cityPinYin": "YC",
+                "pinyin": "YC",
                 "cityname": "伊春",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -3043,7 +3041,7 @@
                 "platePrefix": "黑F"
             }, {
                 "cityID": "6540",
-                "cityPinYin": "YLHSKZZZ",
+                "pinyin": "YLHSKZZZ",
                 "cityname": "伊犁哈萨克自治州",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3052,7 +3050,7 @@
                 "platePrefix": "新F"
             }, {
                 "cityID": "4205",
-                "cityPinYin": "YC",
+                "pinyin": "YC",
                 "cityname": "宜昌",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -3061,7 +3059,7 @@
                 "platePrefix": "鄂E"
             }, {
                 "cityID": "3609",
-                "cityPinYin": "YC",
+                "pinyin": "YC",
                 "cityname": "宜春",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3070,7 +3068,7 @@
                 "platePrefix": "赣C"
             }, {
                 "cityID": "6401",
-                "cityPinYin": "YC",
+                "pinyin": "YC",
                 "cityname": "银川",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3079,7 +3077,7 @@
                 "platePrefix": "宁A"
             }, {
                 "cityID": "3606",
-                "cityPinYin": "YT",
+                "pinyin": "YT",
                 "cityname": "鹰潭",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3088,7 +3086,7 @@
                 "platePrefix": "赣L"
             }, {
                 "cityID": "2108",
-                "cityPinYin": "YK",
+                "pinyin": "YK",
                 "cityname": "营口",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3097,7 +3095,7 @@
                 "platePrefix": "辽H"
             }, {
                 "cityID": "6327",
-                "cityPinYin": "YSCZZZZ",
+                "pinyin": "YSCZZZZ",
                 "cityname": "玉树藏族自治州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -3106,7 +3104,7 @@
                 "platePrefix": "青G"
             }, {
                 "cityID": "5304",
-                "cityPinYin": "YX",
+                "pinyin": "YX",
                 "cityname": "玉溪",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -3115,7 +3113,7 @@
                 "platePrefix": "云F"
             }, {
                 "cityID": "4453",
-                "cityPinYin": "YF",
+                "pinyin": "YF",
                 "cityname": "云浮",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -3124,7 +3122,7 @@
                 "platePrefix": "粤W"
             }, {
                 "cityID": "1408",
-                "cityPinYin": "YC",
+                "pinyin": "YC",
                 "cityname": "运城",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -3136,7 +3134,7 @@
         }, {
             "cityList": [{
                 "cityID": "4308",
-                "cityPinYin": "ZJJ",
+                "pinyin": "ZJJ",
                 "cityname": "张家界",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -3145,7 +3143,7 @@
                 "platePrefix": "湘G"
             }, {
                 "cityID": "0",
-                "cityPinYin": "ZZ",
+                "pinyin": "ZZ",
                 "cityname": "漳州",
                 "engineLen": "0",
                 "frameLen": "0",
@@ -3154,7 +3152,7 @@
                 "platePrefix": "闽E"
             }, {
                 "cityID": "4302",
-                "cityPinYin": "ZZ",
+                "pinyin": "ZZ",
                 "cityname": "株洲",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -3163,7 +3161,7 @@
                 "platePrefix": "湘B"
             }, {
                 "cityID": "5120",
-                "cityPinYin": "ZY",
+                "pinyin": "ZY",
                 "cityname": "资阳",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3172,7 +3170,7 @@
                 "platePrefix": "川M"
             }, {
                 "cityID": "5103",
-                "cityPinYin": "ZG",
+                "pinyin": "ZG",
                 "cityname": "自贡",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3181,7 +3179,7 @@
                 "platePrefix": "川C"
             }, {
                 "cityID": "3704",
-                "cityPinYin": "ZZ",
+                "pinyin": "ZZ",
                 "cityname": "枣庄",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -3190,7 +3188,7 @@
                 "platePrefix": "鲁D"
             }, {
                 "cityID": "4408",
-                "cityPinYin": "ZJ",
+                "pinyin": "ZJ",
                 "cityname": "湛江",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -3199,7 +3197,7 @@
                 "platePrefix": "粤G"
             }, {
                 "cityID": "1307",
-                "cityPinYin": "ZJK",
+                "pinyin": "ZJK",
                 "cityname": "张家口",
                 "engineLen": "0",
                 "frameLen": "4",
@@ -3208,7 +3206,7 @@
                 "platePrefix": "冀G"
             }, {
                 "cityID": "6207",
-                "cityPinYin": "ZY",
+                "pinyin": "ZY",
                 "cityname": "张掖",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -3217,7 +3215,7 @@
                 "platePrefix": "甘G"
             }, {
                 "cityID": "5306",
-                "cityPinYin": "ZT",
+                "pinyin": "ZT",
                 "cityname": "昭通",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -3226,7 +3224,7 @@
                 "platePrefix": "云C"
             }, {
                 "cityID": "4412",
-                "cityPinYin": "ZQ",
+                "pinyin": "ZQ",
                 "cityname": "肇庆",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -3235,7 +3233,7 @@
                 "platePrefix": "粤H"
             }, {
                 "cityID": "3211",
-                "cityPinYin": "ZJ",
+                "pinyin": "ZJ",
                 "cityname": "镇江",
                 "engineLen": "6",
                 "frameLen": "0",
@@ -3244,7 +3242,7 @@
                 "platePrefix": "苏L"
             }, {
                 "cityID": "4101",
-                "cityPinYin": "ZZ",
+                "pinyin": "ZZ",
                 "cityname": "郑州",
                 "engineLen": "6",
                 "frameLen": "99",
@@ -3253,7 +3251,7 @@
                 "platePrefix": "豫A"
             }, {
                 "cityID": "4420",
-                "cityPinYin": "ZS",
+                "pinyin": "ZS",
                 "cityname": "中山",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -3262,7 +3260,7 @@
                 "platePrefix": "粤T"
             }, {
                 "cityID": "6405",
-                "cityPinYin": "ZW",
+                "pinyin": "ZW",
                 "cityname": "中卫",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3271,7 +3269,7 @@
                 "platePrefix": "宁E"
             }, {
                 "cityID": "3309",
-                "cityPinYin": "ZS",
+                "pinyin": "ZS",
                 "cityname": "舟山",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -3280,7 +3278,7 @@
                 "platePrefix": "浙L"
             }, {
                 "cityID": "4116",
-                "cityPinYin": "ZK",
+                "pinyin": "ZK",
                 "cityname": "周口",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3289,7 +3287,7 @@
                 "platePrefix": "豫P"
             }, {
                 "cityID": "4404",
-                "cityPinYin": "ZH",
+                "pinyin": "ZH",
                 "cityname": "珠海",
                 "engineLen": "4",
                 "frameLen": "6",
@@ -3298,7 +3296,7 @@
                 "platePrefix": "粤C"
             }, {
                 "cityID": "4117",
-                "cityPinYin": "ZMD",
+                "pinyin": "ZMD",
                 "cityname": "驻马店",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3307,7 +3305,7 @@
                 "platePrefix": "豫Q"
             }, {
                 "cityID": "3703",
-                "cityPinYin": "ZB",
+                "pinyin": "ZB",
                 "cityname": "淄博",
                 "engineLen": "0",
                 "frameLen": "6",
@@ -3316,7 +3314,7 @@
                 "platePrefix": "鲁C"
             }, {
                 "cityID": "5203",
-                "cityPinYin": "ZY",
+                "pinyin": "ZY",
                 "cityname": "遵义",
                 "engineLen": "6",
                 "frameLen": "6",
@@ -3328,7 +3326,7 @@
         }],
         "hotCity": [{
             "cityID": "3201",
-            "cityPinYin": "NJ",
+            "pinyin": "NJ",
             "cityname": "南京",
             "engineLen": "6",
             "frameLen": "0",
@@ -3337,7 +3335,7 @@
             "platePrefix": "苏A"
         }, {
             "cityID": "4301",
-            "cityPinYin": "CS",
+            "pinyin": "CS",
             "cityname": "长沙",
             "engineLen": "6",
             "frameLen": "0",
@@ -3346,7 +3344,7 @@
             "platePrefix": "湘A"
         }, {
             "cityID": "3301",
-            "cityPinYin": "HZ",
+            "pinyin": "HZ",
             "cityname": "杭州",
             "engineLen": "0",
             "frameLen": "6",
@@ -3355,7 +3353,7 @@
             "platePrefix": "浙A"
         }, {
             "cityID": "4201",
-            "cityPinYin": "WH",
+            "pinyin": "WH",
             "cityname": "武汉",
             "engineLen": "0",
             "frameLen": "6",
@@ -3364,7 +3362,7 @@
             "platePrefix": "鄂A"
         }, {
             "cityID": "31",
-            "cityPinYin": "SH",
+            "pinyin": "SH",
             "cityname": "上海",
             "engineLen": "99",
             "frameLen": "0",
@@ -3373,7 +3371,7 @@
             "platePrefix": "沪"
         }, {
             "cityID": "5101",
-            "cityPinYin": "CD",
+            "pinyin": "CD",
             "cityname": "成都",
             "engineLen": "6",
             "frameLen": "6",
@@ -3382,7 +3380,7 @@
             "platePrefix": "川A"
         }, {
             "cityID": "4401",
-            "cityPinYin": "GZ",
+            "pinyin": "GZ",
             "cityname": "广州",
             "engineLen": "4",
             "frameLen": "6",
@@ -3391,7 +3389,7 @@
             "platePrefix": "粤A"
         }, {
             "cityID": "11",
-            "cityPinYin": "BJ",
+            "pinyin": "BJ",
             "cityname": "北京",
             "engineLen": "99",
             "frameLen": "0",
@@ -3400,7 +3398,7 @@
             "platePrefix": "京"
         }, {
             "cityID": "4403",
-            "cityPinYin": "SZ",
+            "pinyin": "SZ",
             "cityname": "深圳",
             "engineLen": "4",
             "frameLen": "6",
@@ -3408,6 +3406,4 @@
             "isSupported": "true",
             "platePrefix": "粤B"
         }]
-    },
-    "msg": "成功"
-}
+    }

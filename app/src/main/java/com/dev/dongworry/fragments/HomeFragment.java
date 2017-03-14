@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.activities.CityActivity;
 import com.dev.dongworry.activities.SearchActivity;
 import com.dev.dongworry.customview.CustomEditText;
-import com.google.gson.Gson;
-
-import java.io.InputStream;
 
 
 /**
@@ -31,6 +29,7 @@ import java.io.InputStream;
  */
 public class HomeFragment extends BaseFragment implements View.OnClickListener{
     private PopupWindow popupWindow;
+	private TextView tv_home_localCity;
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -55,9 +54,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 		ImageButton imageBtn_home_more = (ImageButton)view.findViewById(R.id.imageBtn_home_more);
 		imageBtn_home_more.setOnClickListener(this);
 
+		tv_home_localCity = (TextView)view.findViewById(R.id.tv_home_localCity);
+		tv_home_localCity.setOnClickListener(this);
+
 		popupWindow = createMenuPopupWindow(getActivity());
-		String cityList = getCityList();
-		Gson gson = new Gson();
 
 		return view;
 	}
@@ -135,23 +135,24 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 				}
 				popupWindow.showAsDropDown(v, 999, 10);
 				break;
+
+			case R.id.tv_home_localCity:
+				intent = new Intent(getActivity(), CityActivity.class);
+				startActivityForResult(intent, 0);
+				break;
 		}
 	}
 
-	public String getCityList(){
-		String result = "";
-		try {
-			InputStream in = getResources().openRawResource(R.raw.city);
-			//获取文件的字节数
-			int lenght = in.available();
-			//创建byte数组
-			byte[]  buffer = new byte[lenght];
-			//将文件中的数据读到byte数组中
-			in.read(buffer);
-			result = new String(buffer, "UTF-8");
-		} catch (Exception e) {
-			e.printStackTrace();
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode){
+			case 0:
+				String cityname = data.getStringExtra("cityname");
+				if(tv_home_localCity != null && cityname != null){
+					tv_home_localCity.setText(cityname+" ");
+				}
+				break;
 		}
-		return result;
 	}
 }

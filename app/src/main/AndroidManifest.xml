@@ -382,6 +382,11 @@
             android:label="@string/title_activity_evaluate"
             android:screenOrientation="portrait"
             ></activity>
+        <activity
+            android:name=".activities.CityActivity"
+            android:label="@string/title_activity_evaluate"
+            android:screenOrientation="portrait"
+            ></activity>
     </application>
 
 </manifest>
