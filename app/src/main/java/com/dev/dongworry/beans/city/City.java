@@ -22,6 +22,8 @@ public class City {
 
     private String cityname;
 
+    private String pinyin;
+
     public String getLetter() {
         return letter;
     }
@@ -32,5 +34,13 @@ public class City {
 
     public String getCityname() {
         return cityname;
+    }
+
+    public String getPinyin() {
+        return pinyin;
+    }
+
+    public void setPinyin(String pinyin) {
+        this.pinyin = pinyin;
     }
 }

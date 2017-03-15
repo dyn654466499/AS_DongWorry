@@ -39,7 +39,6 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:singleLine="true"
-            android:tag="isShowIcon"
             android:textSize="14sp" />
 
         <RelativeLayout

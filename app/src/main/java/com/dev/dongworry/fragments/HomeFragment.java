@@ -148,9 +148,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 		super.onActivityResult(requestCode, resultCode, data);
 		switch (requestCode){
 			case 0:
-				String cityname = data.getStringExtra("cityname");
-				if(tv_home_localCity != null && cityname != null){
-					tv_home_localCity.setText(cityname+" ");
+				if(data != null){
+					String cityname = data.getStringExtra("cityname");
+					if(tv_home_localCity != null && cityname != null) {
+						tv_home_localCity.setText(cityname + " ");
+					}
 				}
 				break;
 		}

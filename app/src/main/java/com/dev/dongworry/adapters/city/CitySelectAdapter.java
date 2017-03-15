@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.dev.dongworry.R;
@@ -19,7 +21,7 @@ import java.util.List;
  * 
  * @author dengyaoning420
  */
-public class CitySelectAdapter extends BaseAdapter{
+public class CitySelectAdapter extends BaseAdapter implements Filterable{
 	private List<City> list = null;
 	private List<City> originList = null;
 	private Context	mContext;
@@ -103,7 +105,38 @@ public class CitySelectAdapter extends BaseAdapter{
 				}
 			}
 		}
-
 		return -1;
+	}
+
+	@Override
+	public Filter getFilter() {
+		Filter filter = new Filter() {
+			@Override
+			protected void publishResults(CharSequence constraint,
+										  FilterResults results) {
+					list = (ArrayList<City>) results.values;
+					notifyDataSetChanged();
+			}
+
+			@Override
+			protected FilterResults performFiltering(CharSequence constraint) {
+				FilterResults result = new FilterResults();
+				List<City> allJournals = originList;
+				if (constraint == null || constraint.length() == 0) {
+					result.values = allJournals;
+					result.count = allJournals.size();
+				} else {
+					List<City> filteredList = new ArrayList<>();
+					for (City j : allJournals) {
+						if (j.getCityname().contains(constraint) || j.getLetter().equalsIgnoreCase(constraint.toString()))
+							filteredList.add(j);
+					}
+					result.values = filteredList;
+					result.count = filteredList.size();
+				}
+				return result;
+			}
+		};
+		return filter;
 	}
 }

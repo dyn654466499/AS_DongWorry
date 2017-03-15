@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.customview.CityView;
+import com.dev.dongworry.customview.CustomEditText;
 import com.dev.dongworry.interfaces.CallBack;
 
 /**
@@ -22,6 +23,9 @@ public class CityActivity extends BaseActivity implements CallBack{
         setContentView(R.layout.activity_city);
         setViewChangeListener(this);
         setTitle("城市列表");
+        CustomEditText editText = (CustomEditText)findViewById(R.id.et_city_search);
+        CityView cityView = (CityView)findViewById(R.id.cityView);
+        cityView.setSearchEditText(editText);
     }
 
 
