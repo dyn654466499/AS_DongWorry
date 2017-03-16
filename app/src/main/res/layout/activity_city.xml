@@ -21,7 +21,9 @@
         android:background="@drawable/editext_frame_corner"
         android:hint="输入城市名称"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:drawableRight="@drawable/submit_edit_clear_pressed"
+        android:paddingRight="15dp"
+        android:textCursorDrawable="@null"
         android:maxLines="1"
         android:textSize="16sp" />
 
