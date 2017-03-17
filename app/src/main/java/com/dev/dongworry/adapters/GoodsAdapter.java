@@ -12,16 +12,21 @@ import com.dev.dongworry.R;
 
 public class GoodsAdapter extends BaseAdapter{
     private Context context;
+	private int nums = 5;
     
 	public GoodsAdapter(Context context) {
 		super();
 		this.context = context;
 	}
 
+	public void update(int nums){
+		this.nums = nums;
+		notifyDataSetChanged();
+	}
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 10;
+		return nums;
 	}
 
 	@Override

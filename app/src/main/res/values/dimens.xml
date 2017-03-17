@@ -15,4 +15,5 @@
     <!-- 商品详情界面 -->
     <dimen name="goods_detail_params">15sp</dimen>
 
+    <dimen name="shifting_label">20sp</dimen>
 </resources>

@@ -50,6 +50,7 @@
 
             <com.dev.dongworry.customview.CustomEditText
                 android:id="@+id/editText_surePWD"
+                android:focusable="false"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="7"

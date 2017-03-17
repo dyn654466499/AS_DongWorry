@@ -32,14 +32,11 @@ public class PhoneFragment extends BaseFragment{
 				// TODO Auto-generated method stub
 				String phoneNum = editText_phone.getText().toString();
 				if (!hasFocus && !CommonUtils.isPhoneNum(phoneNum)) {
-					//editText_phone.setTag("");
 					/**
 					 * 如果Activity结束了，取消提示
 					 */
 					if (!getActivity().isDestroyed()) {
-						Toast.makeText(getActivity(),
-								getString(R.string.phoneNumIsNotFormat),
-								Toast.LENGTH_SHORT).show();
+						showTip(R.string.phoneNumIsNotFormat);
 					}
 				} 
 //				else {

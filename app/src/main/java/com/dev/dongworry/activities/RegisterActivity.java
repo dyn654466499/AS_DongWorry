@@ -79,7 +79,6 @@ public class RegisterActivity extends BaseActivity {
 				button_sureRegister.setEnabled(isChecked);
 			}
 		});
-		//Log.e(getTAG(), GetCountryZipCode());
 	}
 
 	@Override

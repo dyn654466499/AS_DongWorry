@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -98,6 +99,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
 					@Override
 					public void run() {
 						mToast.setText(str);
+						mToast.setGravity(Gravity.CENTER,0,0);
 						mToast.show();
 					}
 				});
@@ -180,7 +182,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
 	 * @return 类名
 	 */
     protected String getTAG(){
- 	   return this.getClass().getName();
+ 	   return this.getClass().getSimpleName();
     }
     
     @Override

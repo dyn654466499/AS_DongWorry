@@ -2,10 +2,13 @@ package com.dev.dongworry.activities;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -22,11 +25,16 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
     private FlowDoctorFragment flowDoctorFragment;
     private UserCenterFragment userCenterFragment;
     private NearbyFragment nearbyFragment;
+    private Context mContext;
+    /**
+     * 退出时间记录，用于按两次返回键。
+     */
+    private long exitTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        mContext = this;
         navigationBar = (BottomNavigationBar)findViewById(R.id.home_navi_bar);
         navigationBar.setMode(BottomNavigationBar.MODE_FIXED);//点击模式
         navigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
@@ -72,16 +80,16 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
                 break;
             case 2:
 
-            case 3:
-
                 break;
-            case 4:
+            case 3:
                 Intent intent = new Intent(this,LoginActivity.class);
                 startActivity(intent);
-//                if(userCenterFragment == null){
-//                    userCenterFragment = new UserCenterFragment();
-//                }
-//                changeFragment(userCenterFragment);
+                break;
+            case 4:
+                if(userCenterFragment == null){
+                    userCenterFragment = new UserCenterFragment();
+                }
+                changeFragment(userCenterFragment);
                 break;
             default:
                 break;
@@ -113,4 +121,18 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
 
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(mContext, R.string.toast_exit_app, Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

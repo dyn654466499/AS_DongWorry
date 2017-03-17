@@ -101,7 +101,7 @@
     <string name="extra_text">由宁哥亲手打造的一款软件，非常好用哦！</string>
     <string name="share">分享</string>
     <string name="aboutAuthorTitle">关于作者</string>
-    <string name="clickAgainToExitApp">再按一次退出程序！</string>
+    <string name="toast_exit_app">再按一次退出程序！</string>
     <string name="aboutAuthor">\t\t\t本应用是由邓耀宁同学开发的语音应用，具体操作请查看帮助；
         \n\n\t\t\t关于广告的声明：在主界面的顶端为显示广告的部分，广告作为本人开发软件的经费来源；如果您支持我，就请点击下载安装（广告的软件源自豌豆荚，放心使用）；
                     如果您仅仅为了支持我同时也不喜欢广告的软件，请下载安装之后再进行卸载；
@@ -230,9 +230,9 @@
     <string name="title_inviteFriends">邀请好友</string>
     <string name="inviteFriendsTips">亲，你还可以邀请您的好友扫描下图的二维码，直接下载本应用哦！</string>
 
-    <!-- 关于语音控 -->
+    <!-- 关于咚哇驴 -->
     <string name="title_help">使用帮助</string>
-    <string name="title_about">关于语音控</string>
+    <string name="title_about">关于咚哇驴</string>
     <string name="current_version">当前版本:%1$s</string>
     <string name="third_part_sdk">第三方SDK说明</string>
     <string name="attention">关注开发者账号</string>

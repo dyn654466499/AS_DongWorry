@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.activities.LoginActivity;
 import com.dev.dongworry.activities.SettingActivity;
 
 public class UserCenterFragment extends BaseFragment implements View.OnClickListener{
@@ -43,10 +44,11 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 				break;
 			case R.id.tv_usercenter_setting:
 				intent = new Intent(getActivity(), SettingActivity.class);
-				getActivity().startActivity(intent);
+				startActivity(intent);
 				break;
 			case R.id.tv_usercenter_login:
-
+				intent = new Intent(getActivity(),LoginActivity.class);
+				startActivity(intent);
 				break;
 			default:
 				break;

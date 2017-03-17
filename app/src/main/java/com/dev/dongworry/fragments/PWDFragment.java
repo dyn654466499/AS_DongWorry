@@ -2,7 +2,6 @@ package com.dev.dongworry.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.text.Selection;
 import android.text.Spannable;
@@ -16,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.dev.dongworry.R;
 
@@ -27,7 +25,7 @@ import com.dev.dongworry.R;
  *
  */
 @SuppressLint("NewApi") 
-public class PWDFragment extends Fragment {
+public class PWDFragment extends BaseFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -45,9 +43,7 @@ public class PWDFragment extends Fragment {
 					 * 如果Activity结束了，取消提示
 					 */
 					if (!getActivity().isDestroyed()) {
-					Toast.makeText(getActivity(),
-							getString(R.string.tips_pwdIsNotFormat),
-							Toast.LENGTH_SHORT).show();
+						showTip(R.string.tips_pwdIsNotFormat);
 					}
 				}
 //				else{
@@ -57,8 +53,7 @@ public class PWDFragment extends Fragment {
 		});
 		final ImageButton imageButton_showPwd = (ImageButton) getActivity()
 				.findViewById(R.id.imageButton_showPwd);
-		imageButton_showPwd.setColorFilter(getActivity().getResources().getColor(
-				android.R.color.darker_gray));
+		imageButton_showPwd.setColorFilter(getColor(android.R.color.darker_gray));
 		//设置隐藏标识
 		imageButton_showPwd.setTag("hidden");
 		imageButton_showPwd.setOnClickListener(new OnClickListener() {
@@ -85,8 +80,7 @@ public class PWDFragment extends Fragment {
 					}
 
 					imageButton_showPwd.setTag("show");
-					imageButton_showPwd.setColorFilter(getActivity().getResources()
-							.getColor(R.color.themeColor));
+					imageButton_showPwd.setColorFilter(getColor(R.color.themeColor));
 				} else {
 					editText_password
 							.setTransformationMethod(PasswordTransformationMethod
@@ -101,8 +95,7 @@ public class PWDFragment extends Fragment {
 					}
 
 					imageButton_showPwd.setTag("hidden");
-					imageButton_showPwd.setColorFilter(getActivity().getResources()
-							.getColor(android.R.color.darker_gray));
+					imageButton_showPwd.setColorFilter(getColor(android.R.color.darker_gray));
 				}
 				editText_password.postInvalidate();
 				// 切换后将EditText光标置于末尾

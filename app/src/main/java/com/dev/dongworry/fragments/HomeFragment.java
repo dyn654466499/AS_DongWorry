@@ -30,17 +30,6 @@ import com.dev.dongworry.customview.CustomEditText;
 public class HomeFragment extends BaseFragment implements View.OnClickListener{
     private PopupWindow popupWindow;
 	private TextView tv_home_localCity;
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-	}
-
-	@Override
-	public void onAttach(Context activity) {
-		// TODO Auto-generated method stub
-		super.onAttach(activity);
-	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +58,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 	private PopupWindow createMenuPopupWindow(Activity activity){
 		ListView listView = new ListView(activity);
 		listView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		listView.setBackgroundColor(activity.getResources().getColor(R.color.themeColor));
+		listView.setBackgroundColor(getColor(R.color.themeColor));
 		listView.setAlpha(0.8f);
 
 		DisplayMetrics dm = new DisplayMetrics();

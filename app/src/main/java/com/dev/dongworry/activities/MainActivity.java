@@ -2063,7 +2063,7 @@ public class MainActivity extends BaseActivity{
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			if ((System.currentTimeMillis() - exitTime) > 2000) {
 				Toast.makeText(mContext,
-						setStringID(R.string.clickAgainToExitApp),
+						setStringID(R.string.toast_exit_app),
 						Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
 			} else {

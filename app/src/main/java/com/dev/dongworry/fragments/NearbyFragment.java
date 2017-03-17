@@ -27,6 +27,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.dev.dongworry.R;
 import com.dev.dongworry.activities.CityActivity;
 import com.dev.dongworry.activities.GoodsDetailActivity;
@@ -36,11 +38,13 @@ import com.dev.dongworry.adapters.ScreeningCheckBoxAdapter;
 import com.dev.dongworry.adapters.ScreeningPriceAdapter;
 import com.dev.dongworry.adapters.SmartSortAdapter;
 import com.dev.dongworry.customview.CustomEditText;
+import com.dev.dongworry.customview.RefreshLayout;
 import com.dev.dongworry.interfaces.Commands;
 
 import java.util.ArrayList;
 
-public class NearbyFragment extends BaseFragment implements View.OnClickListener,SwipeRefreshLayout.OnRefreshListener{
+public class NearbyFragment extends BaseFragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener,
+        RefreshLayout.OnLoadListener,BottomNavigationBar.OnTabSelectedListener{
 
     public static final int VOICE_RECOGNITION_REQUEST_CODE = 0;
     public static final int SEARCH = 1;
@@ -53,13 +57,16 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
     private PopupWindow popupWindow_allCategory, popupWindow_topSearch,
             popupWindow_smartSorting, popupWindow_screening;
     private TextView tv_nearby_localCity;
-    private SwipeRefreshLayout mswipeLayout_nearby;
+    private RefreshLayout mswipeLayout_nearby;
 
     private ListView listView_nearby;
     private Context mContext;
     private View rootView;
 
+    private BottomNavigationBar navigationBar;
+
     private boolean isRefresh = false;//是否刷新中
+    private GoodsAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,7 +105,7 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         tv_nearby_localCity.setOnClickListener(this);
 
         listView_nearby = (ListView)rootView.findViewById(R.id.listView_nearby);
-        GoodsAdapter adapter = new GoodsAdapter(mContext);
+        adapter = new GoodsAdapter(mContext);
         listView_nearby.setAdapter(adapter);
         listView_nearby.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -106,7 +113,9 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // TODO Auto-generated method stub
-                startActivity(new Intent(mContext, GoodsDetailActivity.class));
+                if(position != parent.getCount() -1) {
+                    startActivity(new Intent(mContext, GoodsDetailActivity.class));
+                }
             }
         });
 
@@ -119,18 +128,41 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         }
 
         //设置SwipeRefreshLayout
-        mswipeLayout_nearby = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeLayout_nearby);
+        mswipeLayout_nearby = (RefreshLayout)rootView.findViewById(R.id.swipeLayout_nearby);
 
-        mswipeLayout_nearby.setColorSchemeColors(getActivity().getResources().getColor(R.color.themeColor));
+        mswipeLayout_nearby.setColorSchemeColors(getColor(R.color.themeColor));
         // 设置手指在屏幕下拉多少距离会触发下拉刷新
         mswipeLayout_nearby.setDistanceToTriggerSync(300);
         // 设定下拉圆圈的背景
         mswipeLayout_nearby.setProgressBackgroundColorSchemeColor(Color.WHITE);
         // 设置圆圈的大小
-        mswipeLayout_nearby.setSize(SwipeRefreshLayout.DEFAULT);
+        mswipeLayout_nearby.setSize(RefreshLayout.DEFAULT);
         //设置下拉刷新的监听
         mswipeLayout_nearby.setOnRefreshListener(this);
+        mswipeLayout_nearby.setOnLoadListener(this);
 
+        navigationBar = (BottomNavigationBar)rootView.findViewById(R.id.navibar_nearby);
+        navigationBar.setMode(BottomNavigationBar.MODE_FIXED);//点击模式
+        navigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
+        navigationBar.setTabSelectedListener(this);
+        BitmapDrawable drawable = new BitmapDrawable();
+        drawable.setBounds(0,0,0,0);
+        navigationBar.addItem(new BottomNavigationItem(drawable, getString(R.string.allCategories))).
+                addItem(new BottomNavigationItem(drawable, getString(R.string.jewel))).
+                addItem(new BottomNavigationItem(drawable, getString(R.string.tutor))).
+                addItem(new BottomNavigationItem(drawable, getString(R.string.appliance_repair))).
+                setActiveColor(R.color.themeColor).
+                setInActiveColor(R.color.black).
+                setFirstSelectedPosition(0).initialise();
+        for (int i = 0;i < navigationBar.getChildCount();i++){
+            View view = navigationBar.getChildAt(i);
+            LinearLayout bottom_navigation_bar_item_container = (LinearLayout)view.findViewById(com.ashokvarma.bottomnavigation.R.id.bottom_navigation_bar_item_container);
+            for (int j = 0;j < bottom_navigation_bar_item_container.getChildCount();j++){
+                view = bottom_navigation_bar_item_container.getChildAt(j);
+                TextView fixed_bottom_navigation_title = (TextView)view.findViewById(com.ashokvarma.bottomnavigation.R.id.fixed_bottom_navigation_title);
+                fixed_bottom_navigation_title.setTextSize(16f);
+            }
+        }
         return rootView;
     }
 
@@ -421,26 +453,26 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         if (isSetTag)
             categoryLayout.setTag("clicked");
         Button button = (Button) categoryLayout.getChildAt(0);
-        button.setTextColor(getResources().getColor(R.color.themeColor));
-        Drawable drawable = getActivity().getResources().getDrawable(R.drawable.icon_arrows_red_up);
-        drawable.setColorFilter(getActivity().getResources().getColor(R.color.themeColor), PorterDuff.Mode.SRC_ATOP);
+        button.setTextColor(getColor(R.color.themeColor));
+        Drawable drawable = getDrawable(R.drawable.icon_arrows_red_up);
+        drawable.setColorFilter(getColor(R.color.themeColor), PorterDuff.Mode.SRC_ATOP);
         button.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
-        switch (button.getId()) {
-            case R.id.btn_nearby_allCategories:
-
-                break;
-            case R.id.btn_nearby_jewel:
-
-                break;
-            case R.id.btn_nearby_smartSorting:
-                popupWindow_smartSorting.showAsDropDown(categoryLayout);
-                break;
-            case R.id.btn_nearby_screening:
-                popupWindow_screening.showAsDropDown(categoryLayout);
-                break;
-            default:
-                break;
-        }
+//        switch (button.getId()) {
+//            case R.id.btn_nearby_allCategories:
+//
+//                break;
+//            case R.id.btn_nearby_jewel:
+//
+//                break;
+//            case R.id.btn_nearby_smartSorting:
+//                popupWindow_smartSorting.showAsDropDown(categoryLayout);
+//                break;
+//            case R.id.btn_nearby_screening:
+//                popupWindow_screening.showAsDropDown(categoryLayout);
+//                break;
+//            default:
+//                break;
+//        }
     }
 
     /**
@@ -454,26 +486,26 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
 
         Button button = (Button) categoryLayout.getChildAt(0);
         button.setTextColor(Color.BLACK);
-        button.setCompoundDrawablesWithIntrinsicBounds(null,null,getActivity().getResources().getDrawable(R.drawable.icon_arrows_gray_down),null);
+        button.setCompoundDrawablesWithIntrinsicBounds(null,null,getDrawable(R.drawable.icon_arrows_gray_down),null);
 
-        switch (button.getId()) {
-            case R.id.btn_nearby_allCategories:
-
-                break;
-            case R.id.btn_nearby_jewel:
-
-                break;
-            case R.id.btn_nearby_smartSorting:
-                if (popupWindow_smartSorting.isShowing())
-                    popupWindow_smartSorting.dismiss();
-                break;
-            case R.id.btn_nearby_screening:
-                if (popupWindow_screening.isShowing())
-                    popupWindow_screening.dismiss();
-                break;
-            default:
-                break;
-        }
+//        switch (button.getId()) {
+//            case R.id.btn_nearby_allCategories:
+//
+//                break;
+//            case R.id.btn_nearby_jewel:
+//
+//                break;
+//            case R.id.btn_nearby_smartSorting:
+//                if (popupWindow_smartSorting.isShowing())
+//                    popupWindow_smartSorting.dismiss();
+//                break;
+//            case R.id.btn_nearby_screening:
+//                if (popupWindow_screening.isShowing())
+//                    popupWindow_screening.dismiss();
+//                break;
+//            default:
+//                break;
+//        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -535,7 +567,7 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         if (!isRefresh) {
             isRefresh = true;
             //模拟加载网络数据，这里设置4秒，正好能看到4色进度条
-            new Handler().postDelayed(new Runnable() {
+            mswipeLayout_nearby.postDelayed(new Runnable() {
                 public void run() {
                     //显示或隐藏刷新进度条
                     mswipeLayout_nearby.setRefreshing(false);
@@ -546,5 +578,37 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
                 }
             }, 4000);
         }
+    }
+
+    private int nums=5;
+    @Override
+    public void onLoad() {
+        mswipeLayout_nearby.postDelayed(new Runnable() {
+            public void run() {
+                if(nums < 15) {
+                    nums += 5;
+                    adapter.update(nums);
+                }else{
+                    mswipeLayout_nearby.setOnLoadComplete();
+                }
+                // 更新完后调用该方法结束刷新
+                mswipeLayout_nearby.setLoading(false);
+            }
+        }, 4000);
+    }
+
+    @Override
+    public void onTabSelected(int position) {
+
+    }
+
+    @Override
+    public void onTabUnselected(int position) {
+
+    }
+
+    @Override
+    public void onTabReselected(int position) {
+
     }
 }
