@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.view.ViewStub;
 import android.widget.ListView;
 
 import com.dev.dongworry.R;
@@ -42,12 +43,14 @@ public class RefreshLayout extends SwipeRefreshLayout {
         super(context, attrs);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         mListViewFooter = LayoutInflater.from(context).inflate(R.layout.layout_footer, null, false);
+
     }
 
     public void setOnLoadComplete(){
         mListViewFooter.findViewById(R.id.footer_loading).setVisibility(GONE);
         mListViewFooter.findViewById(R.id.footer_no_more).setVisibility(VISIBLE);
         isCompleted = true;
+        setLoading(false);
     }
 
 
@@ -87,8 +90,9 @@ public class RefreshLayout extends SwipeRefreshLayout {
                 break;
 
             case MotionEvent.ACTION_UP:
+                int count = mListView.getAdapter().getCount();
                 // 抬起
-                if ((mYDown - mLastY) >= mTouchSlop && isLoading == false && !isCompleted) {
+                if ((mYDown - mLastY) >= mTouchSlop && isLoading == false && !isCompleted && count != 0) {
                     // 设置状态
                     setLoading(true);
                     mOnLoadListener.onLoad();
@@ -101,14 +105,19 @@ public class RefreshLayout extends SwipeRefreshLayout {
         return super.dispatchTouchEvent(event);
     }
 
+    private boolean isInitDivider = false;
     // 设置加载状态
     public void setLoading(boolean loading) {
-        if(isCompleted){
+        if(mListView == null || isCompleted){
             return;
         }
         isLoading = loading;
         if (isLoading) {
-            mListView.addFooterView(mListViewFooter);
+            if(!isInitDivider){
+                mListView.addFooterView(new ViewStub(getContext()));
+                isInitDivider = true;
+            }
+            mListView.addFooterView(mListViewFooter,null,false);
         } else {
             mListView.removeFooterView(mListViewFooter);
         }

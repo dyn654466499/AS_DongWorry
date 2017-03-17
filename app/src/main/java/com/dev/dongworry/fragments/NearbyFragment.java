@@ -1,6 +1,7 @@
 package com.dev.dongworry.fragments;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -113,9 +114,7 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // TODO Auto-generated method stub
-                if(position != parent.getCount() -1) {
                     startActivity(new Intent(mContext, GoodsDetailActivity.class));
-                }
             }
         });
 
@@ -588,11 +587,12 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
                 if(nums < 15) {
                     nums += 5;
                     adapter.update(nums);
+                    // 更新完后调用该方法结束刷新
+                    mswipeLayout_nearby.setLoading(false);
                 }else{
                     mswipeLayout_nearby.setOnLoadComplete();
                 }
-                // 更新完后调用该方法结束刷新
-                mswipeLayout_nearby.setLoading(false);
+
             }
         }, 4000);
     }
@@ -610,5 +610,18 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onTabReselected(int position) {
 
+    }
+
+    private BaseFragment curFragment = new BaseFragment();
+    public void switchContent(BaseFragment from, BaseFragment to) {
+        if (curFragment != to) {
+            curFragment = to;
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            if (!to.isAdded()) {    // 先判断是否被add过
+                transaction.hide(from).add(R.id.rLayout_nearby, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
+            } else {
+                transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
+            }
+        }
     }
 }

@@ -1,6 +1,5 @@
 package com.dev.dongworry.activities;
 
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +13,8 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.dev.dongworry.R;
 import com.dev.dongworry.fragments.BaseFragment;
-import com.dev.dongworry.fragments.HomeFragment;
 import com.dev.dongworry.fragments.FlowDoctorFragment;
+import com.dev.dongworry.fragments.HomeFragment;
 import com.dev.dongworry.fragments.NearbyFragment;
 import com.dev.dongworry.fragments.UserCenterFragment;
 
@@ -26,6 +25,7 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
     private UserCenterFragment userCenterFragment;
     private NearbyFragment nearbyFragment;
     private Context mContext;
+    private BaseFragment curFragment = new BaseFragment();
     /**
      * 退出时间记录，用于按两次返回键。
      */
@@ -46,20 +46,11 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
                 addItem(new BottomNavigationItem(R.drawable.navi_drive, "我的")).
                 setActiveColor(R.color.themeColor).
                 setFirstSelectedPosition(0).initialise();
-        setDefaultFragment();
+        navigationBar.selectTab(0);
     }
 
     @Override
     public void onClick(View v) {
-
-    }
-
-    /**
-     * 设置默认的
-     */
-    private void setDefaultFragment() {
-        homeFragment = new HomeFragment();
-        changeFragment(homeFragment);
 
     }
 
@@ -70,13 +61,13 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
                 if(homeFragment == null){
                     homeFragment = new HomeFragment();
                 }
-                changeFragment(homeFragment);
+                switchContent(curFragment,homeFragment);
                 break;
             case 1:
                 if(nearbyFragment == null){
                     nearbyFragment = new NearbyFragment();
                 }
-                changeFragment(nearbyFragment);
+                switchContent(curFragment,nearbyFragment);
                 break;
             case 2:
 
@@ -89,22 +80,24 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
                 if(userCenterFragment == null){
                     userCenterFragment = new UserCenterFragment();
                 }
-                changeFragment(userCenterFragment);
+                switchContent(curFragment,userCenterFragment);
                 break;
             default:
                 break;
         }
     }
 
-    private void changeFragment(BaseFragment baseFragment){
-        FragmentManager fm = getFragmentManager();
-        //开启事务
-        FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.ll_home_main, baseFragment);
-        // 事务提交
-        transaction.commit();
+    public void switchContent(BaseFragment from, BaseFragment to) {
+        if (curFragment != to) {
+            curFragment = to;
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            if (!to.isAdded()) {    // 先判断是否被add过
+                transaction.hide(from).add(R.id.ll_home_main, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
+            } else {
+                transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
+            }
+        }
     }
-
 
     @Override
     public void onTabUnselected(int position) {

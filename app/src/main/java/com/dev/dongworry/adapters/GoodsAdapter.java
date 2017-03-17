@@ -59,8 +59,6 @@ public class GoodsAdapter extends BaseAdapter{
 			holder = (ViewHolder)convertView.getTag();
 		}
 		
-		
-		
 		return convertView;
 	}
 	
