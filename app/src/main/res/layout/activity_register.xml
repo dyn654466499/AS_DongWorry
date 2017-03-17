@@ -73,10 +73,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button_sureRegister"
         android:layout_below="@+id/button_sureRegister"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:checked="true"
         android:textColor="#636363"
-        android:textSize="15sp"
+        android:textSize="14sp"
+        android:buttonTint="@color/themeColor"
         android:text="@string/agree" />
 
     <Button
@@ -85,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_sureRegister"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="7dp"
         android:layout_toRightOf="@+id/checkBox_userProtocol"
         android:background="@null"
         android:gravity="center"

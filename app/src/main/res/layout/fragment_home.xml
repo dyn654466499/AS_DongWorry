@@ -34,7 +34,7 @@
             android:layout_marginTop="9dp"
             android:layout_marginBottom="9dp"
             android:layout_marginRight="9dp"
-            android:background="@drawable/editext_frame"
+            android:background="@drawable/editext_frame_corner"
             android:hint="@string/home_search_hint"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"

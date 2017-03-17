@@ -145,7 +145,7 @@
             android:icon="@drawable/control"
             android:label="@string/local_app_name"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:windowSoftInputMode="adjustResize|adjustPan"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -368,11 +368,6 @@
         <!-- android:windowSoftInputMode="adjustPan" > -->
         <!-- </activity> -->
 
-        <activity
-            android:name=".activities.GoodsActivity"
-            android:label="@string/title_activity_search"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
         <activity
             android:name=".activities.GoodsDetailActivity"
             android:label="@string/title_activity_goods_detail"

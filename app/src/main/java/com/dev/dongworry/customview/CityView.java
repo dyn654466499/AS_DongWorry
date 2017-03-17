@@ -20,12 +20,11 @@ import android.widget.TextView;
 import com.dev.dongworry.R;
 import com.dev.dongworry.adapters.city.CityHotAdapter;
 import com.dev.dongworry.adapters.city.CitySelectAdapter;
+import com.dev.dongworry.beans.city.City;
 import com.dev.dongworry.beans.city.CityBase;
 import com.dev.dongworry.beans.city.CityList;
-import com.dev.dongworry.beans.city.City;
 import com.dev.dongworry.consts.Constants;
 import com.dev.dongworry.interfaces.CallBack;
-import com.dev.dongworry.interfaces.Commands;
 import com.dev.dongworry.utils.BaiduMapUtil;
 import com.dev.dongworry.utils.SPUtils;
 import com.google.gson.Gson;
@@ -35,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.dev.dongworry.R.id.llayout_gps;
 
 /**
  * Created by dengyaoning on 16/12/5.

@@ -86,7 +86,7 @@ public class PWDFragment extends Fragment {
 
 					imageButton_showPwd.setTag("show");
 					imageButton_showPwd.setColorFilter(getActivity().getResources()
-							.getColor(android.R.color.holo_blue_dark));
+							.getColor(R.color.themeColor));
 				} else {
 					editText_password
 							.setTransformationMethod(PasswordTransformationMethod

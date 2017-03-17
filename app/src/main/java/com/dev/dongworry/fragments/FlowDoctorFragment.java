@@ -12,7 +12,6 @@ import android.widget.Button;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.activities.EvaluateActivity;
-import com.dev.dongworry.activities.GoodsActivity;
 import com.dev.dongworry.activities.GoodsDetailActivity;
 import com.dev.dongworry.activities.LoginActivity;
 import com.dev.dongworry.activities.SettingActivity;
@@ -31,40 +30,6 @@ public class FlowDoctorFragment extends BaseFragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
-
-		Button button_register = (Button) getActivity().findViewById(R.id.button_register);
-		button_register.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(getActivity(), GoodsActivity.class);
-				getActivity().startActivity(intent);
-//				Thread loginThread = new Thread() {
-//					@Override
-//					public void run() {
-//						super.run();
-//						HashMap<String, String> map = new HashMap<String, String>();
-//						map.put("grant_type", "password");
-//						map.put("client_id", "daemon_test");
-//						map.put("client_secret", "123456");
-//						map.put("scope", "");
-//
-//						NetworkUtils.setTimeout(10);
-//						String json = NetworkUtils.HttpPost("http://192.168.137.1/daemon/OAuth2_Server/API/token.php", map);
-//						Log.e(getTag(), json+"!");
-//						
-//					}
-//
-//				};
-//
-//				loginThread.setDaemon(true);
-//				loginThread.start();
-//				testLocalIpAndMac();
-				
-			}
-		});
-		
 		
 		Button button_login = (Button) getActivity().findViewById(R.id.button_login);
 		button_login.setOnClickListener(new OnClickListener() {

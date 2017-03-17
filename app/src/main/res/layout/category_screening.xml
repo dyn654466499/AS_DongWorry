@@ -60,8 +60,8 @@
         </LinearLayout>
 
         <!-- 筛选完成按钮 -->
-        <Button
-            android:id="@+id/button_screening_price"
+        <com.dev.dongworry.customview.CButton
+            android:id="@+id/btn_screening_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
