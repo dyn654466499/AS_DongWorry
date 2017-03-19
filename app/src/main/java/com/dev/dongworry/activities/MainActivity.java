@@ -964,16 +964,6 @@ public class MainActivity extends BaseActivity{
 
 	private void setSpeechParams() {
 		mSpeechUnderstander.setParameter(SpeechConstant.PARAMS, null);
-//		String locale = getResources().getConfiguration().locale.toString();
-//		// "mandarin";
-//		Log.v(TAG, locale);
-//		if (locale.contentEquals("en_US")) {
-//			mSpeechUnderstander.setParameter(SpeechConstant.LANGUAGE, "en_us");
-//		} else {
-//			// 设置语言
-//			mSpeechUnderstander.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
-//			mSpeechUnderstander.setParameter(SpeechConstant.ACCENT, "mandarin");
-//		}
         SharedPreferences sp = getSharedPreferences(VOICE_SETTING, Context.MODE_PRIVATE);
 		String lang = sp.getString(VOICE_LANGUAGE, "mandarin");
 		if (lang.equals("en_us")) {

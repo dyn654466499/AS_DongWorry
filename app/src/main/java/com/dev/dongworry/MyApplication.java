@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.dev.dongworry.utils.CrashHandler;
+import com.iflytek.cloud.SpeechUtility;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,13 +17,14 @@ public class MyApplication extends Application{
 	@Override
 	public void onCreate() {
 		CrashHandler.getInstance().init(this);
+		SpeechUtility.createUtility(getApplicationContext(), "appid="+getString(R.string.iflyteck_app_id));
 		/**
 		 * 将帮助文档写入本地存储
 		 */
 		String locale = this.getResources().getConfiguration().locale.toString();
 		super.onCreate();
 		
-		InputStream inputstream = null;
+		InputStream inputstream;
 		if (locale.contentEquals("zh_TW")) {
             inputstream = this.getResources().openRawResource(R.raw.chinese_traditional);
 		} else {
@@ -65,4 +67,6 @@ public class MyApplication extends Application{
 		}.start();
 		
 	}
+
+
 }

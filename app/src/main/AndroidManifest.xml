@@ -67,8 +67,7 @@
         android:icon="@drawable/control"
         android:label="@string/local_app_name"
         android:sharedUserId="android.uid.system"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="BDAPPID"
             android:value="7674189" />
@@ -137,7 +136,7 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
         <activity
             android:name=".activities.HomeActivity"
@@ -145,8 +144,7 @@
             android:icon="@drawable/control"
             android:label="@string/local_app_name"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|adjustPan"
-            >
+            android:windowSoftInputMode="adjustResize|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -201,7 +199,6 @@
         <activity
             android:name=".activities.SearchActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".activities.LoginActivity"
             android:screenOrientation="portrait" />
@@ -250,22 +247,19 @@
         <activity
             android:name=".activities.NavigationActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
 
         <!-- 语音设置界面 -->
         <activity
             android:name=".activities.VoiceSettingActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
 
         <!-- web界面 -->
         <activity
             android:name=".activities.WebActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <!-- 二维码扫描界面 -->
         <activity
             android:name=".activities.QRCodeCaptureActivity"
@@ -344,7 +338,7 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <!-- 下载基础服务 -->
         <service
@@ -355,11 +349,11 @@
         <activity
             android:name=".activities.RegisterActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activities.FindPWDActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
 
         <!-- <activity -->
         <!-- android:name=".activities.LoginActivity" -->
@@ -371,18 +365,20 @@
         <activity
             android:name=".activities.GoodsDetailActivity"
             android:label="@string/title_activity_goods_detail"
-            android:screenOrientation="portrait"
-            ></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.EvaluateActivity"
             android:label="@string/title_activity_evaluate"
-            android:screenOrientation="portrait"
-            ></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.CityActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|adjustPan"
-            ></activity>
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+
+        <activity android:name=".activities.PostRewardJoinActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

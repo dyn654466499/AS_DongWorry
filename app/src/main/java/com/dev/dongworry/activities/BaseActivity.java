@@ -3,10 +3,14 @@ package com.dev.dongworry.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
+import android.app.FragmentTransaction;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -17,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.interfaces.ViewChangeListener;
 import com.dev.dongworry.models.BaseModel;
 
@@ -231,4 +236,16 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
             return false;
     }
 
+	protected BaseFragment curFragment = new BaseFragment();
+	public void switchFragment(BaseFragment from, BaseFragment to, int resId) {
+		if (curFragment != to) {
+			curFragment = to;
+			FragmentTransaction transaction = getFragmentManager().beginTransaction();
+			if (!to.isAdded()) {    // 先判断是否被add过
+				transaction.hide(from).add(resId, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
+			} else {
+				transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
+			}
+		}
+	}
 }

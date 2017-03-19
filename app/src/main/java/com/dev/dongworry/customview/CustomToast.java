@@ -14,34 +14,36 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CustomToast {
+
+	  private static LinearLayout mLayout;
+	  private static CustomToast customToast;
 	  
-	  public static CustomToast makeText(Context context, CharSequence text, int duration) 
-	  {
-	    CustomToast result = new CustomToast(context);
+	  public static CustomToast makeText(Context context, CharSequence text, int duration) {
+		  customToast = new CustomToast(context);
 	    DisplayMetrics dm = context.getResources().getDisplayMetrics();
-	    
-	    LinearLayout mLayout=new LinearLayout(context);
+
+	    mLayout=new LinearLayout(context);
 	    mLayout.setOrientation(LinearLayout.VERTICAL);
-	    
+
 	    TextView tv = new TextView(context);
 	    tv.setText(text);
-	    tv.setTextSize(17);
+	    tv.setTextSize(16);
 	    tv.setTextColor(Color.WHITE);
 	    tv.setGravity(Gravity.CENTER);
 	    tv.setTag(TAG_PRIMARY_VIEW);
 	    mLayout.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.toast_corner));
 	    mLayout.setAlpha(0.85f);
-	    
+
 	    /**
 	     *  width和height是textView的大小
 	     */
-	    int width = dm.widthPixels / 2;
+	    int width = dm.widthPixels / 3;
 	    int height = width / 3;
 	    mLayout.addView(tv, width, height);
-	    result.mNextView = mLayout;
-	    result.mDuration = duration;
+	    customToast.mNextView = mLayout;
+	    customToast.mDuration = duration;
 
-	    return result;
+	    return customToast;
 	  }
 	  
 	  public static final int LENGTH_SHORT = 2000;

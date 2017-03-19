@@ -1,10 +1,12 @@
 package com.dev.dongworry.fragments;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -20,6 +22,7 @@ public class BaseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mToast = Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT);
+        curFragment = new BaseFragment();
     }
 
     /**
@@ -79,4 +82,16 @@ public class BaseFragment extends Fragment {
         return getActivity().getResources().getDrawable(resId);
     }
 
+    protected BaseFragment curFragment;
+    public void switchContent(BaseFragment from, BaseFragment to, int resId) {
+        if (curFragment != to) {
+            curFragment = to;
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            if (!to.isAdded()) {    // 先判断是否被add过
+                transaction.hide(from).add(resId, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
+            } else {
+                transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
+            }
+        }
+    }
 }

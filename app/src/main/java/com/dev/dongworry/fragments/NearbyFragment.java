@@ -11,6 +11,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.speech.RecognizerIntent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
@@ -41,6 +42,7 @@ import com.dev.dongworry.adapters.SmartSortAdapter;
 import com.dev.dongworry.customview.CustomEditText;
 import com.dev.dongworry.customview.RefreshLayout;
 import com.dev.dongworry.interfaces.Commands;
+import com.dev.dongworry.utils.VoiceUtils;
 
 import java.util.ArrayList;
 
@@ -75,6 +77,28 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         mContext = getActivity();
     }
 
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case VoiceUtils.SPEECH_SUCEESE:
+                    if(msg.obj instanceof String){
+                        String searchKey = (String)msg.obj;
+                        et_nearby_search.setHint(searchKey.replaceAll("[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……& amp;*（）——+|{}【】‘；：”“’。，、？|-]", ""));
+                        //TODO 执行搜索
+                    }
+                    break;
+
+                case VoiceUtils.SPEECH_FAIL:
+                    if(msg.obj instanceof String){
+                        showTip((String)msg.obj);
+                    }
+                    break;
+            }
+        }
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_nearby, container, false);
@@ -85,13 +109,7 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
             public void executeCommand() {
                 // TODO Auto-generated method stub
                 try {
-                    Intent intent = new Intent(
-                            RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-                    intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-                    intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "请对着麦克风说话！");
-                    startActivityForResult(intent,
-                            VOICE_RECOGNITION_REQUEST_CODE);
+                    VoiceUtils.startSpeech(mContext,mHandler);
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(mContext, "请先装谷歌语音助手", Toast.LENGTH_SHORT)
@@ -113,8 +131,7 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                // TODO Auto-generated method stub
-                    startActivity(new Intent(mContext, GoodsDetailActivity.class));
+                startActivity(new Intent(mContext, GoodsDetailActivity.class));
             }
         });
 
@@ -612,16 +629,4 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
 
     }
 
-    private BaseFragment curFragment = new BaseFragment();
-    public void switchContent(BaseFragment from, BaseFragment to) {
-        if (curFragment != to) {
-            curFragment = to;
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            if (!to.isAdded()) {    // 先判断是否被add过
-                transaction.hide(from).add(R.id.rLayout_nearby, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
-            } else {
-                transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
-            }
-        }
-    }
 }
