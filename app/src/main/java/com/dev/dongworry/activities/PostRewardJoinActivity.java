@@ -7,6 +7,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.customview.CButton;
 
 public class PostRewardJoinActivity extends BaseActivity implements TabHost.OnTabChangeListener{
     private TabHost tabHost;
@@ -29,6 +30,9 @@ public class PostRewardJoinActivity extends BaseActivity implements TabHost.OnTa
         tabHost.addTab(tabHost.newTabSpec(TAB_POST_REWARD).setIndicator(TAB_POST_REWARD).setContent(R.id.tab_post_reward_join_3));
         tabHost.setOnTabChangedListener(this);
         updateTab(tabHost,TAB_HOT);
+
+        CButton btn_post_reward_start = (CButton)findViewById(R.id.btn_post_reward_start);
+        btn_post_reward_start.setOnClickListener(this);
     }
 
     private void updateTab(final TabHost tabHost, String tabId) {
@@ -66,7 +70,11 @@ public class PostRewardJoinActivity extends BaseActivity implements TabHost.OnTa
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_post_reward_start:
 
+                break;
+        }
     }
 
     @Override

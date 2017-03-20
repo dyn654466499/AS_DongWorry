@@ -44,7 +44,7 @@
 
     </LinearLayout>
 
-    <Button
+    <com.dev.dongworry.customview.CButton
         android:id="@+id/button_sureLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/btn_blue_bg"
+        android:background="@drawable/frame_standard"
         android:textSize="18sp"
         android:textColor="@drawable/btn_textcolor_selector"
         android:text="@string/sureLogin" />

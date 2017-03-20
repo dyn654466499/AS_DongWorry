@@ -1,18 +1,16 @@
 package com.dev.dongworry.fragments;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.widget.Toast;
-
-import com.dev.dongworry.R;
 
 
 public class BaseFragment extends Fragment {

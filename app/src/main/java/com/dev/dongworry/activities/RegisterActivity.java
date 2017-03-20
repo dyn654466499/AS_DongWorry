@@ -38,33 +38,7 @@ public class RegisterActivity extends BaseActivity {
 		button_sureRegister = (Button)findViewById(R.id.button_sureRegister);
 
 		button_getVcode.setOnClickListener(this);
-		button_sureRegister.setOnTouchListener(new View.OnTouchListener() {
-			private float primary_scaleX ;
-			private float primary_scaleY ;
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				// TODO Auto-generated method stub
-				switch (event.getAction()) {
-					case MotionEvent.ACTION_DOWN:
-						primary_scaleX = v.getScaleX();
-						primary_scaleY = v.getScaleY();
-						v.setScaleX((float) (0.95*primary_scaleX));
-						v.setScaleY((float) (0.95*primary_scaleY));
-						return true;
-					case MotionEvent.ACTION_UP:
-						v.setScaleX(primary_scaleX);
-						v.setScaleY(primary_scaleY);
-						String phoneNum = editText_phone.getText().toString();
-						String password = editText_pwd.getText().toString();
 
-						notifyModelChange(ControlState.MODEL_SURE_REGISTER);
-						return true;
-					default:
-						break;
-				}
-				return false;
-			}
-		});
 		editText_pwd = (EditText)findViewById(R.id.editText_password);
 		editText_phone = (EditText)findViewById(R.id.editText_phone);
 

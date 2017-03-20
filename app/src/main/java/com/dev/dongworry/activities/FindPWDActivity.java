@@ -1,6 +1,5 @@
 package com.dev.dongworry.activities;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Message;
@@ -16,6 +15,7 @@ import com.dev.dongworry.consts.ControlState;
 import com.dev.dongworry.fragments.PWDFragment;
 import com.dev.dongworry.fragments.PhoneFragment;
 import com.dev.dongworry.fragments.VCodeFragment;
+import com.dev.dongworry.interfaces.OnViewListener;
 import com.dev.dongworry.models.FindPWDModel;
 import com.dev.dongworry.utils.CommonUtils;
 
@@ -29,7 +29,9 @@ public class FindPWDActivity extends BaseActivity {
 
 	private Button button_findpwd_next,button_getVcode;
 	private TextView textView_findpwd_tips;
-	private Fragment fragment_phone, fragment_vcode,fragment_pwd;
+	private PhoneFragment fragment_phone;
+	private	VCodeFragment fragment_vcode;
+	private PWDFragment fragment_pwd;
 	private EditText editText_phone, editText_vcode,editText_pwd,editText_surePWD;
 	private LinearLayout fragment_findpwd_container;
     private Context mContext;
@@ -46,19 +48,23 @@ public class FindPWDActivity extends BaseActivity {
 		mContext = this;
 		// 若要动态添加fragment，第一个fragment必须要是动态加上去，不能用xml，否则第二个fragment将无法动态替换第一个fragment。
 		fragment_phone = new PhoneFragment();
-
 		fragment_pwd = new PWDFragment();
-		getFragmentManager().beginTransaction()
+		fragment_vcode = new VCodeFragment();
+		fragment_vcode.setViewCreatedListener(new OnViewListener(){
+			@Override
+			public void onViewCreated() {
+				button_getVcode = fragment_vcode.getButtonVcode();
+				button_getVcode.setOnClickListener(FindPWDActivity.this);
+			}
+		});
+		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.fragment_findpwd_container, fragment_phone)
 				.commit();
-
 
 		fragment_findpwd_container = (LinearLayout)findViewById(R.id.fragment_findpwd_container);
 
 		button_findpwd_next = (Button)findViewById(R.id.button_findpwd_next);
 		button_findpwd_next.setOnClickListener(this);
-
-
 
 		textView_findpwd_tips = (TextView)findViewById(R.id.textView_findpwd_tips);
 	}
@@ -75,31 +81,13 @@ public class FindPWDActivity extends BaseActivity {
 						String phoneNumber = editText_phone.getText().toString();
 						// 如果符合手机号码格式
 						if (CommonUtils.isPhoneNum(phoneNumber)) {
-							fragment_vcode = new VCodeFragment() {
-
-								@Override
-								public void onActivityCreated(
-										Bundle savedInstanceState) {
-									// TODO Auto-generated method stub
-									super.onActivityCreated(savedInstanceState);
-									button_getVcode = (Button)findViewById(R.id.button_getVcode);
-									button_getVcode.setOnClickListener(FindPWDActivity.this);
-								}
-
-								@Override
-								public void onDetach() {
-									// TODO Auto-generated method stub
-									super.onDetach();
-								}
-							};
-		                     getFragmentManager()
+		                     getSupportFragmentManager()
 									.beginTransaction()
 									.replace(R.id.fragment_findpwd_container,
 											fragment_vcode).commit();
 											textView_findpwd_tips.setText(String.format(
 									getString(R.string.sendPhoneNumber),
 									phoneNumber));
-
 						} else {
 							Toast.makeText(mContext,
 									getString(R.string.phoneNumIsNotFormat),
@@ -114,7 +102,7 @@ public class FindPWDActivity extends BaseActivity {
 						String vcode = editText_vcode.getText().toString();
 						// 判断vcode是否正确
 						if ("".equals(vcode)) {
-							getFragmentManager()
+							getSupportFragmentManager()
 									.beginTransaction()
 									.replace(R.id.fragment_findpwd_container,
 											fragment_pwd).commit();

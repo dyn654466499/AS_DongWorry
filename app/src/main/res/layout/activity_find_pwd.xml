@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/btn_blue_bg"
+            android:background="@drawable/btn_switch_state"
             android:textColor="#ffffff"
             android:text="@string/next" />
     </LinearLayout>

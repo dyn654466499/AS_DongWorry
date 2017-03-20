@@ -9,7 +9,8 @@
 
     <TabHost
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:id="@+id/tabhost_post_reward_join"
         >
 
@@ -56,4 +57,13 @@
             </FrameLayout>
         </LinearLayout>
     </TabHost>
+    <com.dev.dongworry.customview.CButton
+        android:id="@+id/btn_post_reward_start"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/themeColor"
+        android:text="发起悬赏"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        />
 </LinearLayout>

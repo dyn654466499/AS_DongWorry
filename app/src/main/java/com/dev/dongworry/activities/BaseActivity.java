@@ -3,14 +3,12 @@ package com.dev.dongworry.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
-import android.app.FragmentTransaction;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -35,7 +33,7 @@ import java.util.concurrent.TimeUnit;
  * @author  邓耀宁
  *
  */
-public abstract class BaseActivity extends Activity implements OnClickListener,ViewChangeListener{
+public abstract class BaseActivity extends FragmentActivity implements OnClickListener,ViewChangeListener{
     /**
      * model的代理对象，需要相应的子类设置它（多态）
      */
@@ -240,7 +238,7 @@ public abstract class BaseActivity extends Activity implements OnClickListener,V
 	public void switchFragment(BaseFragment from, BaseFragment to, int resId) {
 		if (curFragment != to) {
 			curFragment = to;
-			FragmentTransaction transaction = getFragmentManager().beginTransaction();
+			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 			if (!to.isAdded()) {    // 先判断是否被add过
 				transaction.hide(from).add(resId, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
 			} else {
