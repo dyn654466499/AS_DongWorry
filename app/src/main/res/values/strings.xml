@@ -417,9 +417,9 @@
 
     <!-- 商品界面 -->
     <string name="allCategories">全部</string>
-    <string name="jewel">装修</string>
-    <string name="tutor">家教</string>
-    <string name="appliance_repair">家电维修</string>
+    <string name="way">方式</string>
+    <string name="sort">排序</string>
+    <string name="screen">筛选</string>
     <string name="inputGoodsName">请输入商品名称</string>
 
     <!-- 智能排序 -->

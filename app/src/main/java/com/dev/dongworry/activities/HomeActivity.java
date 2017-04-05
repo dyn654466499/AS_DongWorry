@@ -1,31 +1,37 @@
 package com.dev.dongworry.activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ashokvarma.bottomnavigation.BottomNavigationBar;
-import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.dev.dongworry.R;
+import com.dev.dongworry.fragments.DiscoveryFragment;
+import com.dev.dongworry.fragments.DynamicFragment;
 import com.dev.dongworry.fragments.HomeFragment;
-import com.dev.dongworry.fragments.NearbyFragment;
-import com.dev.dongworry.fragments.PostRewardFragment;
-import com.dev.dongworry.fragments.PublishFragment;
-import com.dev.dongworry.fragments.UserCenterFragment;
 import com.dev.dongworry.utils.PermissionUtils;
+import com.flyco.tablayout.CommonTabLayout;
+import com.flyco.tablayout.listener.CustomTabEntity;
+import com.flyco.tablayout.listener.OnTabSelectListener;
 
-public class HomeActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
-    private BottomNavigationBar navigationBar;
-    private HomeFragment homeFragment;
-    private PublishFragment publishFragment;
-    private PostRewardFragment postRewardFragment;
-    private UserCenterFragment userCenterFragment;
-    private NearbyFragment nearbyFragment;
+import java.util.ArrayList;
+
+import static com.dev.dongworry.R.id.tv_home_localCity;
+
+public class HomeActivity extends BaseActivity{
+    private ArrayList<Fragment> mFragments = new ArrayList<>();
     private Context mContext;
+    private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
+    private String[] mTitles = {"我的", "发现", "动态"};
     /**
      * 退出时间记录，用于按两次返回键。
      */
@@ -36,76 +42,65 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
         setContentView(R.layout.activity_home);
 //        PermissionUtils.requestPermission(this, PermissionUtils.CODE_RECORD_AUDIO, mPermissionGrant);
         mContext = this;
-        navigationBar = (BottomNavigationBar)findViewById(R.id.home_navi_bar);
-        navigationBar.setMode(BottomNavigationBar.MODE_FIXED);//点击模式
-        navigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        navigationBar.setTabSelectedListener(this);
-        navigationBar.addItem(new BottomNavigationItem(R.drawable.abc_ic_menu_share_holo_light, "首页")).
-                addItem(new BottomNavigationItem(R.drawable.navi_bus, "附近")).
-                addItem(new BottomNavigationItem(R.drawable.navi_walk, "发布")).
-                addItem(new BottomNavigationItem(R.drawable.navi_drive, "悬赏")).
-                addItem(new BottomNavigationItem(R.drawable.navi_drive, "我的")).
-                setActiveColor(R.color.themeColor).
-                setFirstSelectedPosition(0).initialise();
-        navigationBar.selectTab(0);
+
+        Drawable drawable = getResources().getDrawable(R.drawable.icon_arrows_gray_down);
+        drawable.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+        TextView tv_home_localCity = (TextView)findViewById(R.id.tv_home_localCity);
+        tv_home_localCity.setOnClickListener(this);
+        tv_home_localCity.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
+
+        ImageButton imageBtn_home_search = (ImageButton)findViewById(R.id.imageBtn_home_search);
+        imageBtn_home_search.setOnClickListener(this);
+
+        mFragments.add(new HomeFragment());
+        mFragments.add(new DiscoveryFragment());
+        mFragments.add(new DynamicFragment());
+        for (final String title : mTitles){
+            mTabEntities.add(new CustomTabEntity() {
+                @Override
+                public String getTabTitle() {
+                    return title;
+                }
+
+                @Override
+                public int getTabSelectedIcon() {
+                    return 0;
+                }
+
+                @Override
+                public int getTabUnselectedIcon() {
+                    return 0;
+                }
+            });
+        }
+        final CommonTabLayout mTabLayout = (CommonTabLayout)findViewById(R.id.tabLayout_home);
+        mTabLayout.setTabData(mTabEntities, this, R.id.ll_home_main, mFragments);
+        mTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+                mTabLayout.setCurrentTab(position);
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
-
-    }
-
-    @Override
-    public void onTabSelected(int position) {
-        switch (position) {
-            case 0:
-                if(homeFragment == null){
-                    homeFragment = new HomeFragment();
-                }
-                switchFragment(curFragment,homeFragment,R.id.ll_home_main);
+        Intent intent;
+        switch (v.getId()){
+            case tv_home_localCity:
+                intent = new Intent(this, CityActivity.class);
+                startActivityForResult(intent, 0);
                 break;
-            case 1:
-                if(nearbyFragment == null){
-                    nearbyFragment = new NearbyFragment();
-                }
-                switchFragment(curFragment,nearbyFragment,R.id.ll_home_main);
-                break;
-            case 2:
-                if(publishFragment == null){
-                    publishFragment = new PublishFragment();
-                }
-                switchFragment(curFragment,publishFragment,R.id.ll_home_main);
-                break;
-            case 3:
-                if(postRewardFragment == null){
-                    postRewardFragment = new PostRewardFragment();
-                }
-                switchFragment(curFragment,postRewardFragment,R.id.ll_home_main);
-                break;
-            case 4:
-                if(userCenterFragment == null){
-                    userCenterFragment = new UserCenterFragment();
-                }
-                switchFragment(curFragment,userCenterFragment,R.id.ll_home_main);
-                break;
-            default:
+            case R.id.imageBtn_home_search:
+                intent = new Intent(this, SearchActivity.class);
+                startActivityForResult(intent, 0);
                 break;
         }
-    }
-
-    @Override
-    public void onTabUnselected(int position) {
-
-    }
-
-    @Override
-    public void onTabReselected(int position) {
-
-    }
-
-    @Override
-    public void onViewChange(Message msg) {
-
     }
 
     @Override
@@ -172,5 +167,9 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
         PermissionUtils.requestPermissionsResult(this, requestCode, permissions, grantResults, mPermissionGrant);
     }
 
+    @Override
+    public void onViewChange(Message msg) {
+
+    }
 
 }

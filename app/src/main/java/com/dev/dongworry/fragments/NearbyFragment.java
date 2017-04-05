@@ -1,9 +1,10 @@
 package com.dev.dongworry.fragments;
 
 import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -18,7 +19,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -27,27 +27,22 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ashokvarma.bottomnavigation.BottomNavigationBar;
-import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.dev.dongworry.R;
-import com.dev.dongworry.activities.CityActivity;
 import com.dev.dongworry.activities.GoodsDetailActivity;
-import com.dev.dongworry.activities.SearchActivity;
 import com.dev.dongworry.adapters.GoodsAdapter;
 import com.dev.dongworry.adapters.ScreeningCheckBoxAdapter;
 import com.dev.dongworry.adapters.ScreeningPriceAdapter;
 import com.dev.dongworry.adapters.SmartSortAdapter;
 import com.dev.dongworry.customview.CustomEditText;
 import com.dev.dongworry.customview.RefreshLayout;
-import com.dev.dongworry.interfaces.Commands;
+import com.dev.dongworry.utils.ImageUtil;
 import com.dev.dongworry.utils.VoiceUtils;
 
 import java.util.ArrayList;
 
 public class NearbyFragment extends BaseFragment implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener,
-        RefreshLayout.OnLoadListener,BottomNavigationBar.OnTabSelectedListener{
+        RefreshLayout.OnLoadListener{
 
     public static final int VOICE_RECOGNITION_REQUEST_CODE = 0;
     public static final int SEARCH = 1;
@@ -65,8 +60,6 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
     private ListView listView_nearby;
     private Context mContext;
     private View rootView;
-
-    private BottomNavigationBar navigationBar;
 
     private boolean isRefresh = false;//是否刷新中
     private GoodsAdapter adapter;
@@ -102,26 +95,26 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_nearby, container, false);
-        et_nearby_search = (CustomEditText)rootView.findViewById(R.id.et_nearby_search);
-        et_nearby_search.setCommand(new Commands() {
+//        et_nearby_search = (CustomEditText)rootView.findViewById(R.id.et_nearby_search);
+//        et_nearby_search.setCommand(new Commands() {
+//
+//            @Override
+//            public void executeCommand() {
+//                // TODO Auto-generated method stub
+//                try {
+//                    VoiceUtils.startSpeech(mContext,mHandler);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                    Toast.makeText(mContext, "请先装谷歌语音助手", Toast.LENGTH_SHORT)
+//                            .show();
+//                }
+//
+//            }
+//        });
+//        et_nearby_search.setOnClickListener(this);
 
-            @Override
-            public void executeCommand() {
-                // TODO Auto-generated method stub
-                try {
-                    VoiceUtils.startSpeech(mContext,mHandler);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(mContext, "请先装谷歌语音助手", Toast.LENGTH_SHORT)
-                            .show();
-                }
-
-            }
-        });
-        et_nearby_search.setOnClickListener(this);
-
-        tv_nearby_localCity = (TextView)rootView.findViewById(R.id.tv_nearby_localCity);
-        tv_nearby_localCity.setOnClickListener(this);
+//        tv_nearby_localCity = (TextView)rootView.findViewById(R.id.tv_nearby_localCity);
+//        tv_nearby_localCity.setOnClickListener(this);
 
         listView_nearby = (ListView)rootView.findViewById(R.id.listView_nearby);
         adapter = new GoodsAdapter(mContext);
@@ -156,29 +149,6 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         //设置下拉刷新的监听
         mswipeLayout_nearby.setOnRefreshListener(this);
         mswipeLayout_nearby.setOnLoadListener(this);
-
-        navigationBar = (BottomNavigationBar)rootView.findViewById(R.id.navibar_nearby);
-        navigationBar.setMode(BottomNavigationBar.MODE_FIXED);//点击模式
-        navigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        navigationBar.setTabSelectedListener(this);
-        BitmapDrawable drawable = new BitmapDrawable();
-        drawable.setBounds(0,0,0,0);
-        navigationBar.addItem(new BottomNavigationItem(drawable, getString(R.string.allCategories))).
-                addItem(new BottomNavigationItem(drawable, getString(R.string.jewel))).
-                addItem(new BottomNavigationItem(drawable, getString(R.string.tutor))).
-                addItem(new BottomNavigationItem(drawable, getString(R.string.appliance_repair))).
-                setActiveColor(R.color.themeColor).
-                setInActiveColor(R.color.black).
-                setFirstSelectedPosition(0).initialise();
-        for (int i = 0;i < navigationBar.getChildCount();i++){
-            View view = navigationBar.getChildAt(i);
-            LinearLayout bottom_navigation_bar_item_container = (LinearLayout)view.findViewById(com.ashokvarma.bottomnavigation.R.id.bottom_navigation_bar_item_container);
-            for (int j = 0;j < bottom_navigation_bar_item_container.getChildCount();j++){
-                view = bottom_navigation_bar_item_container.getChildAt(j);
-                TextView fixed_bottom_navigation_title = (TextView)view.findViewById(com.ashokvarma.bottomnavigation.R.id.fixed_bottom_navigation_title);
-                fixed_bottom_navigation_title.setTextSize(16f);
-            }
-        }
         return rootView;
     }
 
@@ -196,7 +166,7 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
 
         final ListView listView_smartSorting = (ListView) popupView_smartSorting
                 .findViewById(R.id.listView_smartSorting);
-        final String[] smartSortingNames = { getString(R.string.tutor),
+        final String[] smartSortingNames = { getString(R.string.sort),
                 getString(R.string.topEvaluate),
                 getString(R.string.lastedRelease),
                 getString(R.string.topSales), getString(R.string.lowestPrice),
@@ -385,26 +355,26 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         Intent intent;
         // TODO Auto-generated method stub
         switch (view.getId()) {
-            case R.id.tv_nearby_localCity:
-                intent = new Intent(getActivity(), CityActivity.class);
-                startActivityForResult(intent,SELECT_CITY);
-                return;
-
-            case R.id.et_nearby_search:
-                /**
-                 * 禁用输入法
-                 */
-                InputMethodManager inputMethodManager = (InputMethodManager) mContext
-                        .getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),
-                        InputMethodManager.HIDE_NOT_ALWAYS);
-
-                intent = new Intent(mContext, SearchActivity.class);
-                intent.putExtra("searchKey", et_nearby_search.getText()
-                        .toString());
-                startActivityForResult(intent, SEARCH);
-                getActivity().overridePendingTransition(0, R.anim.activity_up);
-                return;
+//            case R.id.tv_nearby_localCity:
+//                intent = new Intent(getActivity(), CityActivity.class);
+//                startActivityForResult(intent,SELECT_CITY);
+//                return;
+//
+//            case R.id.et_nearby_search:
+//                /**
+//                 * 禁用输入法
+//                 */
+//                InputMethodManager inputMethodManager = (InputMethodManager) mContext
+//                        .getSystemService(Context.INPUT_METHOD_SERVICE);
+//                inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),
+//                        InputMethodManager.HIDE_NOT_ALWAYS);
+//
+//                intent = new Intent(mContext, SearchActivity.class);
+//                intent.putExtra("searchKey", et_nearby_search.getText()
+//                        .toString());
+//                startActivityForResult(intent, SEARCH);
+//                getActivity().overridePendingTransition(0, R.anim.activity_up);
+//                return;
 
             case R.id.btn_screening_price:
                 /**
@@ -470,25 +440,26 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
             categoryLayout.setTag("clicked");
         Button button = (Button) categoryLayout.getChildAt(0);
         button.setTextColor(getColor(R.color.themeColor));
-        Drawable drawable = getDrawable(R.drawable.icon_arrows_red_up);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_arrows_down);
+        Drawable drawable = new BitmapDrawable(getResources(),ImageUtil.rotateBitmap(bitmap,180));
         drawable.setColorFilter(getColor(R.color.themeColor), PorterDuff.Mode.SRC_ATOP);
         button.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
-//        switch (button.getId()) {
-//            case R.id.btn_nearby_allCategories:
-//
-//                break;
-//            case R.id.btn_nearby_jewel:
-//
-//                break;
-//            case R.id.btn_nearby_smartSorting:
-//                popupWindow_smartSorting.showAsDropDown(categoryLayout);
-//                break;
-//            case R.id.btn_nearby_screening:
-//                popupWindow_screening.showAsDropDown(categoryLayout);
-//                break;
-//            default:
-//                break;
-//        }
+        switch (button.getId()) {
+            case R.id.btn_nearby_allCategories:
+
+                break;
+            case R.id.btn_nearby_jewel:
+
+                break;
+            case R.id.btn_nearby_smartSorting:
+                popupWindow_smartSorting.showAsDropDown(categoryLayout);
+                break;
+            case R.id.btn_nearby_screening:
+                popupWindow_screening.showAsDropDown(categoryLayout);
+                break;
+            default:
+                break;
+        }
     }
 
     /**
@@ -502,26 +473,27 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
 
         Button button = (Button) categoryLayout.getChildAt(0);
         button.setTextColor(Color.BLACK);
-        button.setCompoundDrawablesWithIntrinsicBounds(null,null,getDrawable(R.drawable.icon_arrows_gray_down),null);
+        Drawable drawable = getDrawable(R.drawable.icon_arrows_down);
+//        drawable.setColorFilter(getColor(R.color.font_deep_gray), PorterDuff.Mode.SRC_ATOP);
+        button.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
+        switch (button.getId()) {
+            case R.id.btn_nearby_allCategories:
 
-//        switch (button.getId()) {
-//            case R.id.btn_nearby_allCategories:
-//
-//                break;
-//            case R.id.btn_nearby_jewel:
-//
-//                break;
-//            case R.id.btn_nearby_smartSorting:
-//                if (popupWindow_smartSorting.isShowing())
-//                    popupWindow_smartSorting.dismiss();
-//                break;
-//            case R.id.btn_nearby_screening:
-//                if (popupWindow_screening.isShowing())
-//                    popupWindow_screening.dismiss();
-//                break;
-//            default:
-//                break;
-//        }
+                break;
+            case R.id.btn_nearby_jewel:
+
+                break;
+            case R.id.btn_nearby_smartSorting:
+                if (popupWindow_smartSorting.isShowing())
+                    popupWindow_smartSorting.dismiss();
+                break;
+            case R.id.btn_nearby_screening:
+                if (popupWindow_screening.isShowing())
+                    popupWindow_screening.dismiss();
+                break;
+            default:
+                break;
+        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -612,21 +584,6 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
 
             }
         }, 4000);
-    }
-
-    @Override
-    public void onTabSelected(int position) {
-
-    }
-
-    @Override
-    public void onTabUnselected(int position) {
-
-    }
-
-    @Override
-    public void onTabReselected(int position) {
-
     }
 
 }

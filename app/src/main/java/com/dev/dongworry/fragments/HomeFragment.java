@@ -43,9 +43,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 		ImageButton imageBtn_home_more = (ImageButton)view.findViewById(R.id.imageBtn_home_more);
 		imageBtn_home_more.setOnClickListener(this);
 
-		tv_home_localCity = (TextView)view.findViewById(R.id.tv_home_localCity);
-		tv_home_localCity.setOnClickListener(this);
-
 		popupWindow = createMenuPopupWindow(getActivity());
 
 		return view;
@@ -123,11 +120,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 					popupWindow = createMenuPopupWindow(getActivity());
 				}
 				popupWindow.showAsDropDown(v, 999, 10);
-				break;
-
-			case R.id.tv_home_localCity:
-				intent = new Intent(getActivity(), CityActivity.class);
-				startActivityForResult(intent, 0);
 				break;
 		}
 	}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tabLayout_discovery"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        tl:tl_iconVisible="false"
+        tl:tl_textSelectColor="@color/themeColor"
+        tl:tl_textUnselectColor="#000000"
+        tl:tl_textsize="16sp"
+        tl:tl_indicator_color="@color/themeColor"
+        tl:tl_indicator_height="1dp"
+        tl:tl_indicator_gravity="BOTTOM"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_discovery_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    </LinearLayout>
+</LinearLayout>

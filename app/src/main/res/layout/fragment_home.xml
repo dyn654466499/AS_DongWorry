@@ -13,18 +13,6 @@
         android:paddingRight="10dp"
         >
 
-        <TextView
-            android:id="@+id/tv_home_localCity"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:text="深圳 "
-            android:drawableRight="@drawable/icon_arrows_gray_down"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginRight="10dp"
-            />
-
         <com.dev.dongworry.customview.CustomEditText
             android:id="@+id/et_home_search"
             android:layout_width="0dp"
