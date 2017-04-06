@@ -28,6 +28,7 @@ public class DiscoveryFragment extends BaseFragment {
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private String[] mTitles = {"首页", "附近", "悬赏", "排行榜"};
+    private int currentPosition = 0;
     public DiscoveryFragment() {
         // Required empty public constructor
 
@@ -65,6 +66,7 @@ public class DiscoveryFragment extends BaseFragment {
         mTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
+                currentPosition = position;
                 mTabLayout.setCurrentTab(position);
             }
 
@@ -73,8 +75,14 @@ public class DiscoveryFragment extends BaseFragment {
 
             }
         });
-
         return rootView;
     }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if(mFragments != null && mFragments.size() > 0){
+            mFragments.get(currentPosition).onHiddenChanged(hidden);
+        }
+    }
 }

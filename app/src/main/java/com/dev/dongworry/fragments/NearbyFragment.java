@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.speech.RecognizerIntent;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -68,6 +69,19 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if(hidden && categoryClickedLayout != null){
+            hideCategoryPopup(categoryClickedLayout, true);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
     }
 
     private Handler mHandler = new Handler(){
