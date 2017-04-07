@@ -27,7 +27,7 @@ public class DiscoveryFragment extends BaseFragment {
 
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    private String[] mTitles = {"首页", "附近", "悬赏", "排行榜"};
+    private String[] mTitles;
     private int currentPosition = 0;
     public DiscoveryFragment() {
         // Required empty public constructor
@@ -39,6 +39,7 @@ public class DiscoveryFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_discovery, null);
+        mTitles = getResources().getStringArray(R.array.label_nav_discovery);
         mFragments.add(new HomeFragment());
         mFragments.add(new NearbyFragment());
         mFragments.add(new PostRewardFragment());

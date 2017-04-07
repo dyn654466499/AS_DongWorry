@@ -11,11 +11,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -24,6 +26,7 @@ import com.dev.dongworry.interfaces.Commands;
 import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.DialogUtils;
 import com.dev.dongworry.utils.NetUtil;
+import com.dev.dongworry.utils.ViewFactory;
 import com.tencent.connect.share.QQShare;
 import com.tencent.connect.share.QzoneShare;
 import com.tencent.tauth.IUiListener;
@@ -35,8 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.dev.dongworry.R.id.button_share_cancel;
-import static com.dev.dongworry.R.id.linearLayout_share_blank;
+import static com.dev.dongworry.R.id.gridView_share;
 import static com.dev.dongworry.consts.Constants.APK_LOGO_URL;
 import static com.dev.dongworry.consts.Constants.APK_MOBILE_DOWNLOAD_URL;
 import static com.dev.dongworry.consts.Constants.QQ_APP_ID;
@@ -113,10 +115,7 @@ public class ShareActivity extends BaseActivity {
 						resolveInfo.activityInfo.name);
 			}
 		}
-
-		GridView gridView_share = (GridView) findViewById(R.id.gridView_share);
-		String[] names = { "发送apk", "QQ好友", "微信好友", "朋友圈", "短信", "新浪微博",
-				"QQ空间", "复制链接" };
+		String[] names = getResources().getStringArray(R.array.label_share);
 		int[] icons = { R.drawable.bdsocialshare_sendapk,
 				R.drawable.bdsocialshare_qqfriend,
 				R.drawable.bdsocialshare_weixin_friend,
@@ -125,23 +124,10 @@ public class ShareActivity extends BaseActivity {
 				R.drawable.bdsocialshare_sinaweibo,
 				R.drawable.bdsocialshare_qqdenglu,
 				R.drawable.bdsocialshare_copylink };
-		// 新建List
-		ArrayList<Map<String, Object>> data_list = new ArrayList<>();
-		// 获取数据
-		for (int i = 0; i < icons.length; i++) {
-			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("imageView_share_item_icon", icons[i]);
-			map.put("textView_share_item_name", names[i]);
-			data_list.add(map);
-		}
-		String[] from = { "imageView_share_item_icon",
-				"textView_share_item_name" };
-		int[] to = { R.id.imageView_share_item_icon,
-				R.id.textView_share_item_name };
-		final SimpleAdapter adapter = new SimpleAdapter(this, data_list,
-				R.layout.item_third_share, from, to);
-		gridView_share.setAdapter(adapter);
-		gridView_share.setOnItemClickListener(new OnItemClickListener() {
+		GridView gridView = (GridView)findViewById(R.id.gridView_share);
+		final ListAdapter adapter = (ListAdapter)ViewFactory.getInstance().getSimpleGridViewAdapter(this, names, icons);
+		gridView.setAdapter(adapter);
+		gridView.setOnItemClickListener(new OnItemClickListener() {
 
 			@SuppressWarnings("deprecation")
 			@Override
@@ -250,7 +236,7 @@ public class ShareActivity extends BaseActivity {
 				}
 			}
 		});
-	}
+    }
 
 	@Override
 	public void finish() {

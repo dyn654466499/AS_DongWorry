@@ -75,7 +75,13 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         if(hidden && categoryClickedLayout != null){
-            hideCategoryPopup(categoryClickedLayout, true);
+            //延时，改善视觉体验
+            categoryClickedLayout.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    hideCategoryPopup(categoryClickedLayout, true);
+                }
+            },100);
         }
     }
 

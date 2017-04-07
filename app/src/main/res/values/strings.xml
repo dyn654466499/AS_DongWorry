@@ -657,6 +657,46 @@
         <item>263,ZW</item>
     </string-array>
 
+    <!-- 主页顶部导航栏的标签 -->
+    <string-array name="label_nav_main">
+        <item>我的</item>
+        <item>发现</item>
+        <item>动态</item>
+    </string-array>
+
+    <!-- 导航栏发现的标签 -->
+    <string-array name="label_nav_discovery">
+        <item>首页</item>
+        <item>附近</item>
+        <item>悬赏</item>
+        <item>排行榜</item>
+    </string-array>
+
+    <!-- 发现-首页的标签 -->
+    <string-array name="label_home">
+        <item>家教</item>
+        <item>维修</item>
+        <item>家政</item>
+        <item>装修</item>
+        <item>丽人</item>
+        <item>保健</item>
+        <item>娱乐</item>
+        <item>老人</item>
+        <item>全部</item>
+    </string-array>
+
+    <!-- 分享的标签 -->
+    <string-array name="label_share">
+        <item>发送apk</item>
+        <item>QQ好友</item>
+        <item>微信好友</item>
+        <item>朋友圈</item>
+        <item>短信</item>
+        <item>新浪微博</item>
+        <item>QQ空间</item>
+        <item>复制链接</item>
+    </string-array>
+
     <string name="title_activity_find_pwd">FindPWDActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_setting">SettingActivity</string>

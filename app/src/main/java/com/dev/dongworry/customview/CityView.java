@@ -24,7 +24,7 @@ import com.dev.dongworry.beans.city.City;
 import com.dev.dongworry.beans.city.CityBase;
 import com.dev.dongworry.beans.city.CityList;
 import com.dev.dongworry.consts.Constants;
-import com.dev.dongworry.interfaces.CallBack;
+import com.dev.dongworry.interfaces.onActivityResultCallBack;
 import com.dev.dongworry.utils.BaiduMapUtil;
 import com.dev.dongworry.utils.SPUtils;
 import com.google.gson.Gson;
@@ -91,13 +91,13 @@ public class CityView extends RelativeLayout{
         init(context);
     }
 
-    private CallBack callBack;
+    private onActivityResultCallBack onActivityResultCallBack;
     private void init(Context context){
         mContext = context;
         initViews();
         initData();
-        if(context instanceof CallBack) {
-            callBack = (CallBack) context;
+        if(context instanceof onActivityResultCallBack) {
+            onActivityResultCallBack = (onActivityResultCallBack) context;
         }
 
         String currentCity = SPUtils.getCurrentCity(mContext);
@@ -154,8 +154,8 @@ public class CityView extends RelativeLayout{
                 if(positionTemp != -1) {
                     try {
                         String cityName = ((City) adapter_city.getItem(positionTemp)).getCityname();
-                        if(callBack != null){
-                            callBack.onActivityResult(cityName);
+                        if(onActivityResultCallBack != null){
+                            onActivityResultCallBack.onActivityResult(cityName);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -170,8 +170,8 @@ public class CityView extends RelativeLayout{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 try {
                     String cityName = (String)adapter_hotCity.getItem(position);
-                    if(callBack != null){
-                        callBack.onActivityResult(cityName);
+                    if(onActivityResultCallBack != null){
+                        onActivityResultCallBack.onActivityResult(cityName);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -183,8 +183,8 @@ public class CityView extends RelativeLayout{
             @Override
             public void onClick(View v) {
                 String cityName = tv_local_city.getText().toString();
-                if(callBack != null && !"定位中...".equals(cityName)){
-                    callBack.onActivityResult(cityName);
+                if(onActivityResultCallBack != null && !"定位中...".equals(cityName)){
+                    onActivityResultCallBack.onActivityResult(cityName);
                 }
             }
         });

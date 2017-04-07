@@ -4,19 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.customview.CityView;
 import com.dev.dongworry.customview.CustomEditText;
-import com.dev.dongworry.interfaces.CallBack;
+import com.dev.dongworry.interfaces.onActivityResultCallBack;
 
 /**
  * Created by dengyaoning on 17/3/14.
  */
 
-public class CityActivity extends BaseActivity implements CallBack{
+public class CityActivity extends BaseActivity implements onActivityResultCallBack {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.dev.dongworry.R;
 import com.dev.dongworry.fragments.DiscoveryFragment;
 import com.dev.dongworry.fragments.DynamicFragment;
-import com.dev.dongworry.fragments.HomeFragment;
+import com.dev.dongworry.fragments.UserCenterFragment;
 import com.dev.dongworry.utils.PermissionUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -31,7 +31,7 @@ public class HomeActivity extends BaseActivity{
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private Context mContext;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    private String[] mTitles = {"我的", "发现", "动态"};
+    private String[] mTitles;
     /**
      * 退出时间记录，用于按两次返回键。
      */
@@ -42,7 +42,7 @@ public class HomeActivity extends BaseActivity{
         setContentView(R.layout.activity_home);
 //        PermissionUtils.requestPermission(this, PermissionUtils.CODE_RECORD_AUDIO, mPermissionGrant);
         mContext = this;
-
+        mTitles = getResources().getStringArray(R.array.label_nav_main);
         Drawable drawable = getResources().getDrawable(R.drawable.icon_arrows_gray_down);
         drawable.setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
         TextView tv_home_localCity = (TextView)findViewById(R.id.tv_home_localCity);
@@ -52,7 +52,7 @@ public class HomeActivity extends BaseActivity{
         ImageButton imageBtn_home_search = (ImageButton)findViewById(R.id.imageBtn_home_search);
         imageBtn_home_search.setOnClickListener(this);
 
-        mFragments.add(new HomeFragment());
+        mFragments.add(new UserCenterFragment());
         mFragments.add(new DiscoveryFragment());
         mFragments.add(new DynamicFragment());
         for (final String title : mTitles){
@@ -86,6 +86,7 @@ public class HomeActivity extends BaseActivity{
 
             }
         });
+        mTabLayout.setCurrentTab(1);
     }
 
     @Override
