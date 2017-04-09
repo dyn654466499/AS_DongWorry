@@ -17,6 +17,9 @@ public class SmartSortAdapter extends ArrayAdapter<String>{
 		this.resource = resource;
 	}
 
+	public void setCurPosition(int position){
+		click_position = position;
+	}
 	@Override
 	public String getItem(int position) {
 		// TODO Auto-generated method stub

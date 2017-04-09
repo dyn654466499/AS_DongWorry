@@ -28,6 +28,7 @@ import com.dev.dongworry.utils.PermissionUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.flyco.tablayout.widget.MsgView;
 
 import java.util.ArrayList;
 
@@ -93,6 +94,11 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
             }
         });
         mTabLayout.setCurrentTab(1);
+
+        int showDot_position = 1;
+        mTabLayout.showDot(showDot_position);
+        MsgView msgView = mTabLayout.getMsgView(showDot_position);
+        msgView.setBackgroundColor(getResources().getColor(R.color.white));
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {

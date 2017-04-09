@@ -15,7 +15,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.speech.RecognizerIntent;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -53,7 +52,7 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
 
     private RelativeLayout categoryClickedLayout;
 
-    private PopupWindow popupWindow_allCategory, popupWindow_topSearch,
+    private PopupWindow popupWindow_allCategory, popupWindow_way,
             popupWindow_smartSorting, popupWindow_screening;
     private TextView tv_nearby_localCity;
     private RefreshLayout mswipeLayout_nearby;
@@ -83,11 +82,6 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
                 }
             },100);
         }
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
     }
 
     private Handler mHandler = new Handler(){
@@ -148,6 +142,8 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
             }
         });
 
+        popupWindow_allCategory = createAllCategoryPopupWindow();
+        popupWindow_way = createWayPopupWindow();
         popupWindow_smartSorting = createSmartSortingPopupWindow();
         popupWindow_screening = createScreeningPopupWindow();
 
@@ -170,6 +166,187 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         mswipeLayout_nearby.setOnRefreshListener(this);
         mswipeLayout_nearby.setOnLoadListener(this);
         return rootView;
+    }
+
+    /**
+     * 创建“全部”popupwindow
+     * @return
+     */
+    private PopupWindow createAllCategoryPopupWindow() {
+        final View popupView_allCategory = LayoutInflater.from(mContext).inflate(
+                R.layout.category_smartsorting, null, false);
+
+        final PopupWindow popupWindow_allCategory = new PopupWindow(popupView_allCategory,
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, false);
+        popupWindow_allCategory.setAnimationStyle(R.style.popupTheme);
+
+        final ListView listView_allCategory = (ListView) popupView_allCategory
+                .findViewById(R.id.listView_smartSorting);
+        final String[] allCategoryNames = getResources().getStringArray(R.array.label_home);
+        /**
+         *
+         */
+        final SmartSortAdapter allCategoryAdapter = new SmartSortAdapter(
+                mContext, R.layout.category_smartsorting_item,
+                allCategoryNames);
+        allCategoryAdapter.setCurPosition(allCategoryNames.length -1);
+        listView_allCategory.setAdapter(allCategoryAdapter);
+        listView_allCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View view,
+                                    int position, long arg3) {
+                // TODO Auto-generated method stub
+                Button button = (Button) categoryClickedLayout.getChildAt(0);
+                button.setText(allCategoryNames[position]);
+                allCategoryAdapter.setSelectedPosition(position);
+                allCategoryAdapter.notifyDataSetChanged();
+                /**
+                 * 延迟popupwindow消失
+                 */
+                popupView_allCategory.postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        // TODO Auto-generated method stub
+                        popupWindow_allCategory.dismiss();
+                        /**
+                         * 在此按所选的排序执行代码
+                         */
+
+                    }
+                }, 300);
+            }
+        });
+
+        /**
+         * 关键的地方，切勿设置如下注释的函数，改为在touchListener中监听是否dismiss。
+         */
+        // categoryWindow.setTouchable(true);
+        // categoryWindow.setOutsideTouchable(true);
+        popupWindow_allCategory.setFocusable(false);
+        /**
+         * 必须设置drawable
+         */
+        popupWindow_allCategory.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow_allCategory.setTouchInterceptor(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                /**
+                 * 获取listView的矩形区域，判断点击是否在该区域内，若不在，则dismiss。
+                 */
+                Rect rect = new Rect(0, 0, listView_allCategory.getWidth(),
+                        listView_allCategory.getHeight());
+                if (!rect.contains((int) event.getX(), (int) event.getY())) {
+                    popupWindow_allCategory.dismiss();
+                }
+                return false;
+            }
+        });
+        popupWindow_allCategory.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+            @Override
+            public void onDismiss() {
+                // TODO Auto-generated method stub
+                if (categoryClickedLayout != null) {
+                    hideCategoryPopup(categoryClickedLayout, true);
+                }
+            }
+        });
+        return popupWindow_allCategory;
+    }
+
+    /**
+     * 创建“排序”popupwindow
+     * @return
+     */
+    private PopupWindow createWayPopupWindow() {
+        final View popupView_smartSorting = LayoutInflater.from(mContext).inflate(
+                R.layout.category_smartsorting, null, false);
+
+        final PopupWindow popupWindow_smartSorting = new PopupWindow(popupView_smartSorting,
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, false);
+        popupWindow_smartSorting.setAnimationStyle(R.style.popupTheme);
+
+        final ListView listView_smartSorting = (ListView) popupView_smartSorting
+                .findViewById(R.id.listView_smartSorting);
+        final String[] smartSortingNames = { getString(R.string.sort),
+                getString(R.string.topEvaluate),
+                getString(R.string.lastedRelease),
+                getString(R.string.topSales), getString(R.string.lowestPrice),
+                getString(R.string.highestPrice), };
+        /**
+         *
+         */
+        final SmartSortAdapter smartSortAdapter = new SmartSortAdapter(
+                mContext, R.layout.category_smartsorting_item,
+                smartSortingNames);
+        listView_smartSorting.setAdapter(smartSortAdapter);
+        listView_smartSorting.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View view,
+                                    int position, long arg3) {
+                // TODO Auto-generated method stub
+                Button button = (Button) categoryClickedLayout.getChildAt(0);
+                button.setText(smartSortingNames[position]);
+                smartSortAdapter.setSelectedPosition(position);
+                smartSortAdapter.notifyDataSetChanged();
+                /**
+                 * 延迟popupwindow消失
+                 */
+                popupView_smartSorting.postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        // TODO Auto-generated method stub
+                        popupWindow_smartSorting.dismiss();
+                        /**
+                         * 在此按所选的排序执行代码
+                         */
+
+                    }
+                }, 300);
+            }
+        });
+
+        /**
+         * 关键的地方，切勿设置如下注释的函数，改为在touchListener中监听是否dismiss。
+         */
+        // categoryWindow.setTouchable(true);
+        // categoryWindow.setOutsideTouchable(true);
+        popupWindow_smartSorting.setFocusable(false);
+        /**
+         * 必须设置drawable
+         */
+        popupWindow_smartSorting.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow_smartSorting.setTouchInterceptor(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                /**
+                 * 获取listView的矩形区域，判断点击是否在该区域内，若不在，则dismiss。
+                 */
+                Rect rect = new Rect(0, 0, listView_smartSorting.getWidth(),
+                        listView_smartSorting.getHeight());
+                if (!rect.contains((int) event.getX(), (int) event.getY())) {
+                    popupWindow_smartSorting.dismiss();
+                }
+                return false;
+            }
+        });
+        popupWindow_smartSorting.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+            @Override
+            public void onDismiss() {
+                // TODO Auto-generated method stub
+                if (categoryClickedLayout != null) {
+                    hideCategoryPopup(categoryClickedLayout, true);
+                }
+            }
+        });
+        return popupWindow_smartSorting;
     }
 
     /**
@@ -466,10 +643,10 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         button.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
         switch (button.getId()) {
             case R.id.btn_nearby_allCategories:
-
+                popupWindow_allCategory.showAsDropDown(categoryLayout);
                 break;
             case R.id.btn_nearby_jewel:
-
+                popupWindow_way.showAsDropDown(categoryLayout);
                 break;
             case R.id.btn_nearby_smartSorting:
                 popupWindow_smartSorting.showAsDropDown(categoryLayout);
@@ -498,18 +675,24 @@ public class NearbyFragment extends BaseFragment implements View.OnClickListener
         button.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
         switch (button.getId()) {
             case R.id.btn_nearby_allCategories:
-
+                if (popupWindow_allCategory.isShowing()) {
+                    popupWindow_allCategory.dismiss();
+                }
                 break;
             case R.id.btn_nearby_jewel:
-
+                if (popupWindow_way.isShowing()) {
+                    popupWindow_way.dismiss();
+                }
                 break;
             case R.id.btn_nearby_smartSorting:
-                if (popupWindow_smartSorting.isShowing())
+                if (popupWindow_smartSorting.isShowing()) {
                     popupWindow_smartSorting.dismiss();
+                }
                 break;
             case R.id.btn_nearby_screening:
-                if (popupWindow_screening.isShowing())
+                if (popupWindow_screening.isShowing()) {
                     popupWindow_screening.dismiss();
+                }
                 break;
             default:
                 break;
