@@ -6,10 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -26,6 +26,7 @@ import com.dev.dongworry.interfaces.Commands;
 import com.dev.dongworry.utils.DialogUtils;
 import com.dev.dongworry.utils.SPUtils;
 import com.dev.dongworry.R;
+import com.dev.dongworry.utils.VoiceUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,9 +37,30 @@ import static com.dev.dongworry.consts.Constants.SEARCH_KEY;
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
 public class SearchActivity extends BaseActivity{
 
-	private CustomEditText editText_search_goods;
+	private CustomEditText et_search;
 	private Context mContext;
-	
+	private Handler mHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			switch (msg.what){
+				case VoiceUtils.SPEECH_SUCEESE:
+					if(msg.obj instanceof String){
+						String searchKey = (String)msg.obj;
+						et_search.setText(searchKey.replaceAll("[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……& amp;*（）——+|{}【】‘；：”“’。，、？|-]", ""));
+						//TODO 执行搜索
+					}
+					break;
+
+				case VoiceUtils.SPEECH_FAIL:
+					if(msg.obj instanceof String){
+						showTip((String)msg.obj);
+					}
+					break;
+			}
+		}
+	};
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -49,27 +71,32 @@ public class SearchActivity extends BaseActivity{
 
 	private void initView() {
 		setContentView(R.layout.activity_search);
-		editText_search_goods = (CustomEditText)findViewById(R.id.editText_search_goods);
-//		editText_search_goods.setText(getIntent().getStringExtra("searchKey"));
-//		/**
-//		 * 将光标移到最后，方便修改文字内容。
-//		 */
-//		CharSequence charSequence = editText_search_goods.getText();
-//		if (charSequence instanceof Spannable) {
-//			Spannable spanText = (Spannable) charSequence;
-//			Selection.setSelection(spanText, charSequence.length());
-//		}
+		et_search = (CustomEditText)findViewById(R.id.editText_search_goods);
+		et_search.setCommand(new Commands() {
+            @Override
+            public void executeCommand() {
+                // TODO Auto-generated method stub
+                try {
+                    VoiceUtils.startSpeech(mContext,mHandler);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(mContext, "请先装谷歌语音助手", Toast.LENGTH_SHORT)
+                            .show();
+                }
+
+            }
+        });
 		/**
 		 * 需要delay一下才能弹出输入法。
 		 */
-		editText_search_goods.postDelayed(new Runnable() {
+		et_search.postDelayed(new Runnable() {
 			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				InputMethodManager inputMethodManager = (InputMethodManager) mContext
 						.getSystemService(Context.INPUT_METHOD_SERVICE);
-				inputMethodManager.showSoftInput(editText_search_goods, InputMethodManager.SHOW_FORCED);
+				inputMethodManager.showSoftInput(et_search, InputMethodManager.SHOW_FORCED);
 			}
 		}, 100);
 		
@@ -101,7 +128,7 @@ public class SearchActivity extends BaseActivity{
 			public void onItemClick(AdapterView<?> arg0, View view, int position,
 					long arg3) {
 				// TODO Auto-generated method stub
-				editText_search_goods.setText((String) data_list.get(position).get("text"));
+				et_search.setText((String) data_list.get(position).get("text"));
 				button_search.callOnClick();
 			}
 		});
@@ -118,7 +145,7 @@ public class SearchActivity extends BaseActivity{
 				public void onItemClick(AdapterView<?> arg0, View view, int position,
 						long arg3) {
 					// TODO Auto-generated method stub
-					editText_search_goods.setText(searchKey.get(position));
+					et_search.setText(searchKey.get(position));
 					button_search.callOnClick();
 				}
 			});
@@ -141,10 +168,10 @@ public class SearchActivity extends BaseActivity{
 				 * 将搜索关键字回调给主界面，并设置搜索历史记录
 				 */
 				Intent intent = new Intent();
-				if(editText_search_goods.getText().length() == 0){
+				if(et_search.getText().length() == 0){
 					Toast.makeText(mContext, "请输入关键字", Toast.LENGTH_SHORT).show();
 				}else{
-					String searchKey = editText_search_goods.getText().toString();
+					String searchKey = et_search.getText().toString();
 					intent.putExtra(SEARCH_KEY, searchKey); 
 					SPUtils.setSearchHistory(mContext, searchKey);
 					setResult(Activity.RESULT_OK, intent);
@@ -179,7 +206,7 @@ public class SearchActivity extends BaseActivity{
 //			/**
 //			 * 将输入结果回调给主界面，同时设置搜索历史记录
 //			 */
-//            String text= editText_search_goods.getText().toString();  
+//            String text= et_search.getText().toString();
 //            SPUtils.setSearchHistory(mContext, text);
 //			Intent intent = new Intent();
 //		    intent.putExtra("text", text); 

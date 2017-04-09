@@ -12,7 +12,7 @@ import android.widget.EditText;
 import com.dev.dongworry.interfaces.Commands;
 
 public class CustomEditText extends EditText {
-	private final String TAG = "CustomEditText";
+	private final String TAG = this.getClass().getSimpleName();
 	private Drawable dRight;
 	private Drawable dLeft;
 	private Rect rBounds;

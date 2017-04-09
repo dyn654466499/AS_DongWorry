@@ -7,10 +7,16 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +33,7 @@ import java.util.ArrayList;
 
 import static com.dev.dongworry.R.id.tv_home_localCity;
 
-public class HomeActivity extends BaseActivity{
+public class HomeActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener{
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private Context mContext;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
@@ -87,11 +93,98 @@ public class HomeActivity extends BaseActivity{
             }
         });
         mTabLayout.setCurrentTab(1);
+
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                if(drawer.getTag() instanceof Integer){
+                    Intent intent;
+                    switch ((int)drawer.getTag()){
+                        case R.id.btn_drawer_login:
+                            intent = new Intent(HomeActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.llayout_drawer_setting:
+                            intent = new Intent(HomeActivity.this,SettingActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.llayout_drawer_logout:
+
+                            break;
+                    }
+                    drawer.setTag(null);
+                }
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        Button btn_drawer_login = (Button)navigationView.getHeaderView(0).findViewById(R.id.btn_drawer_login);
+        btn_drawer_login.setOnClickListener(this);
+
+        LinearLayout llayout_drawer_setting = (LinearLayout) navigationView.findViewById(R.id.llayout_drawer_setting);
+        llayout_drawer_setting.setOnClickListener(this);
+
+        LinearLayout llayout_drawer_logout = (LinearLayout) navigationView.findViewById(R.id.llayout_drawer_logout);
+        llayout_drawer_logout.setOnClickListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.menu_item_loose_change) {
+            // Handle the camera action
+        } else if (id == R.id.menu_item_recommend_money) {
+
+        } else if (id == R.id.menu_item_my_auth) {
+
+        } else if (id == R.id.menu_item_my_task) {
+
+        } else if (id == R.id.menu_item_transaction_history) {
+
+        } else if (id == R.id.menu_item_my_collection) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     @Override
     public void onClick(View v) {
         Intent intent;
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         switch (v.getId()){
             case tv_home_localCity:
                 intent = new Intent(this, CityActivity.class);
@@ -101,12 +194,23 @@ public class HomeActivity extends BaseActivity{
                 intent = new Intent(this, SearchActivity.class);
                 startActivityForResult(intent, 0);
                 break;
+            case R.id.btn_drawer_login:
+                drawer.setTag(R.id.btn_drawer_login);
+                drawer.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.llayout_drawer_setting:
+                drawer.setTag(R.id.llayout_drawer_setting);
+                drawer.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.llayout_drawer_logout:
+                drawer.setTag(R.id.llayout_drawer_logout);
+                drawer.closeDrawer(GravityCompat.START);
+                break;
         }
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - exitTime) > 2000) {
                 Toast.makeText(mContext, R.string.toast_exit_app, Toast.LENGTH_SHORT).show();

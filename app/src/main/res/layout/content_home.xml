@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dev.dongworry.activities.HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/themeColor"
+        >
+
+        <TextView
+            android:id="@+id/tv_home_localCity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:text="深圳 "
+            android:drawableRight="@drawable/icon_arrows_gray_down"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            />
+
+        <com.flyco.tablayout.CommonTabLayout
+            android:id="@+id/tabLayout_home"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:background="@color/themeColor"
+            tl:tl_iconVisible="false"
+            tl:tl_indicator_style="BLOCK"
+            tl:tl_textSelectColor="#ffffff"
+            tl:tl_textUnselectColor="#eab2b2"
+            tl:tl_textsize="18sp"
+            tl:tl_indicator_color="@color/themeColor"
+            />
+
+        <ImageButton
+            android:id="@+id/imageBtn_home_search"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_search"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/ll_home_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        >
+     </FrameLayout>
+
+
+</LinearLayout>

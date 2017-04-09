@@ -32,7 +32,7 @@
             android:background="@drawable/editext_frame"
             android:drawableLeft="@drawable/cityselect_search_icon"
             android:drawableRight="@drawable/searchbar_icon_voice_normal"
-            android:hint="@string/inputGoodsName"
+            android:hint="输入搜索关键字"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:singleLine="true"

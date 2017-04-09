@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:background="#666666"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/llayout_drawer_noLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="登录咚哇驴\n开启附近效率生活"
+        android:textSize="14sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btn_drawer_login"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_standard_bg_transparent"
+        android:layout_gravity="center"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llayout_drawer_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        >
+
+        <com.dev.dongworry.customview.CircleImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/login_bind_dialog_head"
+            android:layout_gravity="bottom"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:background="@drawable/btn_standard_bg_transparent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="未签到"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
