@@ -69,6 +69,8 @@ public class Constants {
      public static final String CURRENT_ADDRESS = "current_address";
      public static final String CURRENT_LATITUDE = "current_latitude";
      public static final String CURRENT_LONGITUDE = "current_longitude";
+     public static final String LOGIN_INFO = "login_info";
+     public static final String IS_LOGIN = "is_login";
      public static final float MAP_BASE_ZOOM = 15;
      
      public static final String LOCATE_SOMEWHERE = "locate_somewhere";

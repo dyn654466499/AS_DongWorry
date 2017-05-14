@@ -21,7 +21,7 @@
 
         <fragment
             android:id="@+id/fragment_phone"
-            android:name="com.dev.dongworry.fragments.PhoneFragment"
+            android:name="com.dev.dongworry.fragments.login.PhoneFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
@@ -38,7 +38,7 @@
 
          <fragment
             android:id="@+id/fragment_pwd"
-            android:name="com.dev.dongworry.fragments.PWDFragment"
+            android:name="com.dev.dongworry.fragments.login.PWDFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/frame" />
@@ -46,7 +46,7 @@
 
       <fragment
             android:id="@+id/fragment_vcode"
-            android:name="com.dev.dongworry.fragments.VCodeFragment"
+            android:name="com.dev.dongworry.fragments.login.VCodeFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"

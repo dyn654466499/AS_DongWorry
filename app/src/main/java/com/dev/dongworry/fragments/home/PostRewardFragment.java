@@ -1,4 +1,4 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.home;
 
 
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.fragments.BaseFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 /**
  * 悬赏页面
  */
-public class PostRewardFragment extends BaseFragment{
+public class PostRewardFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

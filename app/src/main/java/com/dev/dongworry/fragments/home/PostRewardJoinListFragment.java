@@ -1,4 +1,4 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.dev.dongworry.R;
 import com.dev.dongworry.activities.PostRewardJoinActivity;
 import com.dev.dongworry.customview.CButton;
+import com.dev.dongworry.fragments.BaseFragment;
 
 public class PostRewardJoinListFragment extends BaseFragment {
     @Nullable

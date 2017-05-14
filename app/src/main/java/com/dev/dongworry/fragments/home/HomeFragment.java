@@ -1,4 +1,4 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ListAdapter;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.customview.NestGridView;
+import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.utils.ViewFactory;
 
 
@@ -17,7 +18,7 @@ import com.dev.dongworry.utils.ViewFactory;
  * @author 邓耀宁
  *
  */
-public class HomeFragment extends BaseFragment{
+public class HomeFragment extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

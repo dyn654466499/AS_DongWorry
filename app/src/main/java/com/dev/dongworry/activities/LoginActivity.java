@@ -3,6 +3,9 @@ package com.dev.dongworry.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -11,13 +14,21 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.baidu.mapapi.map.Text;
 import com.dev.dongworry.R;
+import com.dev.dongworry.beans.login.LoginInfo;
+import com.dev.dongworry.consts.login.LoginEvent;
 import com.dev.dongworry.customview.CButton;
+import com.dev.dongworry.managers.login.LoginManager;
 import com.dev.dongworry.models.LoginModel;
+import com.dev.dongworry.utils.CommonUtils;
 
 import java.util.List;
 import java.util.Map;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * “登录界面”的Activity
@@ -51,8 +62,29 @@ public class LoginActivity extends BaseActivity {
 		tv_title.setText(getText(R.string.login));
 		editText_phone = (EditText) findViewById(R.id.editText_phone);
 		editText_pwd = (EditText)findViewById(R.id.editText_password);
+		editText_phone.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				if(s.toString().length() > 0){
+					button_sureLogin.setEnabled(true);
+				}else{
+					button_sureLogin.setEnabled(false);
+				}
+			}
+		});
 		
 		button_sureLogin = (CButton)findViewById(R.id.button_sureLogin);
+		button_sureLogin.setEnabled(false);
 		button_forgetPWD = (Button)findViewById(R.id.button_forgetPWD);
 		button_login_register = (Button)findViewById(R.id.button_login_register);
 //		button_more_loginOptions = (Button) mActivity
@@ -135,11 +167,37 @@ public class LoginActivity extends BaseActivity {
 			case R.id.button_login_register:
 				startActivity(new Intent(this,RegisterActivity.class));
 				break;
+
+			case R.id.button_sureLogin:
+				String phone = editText_phone.getText().toString();
+				String pwd = editText_pwd.getText().toString();
+				if(canLogin(phone,pwd)){
+					LoginInfo info = new LoginInfo();
+					info.phoneNum = phone;
+					info.userName = "邓某";
+					LoginManager.getInstance().saveUserInfo(info);
+					EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
+					finish();
+				}
+				break;
+
 			default:
 				break;
 		}
 	}
 
+	private boolean canLogin(String phone, String pwd){
+		if (CommonUtils.isPhoneNum(phone)) {
+			if(!TextUtils.isEmpty(pwd)){
+				return true;
+			}else{
+				Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
+			}
+		} else {
+			Toast.makeText(this, "手机号格式错误", Toast.LENGTH_SHORT).show();
+		}
+		return false;
+	}
 	@Override
 	public void onViewChange(Message msg) {
 

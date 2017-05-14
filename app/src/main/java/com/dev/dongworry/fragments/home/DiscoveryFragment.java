@@ -1,4 +1,4 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.home;
 
 
 import android.os.Bundle;
@@ -6,14 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.dev.dongworry.R;
-import com.dev.dongworry.fragments.NearbyFragment;
-import com.dev.dongworry.fragments.PostRewardFragment;
-import com.dev.dongworry.fragments.PublishFragment;
-import com.dev.dongworry.fragments.UserCenterFragment;
-import com.dev.dongworry.utils.CommonUtils;
+import com.dev.dongworry.fragments.BaseFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -82,8 +77,12 @@ public class DiscoveryFragment extends BaseFragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if(mFragments != null && mFragments.size() > 0){
-            mFragments.get(currentPosition).onHiddenChanged(hidden);
+        try {
+            if (mFragments != null && mFragments.size() > 0 && currentPosition < mFragments.size()) {
+                mFragments.get(currentPosition).onHiddenChanged(hidden);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

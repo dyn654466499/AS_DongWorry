@@ -1,4 +1,4 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.home;
 
 import android.app.Activity;
 import android.content.Context;
@@ -36,6 +36,7 @@ import com.dev.dongworry.adapters.ScreeningPriceAdapter;
 import com.dev.dongworry.adapters.SmartSortAdapter;
 import com.dev.dongworry.customview.CustomEditText;
 import com.dev.dongworry.customview.RefreshLayout;
+import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.utils.ImageUtil;
 import com.dev.dongworry.utils.VoiceUtils;
 

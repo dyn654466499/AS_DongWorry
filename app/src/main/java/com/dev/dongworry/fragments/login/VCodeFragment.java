@@ -1,4 +1,4 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.login;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.activities.FindPWDActivity;
+import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.interfaces.OnViewListener;
 
 import static com.dev.dongworry.R.id.button_getVcode;
@@ -19,7 +20,7 @@ import static com.dev.dongworry.R.id.button_getVcode;
  * @author 邓耀宁
  *
  */
-public class VCodeFragment extends BaseFragment{
+public class VCodeFragment extends BaseFragment {
 	private Button button_getVcode;
 	private OnViewListener onViewListener;
 	@Override

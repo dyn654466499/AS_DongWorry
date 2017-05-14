@@ -23,7 +23,7 @@
 
         <fragment
             android:id="@+id/fragment_phone"
-            android:name="com.dev.dongworry.fragments.PhoneFragment"
+            android:name="com.dev.dongworry.fragments.login.PhoneFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp" />
@@ -37,7 +37,7 @@
 
          <fragment
             android:id="@+id/fragment_pwd"
-            android:name="com.dev.dongworry.fragments.PWDFragment"
+            android:name="com.dev.dongworry.fragments.login.PWDFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         </LinearLayout>
@@ -53,7 +53,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/frame_standard"
+        android:background="@drawable/btn_switch_state"
         android:textSize="18sp"
         android:textColor="@drawable/btn_textcolor_selector"
         android:text="@string/sureLogin" />

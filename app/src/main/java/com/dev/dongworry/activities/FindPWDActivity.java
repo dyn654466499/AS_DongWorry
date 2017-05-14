@@ -12,9 +12,9 @@ import android.widget.Toast;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.consts.ControlState;
-import com.dev.dongworry.fragments.PWDFragment;
-import com.dev.dongworry.fragments.PhoneFragment;
-import com.dev.dongworry.fragments.VCodeFragment;
+import com.dev.dongworry.fragments.login.PWDFragment;
+import com.dev.dongworry.fragments.login.PhoneFragment;
+import com.dev.dongworry.fragments.login.VCodeFragment;
 import com.dev.dongworry.interfaces.OnViewListener;
 import com.dev.dongworry.models.FindPWDModel;
 import com.dev.dongworry.utils.CommonUtils;

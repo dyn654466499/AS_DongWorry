@@ -1,8 +1,11 @@
 package com.dev.dongworry.utils;
 
+import java.io.IOException;
+import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 
 import com.baidu.mapapi.model.LatLng;
+import com.dev.dongworry.beans.login.LoginInfo;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -82,5 +85,52 @@ public class SPUtils {
 		}
 		return ll;
 	}
-	
+
+	public static void setIsLogin(Context context,boolean isLogin){
+		SharedPreferences preferences = context.getSharedPreferences(LOGIN_INFO, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putBoolean(IS_LOGIN, isLogin);
+		editor.commit();
+	}
+
+	public static boolean isLogin(Context context){
+		SharedPreferences preferences = context.getSharedPreferences(LOGIN_INFO, Context.MODE_PRIVATE);
+		return preferences.getBoolean(IS_LOGIN,false);
+	}
+
+	public static synchronized void setUserInfo(Context context, LoginInfo user)
+	{
+		SharedPreferences preferences = context.getSharedPreferences(LOGIN_INFO, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		String str="";
+		try {
+			str = SerializableUtils.obj2Str(user);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		editor.putString(LOGIN_INFO,str);
+		editor.commit();
+	}
+
+	public static synchronized LoginInfo getUserInfo(Context context)
+	{
+		SharedPreferences preferences = context.getSharedPreferences(LOGIN_INFO, Context.MODE_PRIVATE);
+		//获取序列化的数据
+		String str = preferences.getString(LOGIN_INFO, "");
+		LoginInfo userInfo = null;
+		try {
+			Object obj = SerializableUtils.str2Obj(str);
+			if(obj != null){
+				userInfo = (LoginInfo)obj;
+			}
+		} catch (StreamCorruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return userInfo;
+	}
 }

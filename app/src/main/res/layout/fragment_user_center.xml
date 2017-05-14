@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray_deep"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,14 +12,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@drawable/frame"
-                android:orientation="horizontal" >
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_frame"
+                android:paddingBottom="1px"
+                android:paddingTop="1px"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                >
 
                 <com.dev.dongworry.customview.RoundImageView
                     android:id="@+id/img_user_image"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:background="@drawable/user_default_image" />
 
@@ -27,14 +33,101 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:text="未登录"/>
+
+                <LinearLayout
+                    android:id="@+id/llayout_usercenter_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:id="@+id/tv_usercenter_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text="名字"
+
+                            />
+                        <TextView
+                            android:id="@+id/tv_usercenter_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:text="手机号"
+                            android:layout_marginTop="5dp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        >
+                        <ProgressBar
+                            android:id="@+id/pb_usercenter_credibility"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:progress="90"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:progressDrawable="@drawable/progress_horizontal"
+                            android:max="100"
+                            android:layout_gravity="center"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="信誉："
+                            android:textSize="16sp"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_usercenter_credibility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9"
+                            android:textSize="16sp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llayout_usercenter_own"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/white"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                >
+                <GridView
+                    android:id="@+id/gv_usercenter_own"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="3"
+                    >
+                </GridView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/layout_frame_nomal"
+                android:background="@drawable/layout_frame"
                 android:divider="@drawable/line"
                 android:orientation="vertical"
                 android:paddingBottom="1px"
@@ -42,29 +135,16 @@
                 android:showDividers="middle" >
 
                 <TextView
-                    android:id="@+id/tv_usercenter_ability"
+                    android:id="@+id/tv_usercenter_auth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/user_layout_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="@dimen/user_layout_margin"
                     android:drawableRight="@drawable/daren_middle_more"
                     android:gravity="left|center"
                     android:paddingRight="10dp"
-                    android:text="@string/user_ability"
-                    android:textSize="@dimen/user_center_text_size" />
-
-                <TextView
-                    android:id="@+id/tv_usercenter_pushInfo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/user_layout_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginTop="@dimen/user_layout_margin"
-                    android:drawableRight="@drawable/daren_middle_more"
-                    android:gravity="left|center"
-                    android:paddingRight="10dp"
-                    android:text="@string/user_push_info"
+                    android:text="@string/user_auth"
                     android:textSize="@dimen/user_center_text_size" />
 
                 <TextView
@@ -72,7 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/user_layout_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="@dimen/user_layout_margin"
                     android:drawableRight="@drawable/daren_middle_more"
                     android:gravity="left|center"
@@ -81,30 +161,70 @@
                     android:textSize="@dimen/user_center_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_usercenter_service"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/user_layout_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginTop="@dimen/user_layout_margin"
-                    android:drawableRight="@drawable/daren_middle_more"
-                    android:gravity="left|center"
-                    android:paddingRight="10dp"
-                    android:text="@string/contact_service"
-                    android:textSize="@dimen/user_center_text_size" />
-
-                <TextView
                     android:id="@+id/tv_usercenter_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/user_layout_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="@dimen/user_layout_margin"
                     android:drawableRight="@drawable/daren_middle_more"
                     android:gravity="left|center"
                     android:paddingRight="10dp"
-                    android:text="@string/user_setting"
+                    android:text="我的设置"
+                    android:textSize="@dimen/user_center_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_usercenter_feedBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/user_layout_margin"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="@dimen/user_layout_margin"
+                    android:drawableRight="@drawable/daren_middle_more"
+                    android:gravity="left|center"
+                    android:paddingRight="10dp"
+                    android:text="@string/problem_feed_back"
                     android:textSize="@dimen/user_center_text_size" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_usercenter_makeMoney"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="@dimen/user_layout_margin"
+            android:layout_marginBottom="@dimen/user_layout_margin"
+            android:drawableRight="@drawable/daren_middle_more"
+            android:gravity="left|center"
+            android:paddingRight="10dp"
+            android:text="@string/user_make_money"
+            android:textSize="@dimen/user_center_text_size" />
+
+        <TextView
+            android:id="@+id/tv_usercenter_securityTrading"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:layout_marginBottom="@dimen/user_layout_margin"
+            android:drawableRight="@drawable/daren_middle_more"
+            android:gravity="left|center"
+            android:paddingRight="10dp"
+            android:text="@string/user_security_trading"
+            android:textSize="@dimen/user_center_text_size" />
+
+        <com.dev.dongworry.customview.CButton
+            android:id="@+id/btn_usercenter_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="@dimen/user_layout_margin"
+            android:background="@drawable/bg_selector_frame"
+            android:visibility="gone"
+            android:text="退出登录"
+            android:textColor="#FF1133"
+            android:textSize="16sp" />
     </LinearLayout>
 </ScrollView>

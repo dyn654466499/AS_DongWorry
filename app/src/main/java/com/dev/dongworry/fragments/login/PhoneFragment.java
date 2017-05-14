@@ -1,4 +1,4 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.login;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.utils.CommonUtils;
 
 /**
@@ -20,7 +21,7 @@ import com.dev.dongworry.utils.CommonUtils;
  *
  */
 @SuppressLint("NewApi") 
-public class PhoneFragment extends BaseFragment{
+public class PhoneFragment extends BaseFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub

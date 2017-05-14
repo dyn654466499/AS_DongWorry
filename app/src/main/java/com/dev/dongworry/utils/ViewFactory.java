@@ -42,12 +42,29 @@ public class ViewFactory {
              map.put("tv_item_name", texts[i]);
              data_list.add(map);
          }
-         String[] from = { "iv_item_icon",
-                 "tv_item_name" };
+         String[] from = { "iv_item_icon", "tv_item_name" };
          int[] to = { R.id.iv_item_icon,
                  R.id.tv_item_name};
          final SimpleAdapter adapter = new SimpleAdapter(context, data_list,
                  R.layout.item_simple_grid, from, to);
          return adapter;
      }
+
+    public Adapter getTextGridViewAdapter(Context context, String[] tops, String[] bottoms){
+        // 新建List
+        ArrayList<Map<String, Object>> data_list = new ArrayList<>();
+        // 获取数据
+        for (int i = 0; i < tops.length; i++) {
+            Map<String, Object> map = new HashMap<>();
+            map.put("tv_top", tops[i]);
+            map.put("tv_bottom", bottoms[i]);
+            data_list.add(map);
+        }
+        String[] from = { "tv_top",
+                "tv_bottom" };
+        int[] to = { R.id.tv_top, R.id.tv_bottom};
+        final SimpleAdapter adapter = new SimpleAdapter(context, data_list,
+                R.layout.item_text_grid, from, to);
+        return adapter;
+    }
 }

@@ -21,9 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev.dongworry.R;
-import com.dev.dongworry.fragments.DiscoveryFragment;
-import com.dev.dongworry.fragments.DynamicFragment;
-import com.dev.dongworry.fragments.UserCenterFragment;
+import com.dev.dongworry.fragments.dynamic.DynamicFragment;
+import com.dev.dongworry.fragments.home.DiscoveryFragment;
+import com.dev.dongworry.fragments.mine.MineFragment;
+import com.dev.dongworry.managers.login.LoginManager;
 import com.dev.dongworry.utils.PermissionUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -59,7 +60,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         ImageButton imageBtn_home_search = (ImageButton)findViewById(R.id.imageBtn_home_search);
         imageBtn_home_search.setOnClickListener(this);
 
-        mFragments.add(new UserCenterFragment());
+        mFragments.add(new MineFragment());
         mFragments.add(new DiscoveryFragment());
         mFragments.add(new DynamicFragment());
         for (final String title : mTitles){
@@ -101,6 +102,8 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         msgView.setBackgroundColor(getResources().getColor(R.color.white));
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //禁止滑动
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
@@ -283,4 +286,8 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

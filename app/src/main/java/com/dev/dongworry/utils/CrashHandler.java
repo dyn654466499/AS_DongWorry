@@ -86,7 +86,7 @@ public void uncaughtException(Thread thread, Throwable ex) {
                 thread.getId(), ex.getMessage(),
                 Log.getStackTraceString(ex));
         printWriter.print(logMessage);
-        printWriter.print("\n\n-------------------------------------------------\n\n");
+        printWriter.print("\n\n-------------------------zheli-----------------------\n\n");
     } catch (Throwable tr2) {
         //最后回抛出异常，所以这里就可以不用处理了。
     } finally {

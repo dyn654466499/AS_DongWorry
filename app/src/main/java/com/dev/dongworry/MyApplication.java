@@ -1,8 +1,11 @@
 package com.dev.dongworry;
 
+import android.app.ActivityManager;
 import android.app.Application;
 import android.util.Log;
 
+import com.dev.dongworry.managers.AppManager;
+import com.dev.dongworry.managers.login.LoginManager;
 import com.dev.dongworry.utils.CrashHandler;
 import com.iflytek.cloud.SpeechUtility;
 
@@ -16,6 +19,7 @@ public class MyApplication extends Application{
 
 	@Override
 	public void onCreate() {
+		AppManager.getInstance().setAppContext(this);
 		CrashHandler.getInstance().init(this);
 		SpeechUtility.createUtility(getApplicationContext(), "appid="+getString(R.string.iflyteck_app_id));
 		/**
@@ -68,5 +72,9 @@ public class MyApplication extends Application{
 		
 	}
 
-
+	@Override
+	public void onTerminate() {
+		super.onTerminate();
+		LoginManager.getInstance().logout();
+	}
 }

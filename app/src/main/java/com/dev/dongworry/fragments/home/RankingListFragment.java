@@ -1,19 +1,22 @@
-package com.dev.dongworry.fragments;
+package com.dev.dongworry.fragments.home;
 
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.dev.dongworry.R;
+import com.dev.dongworry.fragments.BaseFragment;
+
 
 /**
- * 发布页面
+ * 排行榜页面.
  */
-public class PublishFragment extends BaseFragment {
+public class RankingListFragment extends BaseFragment {
 
 
-    public PublishFragment() {
+    public RankingListFragment() {
         // Required empty public constructor
     }
 
@@ -22,7 +25,7 @@ public class PublishFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_publish, container, false);
+        return inflater.inflate(R.layout.fragment_ranking_list, container, false);
     }
 
 }
