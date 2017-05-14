@@ -28,19 +28,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/frame"
-            android:orientation="horizontal" >
-
          <fragment
             android:id="@+id/fragment_pwd"
+            android:layout_marginTop="20dp"
             android:name="com.dev.dongworry.fragments.login.PWDFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        </LinearLayout>
 
     </LinearLayout>
 

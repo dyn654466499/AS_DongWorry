@@ -61,7 +61,25 @@ public class CommonUtils {
 	    String telRegex = "[1][358]\\d{9}";//"[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。  
 	    if (TextUtils.isEmpty(phoneNumber)) return false;  
 	    else return phoneNumber.matches(telRegex);  
-	   } 
+	   }
+
+	public static boolean checkPassword(String pwd){
+		if(!TextUtils.isEmpty(pwd)){
+			boolean isDigit = false;//定义一个boolean值，用来表示是否包含数字
+			boolean isLowerCase = false;//定义一个boolean值，用来表示是否包含字母
+			for (int i = 0; i < pwd.length(); i++) {
+				if (Character.isDigit(pwd.charAt(i))) {   //用char包装类中的判断数字的方法判断每一个字符
+					isDigit = true;
+				} else if (Character.isLowerCase(pwd.charAt(i))) {  //用char包装类中的判断字母的方法判断每一个字符
+					isLowerCase = true;
+				}
+			}
+			String regex = "^[a-zA-Z0-9]+$";
+			boolean isRight = pwd.length() >= 8 && isDigit && isLowerCase && pwd.matches(regex);
+			return isRight;
+		}
+		return false;
+	}
 	
 	/**
 	 * 自定义middle()方法：取出语义理解返回的文本结果中的特定结果

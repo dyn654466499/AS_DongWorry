@@ -6,6 +6,7 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -24,6 +25,7 @@ import com.dev.dongworry.customview.CButton;
 import com.dev.dongworry.managers.login.LoginManager;
 import com.dev.dongworry.models.LoginModel;
 import com.dev.dongworry.utils.CommonUtils;
+import com.dev.dongworry.utils.MD5Utils;
 
 import java.util.List;
 import java.util.Map;
@@ -170,11 +172,12 @@ public class LoginActivity extends BaseActivity {
 
 			case R.id.button_sureLogin:
 				String phone = editText_phone.getText().toString();
-				String pwd = editText_pwd.getText().toString();
+				String pwd = editText_pwd.getText().toString().toLowerCase();
 				if(canLogin(phone,pwd)){
 					LoginInfo info = new LoginInfo();
 					info.phoneNum = phone;
 					info.userName = "邓某";
+					info.pwd = MD5Utils.getMD5(pwd);
 					LoginManager.getInstance().saveUserInfo(info);
 					EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
 					finish();
@@ -188,10 +191,10 @@ public class LoginActivity extends BaseActivity {
 
 	private boolean canLogin(String phone, String pwd){
 		if (CommonUtils.isPhoneNum(phone)) {
-			if(!TextUtils.isEmpty(pwd)){
+			if(CommonUtils.checkPassword(pwd)){
 				return true;
 			}else{
-				Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "密码格式不正确", Toast.LENGTH_SHORT).show();
 			}
 		} else {
 			Toast.makeText(this, "手机号格式错误", Toast.LENGTH_SHORT).show();

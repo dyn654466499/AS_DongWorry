@@ -10,4 +10,5 @@ public class LoginInfo implements Serializable{
     public String phoneNum = "";
     public String imageUrl = "";
     public String userName = "";
+    public String pwd = "";
 }

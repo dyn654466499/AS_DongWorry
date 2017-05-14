@@ -2,24 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/frame"
-    android:orientation="horizontal" >
-
-    <com.dev.dongworry.customview.CustomEditText
-        android:id="@+id/editText_phone"
+    >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@null"
-        android:hint="@string/inputPhoneNum"
-        android:textSize="15sp"
-        android:inputType="phone"
-        android:maxLength="11"
-        android:drawableRight="@drawable/submit_edit_clear_pressed"
-        android:paddingRight="15dp"  
-        android:textCursorDrawable="@null" 
-        android:paddingLeft="15dp" >
+        android:background="@drawable/frame"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        >
+        <com.dev.dongworry.customview.CustomEditText
+            android:id="@+id/editText_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:hint="@string/inputPhoneNum"
+            android:textSize="15sp"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:drawableRight="@drawable/submit_edit_clear_pressed"
+            android:paddingRight="15dp"
+            android:textCursorDrawable="@null"
+            android:paddingLeft="15dp" >
 
-        <requestFocus />
-    </com.dev.dongworry.customview.CustomEditText>
-
+            <requestFocus />
+        </com.dev.dongworry.customview.CustomEditText>
+    </LinearLayout>
 </LinearLayout>
