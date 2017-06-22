@@ -12,6 +12,8 @@ import android.text.TextUtils;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.dev.dongworry.customview.LoadingDialog;
+
 
 public class BaseFragment extends Fragment {
     private Toast mToast;
@@ -90,6 +92,37 @@ public class BaseFragment extends Fragment {
             } else {
                 transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
             }
+        }
+    }
+
+    /**
+     * 标准控件——加载对话框
+     */
+    protected LoadingDialog mLoadingDialog;
+
+    protected void showLoadingDialog() {
+        showLoadingDialog(null);
+    }
+    /**
+     * 显示加载对话框
+     * @param message 默认"正在加载..."
+     */
+    protected void showLoadingDialog(String message) {
+        if(mLoadingDialog == null) {
+            mLoadingDialog = new LoadingDialog(getActivity());
+            mLoadingDialog.setCanceledOnTouchOutside(false);
+            if (!TextUtils.isEmpty(message))
+                mLoadingDialog.setLoadingText(message);
+            mLoadingDialog.show();
+        }
+    }
+    /**
+     * 使加载对话框消失
+     */
+    protected void dismissLoadingDialog() {
+        if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
+            mLoadingDialog.cancel();
+            mLoadingDialog = null;
         }
     }
 }

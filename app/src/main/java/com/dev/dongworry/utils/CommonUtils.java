@@ -203,9 +203,16 @@ public class CommonUtils {
      * @return 
      */
     public static String formatPhoneNum(String phoneNum){
-        String target = phoneNum.substring(3, 7);
-        phoneNum = phoneNum.replace(target, "*****");
-    	return phoneNum;
+		StringBuilder sb  =new StringBuilder();
+		for (int i = 0; i < phoneNum.length(); i++) {
+			char c = phoneNum.charAt(i);
+			if (i >= 3 && i <= 6) {
+				sb.append('*');
+			} else {
+				sb.append(c);
+			}
+		}
+    	return sb.toString();
     }
     
     /**

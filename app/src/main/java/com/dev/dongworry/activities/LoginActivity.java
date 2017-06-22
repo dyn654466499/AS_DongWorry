@@ -26,6 +26,8 @@ import com.dev.dongworry.managers.login.LoginManager;
 import com.dev.dongworry.models.LoginModel;
 import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.MD5Utils;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 
 import java.util.List;
 import java.util.Map;
@@ -171,16 +173,37 @@ public class LoginActivity extends BaseActivity {
 				break;
 
 			case R.id.button_sureLogin:
-				String phone = editText_phone.getText().toString();
-				String pwd = editText_pwd.getText().toString().toLowerCase();
+				final String phone = editText_phone.getText().toString();
+				final String pwd = editText_pwd.getText().toString().toLowerCase();
+				showLoadingDialog();
 				if(canLogin(phone,pwd)){
-					LoginInfo info = new LoginInfo();
-					info.phoneNum = phone;
-					info.userName = "邓某";
-					info.pwd = MD5Utils.getMD5(pwd);
-					LoginManager.getInstance().saveUserInfo(info);
-					EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
-					finish();
+					EMClient.getInstance().login(phone,pwd,new EMCallBack() {//回调
+						@Override
+						public void onSuccess() {
+							dismissLoadingDialog();
+							EMClient.getInstance().groupManager().loadAllGroups();
+							EMClient.getInstance().chatManager().loadAllConversations();
+							Log.d("main", "登录聊天服务器成功！");
+							LoginInfo info = new LoginInfo();
+							info.phoneNum = phone;
+							info.userName = "邓某";
+							info.pwd = MD5Utils.getMD5(pwd);
+							LoginManager.getInstance().saveUserInfo(info);
+							EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
+							finish();
+						}
+
+						@Override
+						public void onProgress(int progress, String status) {
+
+						}
+
+						@Override
+						public void onError(int code, String message) {
+							dismissLoadingDialog();
+							Log.d("main", "登录聊天服务器失败！");
+						}
+					});
 				}
 				break;
 

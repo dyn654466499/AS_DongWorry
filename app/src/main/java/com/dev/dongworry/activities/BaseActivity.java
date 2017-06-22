@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.customview.LoadingDialog;
 import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.interfaces.ViewChangeListener;
 import com.dev.dongworry.models.BaseModel;
@@ -244,6 +245,37 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 			} else {
 				transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
 			}
+		}
+	}
+
+	/**
+	 * 标准控件——加载对话框
+	 */
+	protected LoadingDialog mLoadingDialog;
+
+	protected void showLoadingDialog() {
+		showLoadingDialog(null);
+	}
+	/**
+	 * 显示加载对话框
+	 * @param message 默认"正在加载..."
+	 */
+	protected void showLoadingDialog(String message) {
+		if(mLoadingDialog == null) {
+			mLoadingDialog = new LoadingDialog(this);
+			mLoadingDialog.setCanceledOnTouchOutside(false);
+			if (!TextUtils.isEmpty(message))
+				mLoadingDialog.setLoadingText(message);
+			mLoadingDialog.show();
+		}
+	}
+	/**
+	 * 使加载对话框消失
+	 */
+	protected void dismissLoadingDialog() {
+		if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
+			mLoadingDialog.cancel();
+			mLoadingDialog = null;
 		}
 	}
 }

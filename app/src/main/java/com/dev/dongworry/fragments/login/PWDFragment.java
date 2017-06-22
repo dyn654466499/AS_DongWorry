@@ -43,9 +43,9 @@ public class PWDFragment extends BaseFragment {
 					/**
 					 * 如果Activity结束了，取消提示
 					 */
-					if (!getActivity().isDestroyed()) {
-						showTip(R.string.tips_pwdIsNotFormat);
-					}
+//					if (!getActivity().isDestroyed()) {
+//						showTip(R.string.tips_pwdIsNotFormat);
+//					}
 				}
 //				else{
 //					editText_password.setTag("complete");

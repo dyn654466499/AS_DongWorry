@@ -23,6 +23,8 @@ import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.managers.login.LoginManager;
 import com.dev.dongworry.utils.CommonUtils;
 import com.dev.dongworry.utils.ViewFactory;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 
 import de.greenrobot.event.EventBus;
 
@@ -94,8 +96,29 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 						.setNegativeButton("确定", new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
-								LoginManager.getInstance().logout();
-								EventBus.getDefault().post(Message.obtain(null,LoginEvent.DO_LOGOUT));
+								showLoadingDialog();
+								EMClient.getInstance().logout(true, new EMCallBack() {
+
+									@Override
+									public void onSuccess() {
+										// TODO Auto-generated method stub
+										dismissLoadingDialog();
+										LoginManager.getInstance().logout();
+										EventBus.getDefault().post(Message.obtain(null,LoginEvent.DO_LOGOUT));
+									}
+
+									@Override
+									public void onProgress(int progress, String status) {
+										// TODO Auto-generated method stub
+
+									}
+
+									@Override
+									public void onError(int code, String message) {
+										// TODO Auto-generated method stub
+										dismissLoadingDialog();
+									}
+								});
 							}
 						})
 						.setPositiveButton("取消", new DialogInterface.OnClickListener() {

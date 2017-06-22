@@ -44,9 +44,8 @@ public class MineFragment extends BaseFragment {
         View rootView = inflater.inflate(R.layout.fragment_mine, null);
         mTitles = getResources().getStringArray(R.array.label_nav_mine);
         mFragments.add(new UserCenterFragment());
-//        mFragments.add(new NearbyFragment());
-//        mFragments.add(new PostRewardFragment());
         mFragments.add(new BaseFragment());
+        mFragments.add(new OrderFragment());
         for (final String title : mTitles){
             mTabEntities.add(new CustomTabEntity() {
                 @Override
@@ -71,10 +70,6 @@ public class MineFragment extends BaseFragment {
             @Override
             public void onTabSelect(int position) {
                 currentPosition = position;
-                if(currentPosition == 3){
-                    startActivity(new Intent(getActivity(), SettingActivity.class));
-                    return;
-                }
                 mTabLayout.setCurrentTab(position);
             }
 

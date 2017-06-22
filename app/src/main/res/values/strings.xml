@@ -706,6 +706,15 @@
         <item>复制链接</item>
     </string-array>
 
+    <!-- 订单的分类标签 -->
+    <string-array name="label_order">
+        <item>全部</item>
+        <item>进行中</item>
+        <item>待付款</item>
+        <item>待确认</item>
+        <item>待评价</item>
+    </string-array>
+
     <string name="title_activity_find_pwd">FindPWDActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_setting">SettingActivity</string>
