@@ -1,5 +1,6 @@
 package com.dev.dongworry.models;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
@@ -13,12 +14,20 @@ public abstract class BaseModel {
 	 * controler的handler
 	 */
 	protected Handler handler;
+
+	protected Context mContext;
 	/**
 	 * 绑定controler的handler
 	 */
 	public BaseModel(Handler handler) {
 		this.handler = handler;
 	}
+
+	public BaseModel(Handler handler,Context mContext) {
+		this.handler = handler;
+		this.mContext = mContext;
+	}
+
 	/**
 	 * model业务逻辑计算的主要函数
 	 * @param changeState

@@ -52,3 +52,5 @@ gradle/wrapper/gradle-wrapper.properties
 gradle.properties
 settings.gradle
 .idea/encodings.xml
+.idea/copyright/
+gradle/

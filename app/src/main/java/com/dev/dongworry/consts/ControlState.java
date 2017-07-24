@@ -27,4 +27,5 @@ public class ControlState {
 
 	public static final int MODEL_GET_VCODE = 401;
 	public static final int VIEW_VCODE_CHANGE = 402;
+	public static final int VIEW_REGISTER = 403;
 }

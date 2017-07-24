@@ -12,6 +12,16 @@ import android.widget.EditText;
 import com.dev.dongworry.R;
 import com.dev.dongworry.consts.ControlState;
 import com.dev.dongworry.models.RegisterModel;
+import com.dev.dongworry.utils.RSAUtils;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
+import static com.dev.dongworry.consts.ControlState.MODEL_SURE_REGISTER;
+import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER;
+import static com.dev.dongworry.consts.ControlState.VIEW_VCODE_CHANGE;
 
 
 /**
@@ -30,13 +40,13 @@ public class RegisterActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
 
-		setModelDelegate(new RegisterModel(handler));
+		setModelDelegate(new RegisterModel(handler,this));
 		setViewChangeListener(this);
 		setTitle(getString(R.string.title_register));
 
 		button_getVcode = (Button)findViewById(R.id.button_getVcode);
 		button_sureRegister = (Button)findViewById(R.id.button_sureRegister);
-
+		button_sureRegister.setOnClickListener(this);
 		button_getVcode.setOnClickListener(this);
 
 		editText_pwd = (EditText)findViewById(R.id.editText_password);
@@ -57,6 +67,7 @@ public class RegisterActivity extends BaseActivity {
 
 	@Override
 	public void onClick(View v) {
+		HashMap<String,String> params;
 		switch (v.getId()) {
 			case R.id.button_getVcode:
 				if (checkBox_userProtocol.isChecked()) {
@@ -65,6 +76,13 @@ public class RegisterActivity extends BaseActivity {
 					button_getVcode.setEnabled(false);
 				}
 
+				break;
+			case R.id.button_sureRegister:
+				showLoadingDialog();
+				params = new HashMap<>();
+				params.put("password", RSAUtils.encryptAndToHex(editText_pwd.getText().toString()));
+				params.put("mobile",editText_phone.getText().toString());
+				notifyModelChange(Message.obtain(handler,MODEL_SURE_REGISTER,params));
 				break;
 			default:
 
@@ -75,7 +93,7 @@ public class RegisterActivity extends BaseActivity {
 	@Override
 	public void onViewChange(final Message msg) {
 		switch (msg.what) {
-			case ControlState.VIEW_VCODE_CHANGE:
+			case VIEW_VCODE_CHANGE:
 				// Log.e(getTAG(), msg.arg1 + "秒后重发");
 				button_getVcode.setText(msg.arg1
 						+ getString(R.string.vcode_schedule));
@@ -88,9 +106,26 @@ public class RegisterActivity extends BaseActivity {
 				}
 				break;
 
+			case VIEW_REGISTER:
+				dismissLoadingDialog();
+				if(msg.obj instanceof String){
+					String json = (String)msg.obj;
+					try {
+						JSONObject jsonObject = new JSONObject(json);
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+				}
+				break;
 			default:
 				break;
 		}
 	}
 
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		handler.removeCallbacksAndMessages(null);
+		setModelDelegate(null);
+	}
 }
