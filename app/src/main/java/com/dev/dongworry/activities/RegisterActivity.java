@@ -2,7 +2,6 @@ package com.dev.dongworry.activities;
 
 import android.os.Bundle;
 import android.os.Message;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -20,7 +19,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import static com.dev.dongworry.consts.ControlState.MODEL_SURE_REGISTER;
-import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER;
+import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER_SUCCESS;
 import static com.dev.dongworry.consts.ControlState.VIEW_VCODE_CHANGE;
 
 
@@ -72,7 +71,7 @@ public class RegisterActivity extends BaseActivity {
 			case R.id.button_getVcode:
 				if (checkBox_userProtocol.isChecked()) {
 					button_getVcode.setTag("clicked");
-					notifyModelChange(ControlState.MODEL_GET_VCODE);
+					notifyModel(ControlState.MODEL_GET_VCODE);
 					button_getVcode.setEnabled(false);
 				}
 
@@ -82,7 +81,7 @@ public class RegisterActivity extends BaseActivity {
 				params = new HashMap<>();
 				params.put("password", RSAUtils.encryptAndToHex(editText_pwd.getText().toString()));
 				params.put("mobile",editText_phone.getText().toString());
-				notifyModelChange(Message.obtain(handler,MODEL_SURE_REGISTER,params));
+				notifyModel(Message.obtain(handler,MODEL_SURE_REGISTER,params));
 				break;
 			default:
 
@@ -106,7 +105,7 @@ public class RegisterActivity extends BaseActivity {
 				}
 				break;
 
-			case VIEW_REGISTER:
+			case VIEW_REGISTER_SUCCESS:
 				dismissLoadingDialog();
 				if(msg.obj instanceof String){
 					String json = (String)msg.obj;

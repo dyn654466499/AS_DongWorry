@@ -4,12 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -17,22 +13,19 @@ import android.widget.SlidingDrawer;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.mapapi.map.Text;
 import com.dev.dongworry.R;
-import com.dev.dongworry.beans.login.LoginInfo;
-import com.dev.dongworry.consts.login.LoginEvent;
+import com.dev.dongworry.consts.BaseConfig;
 import com.dev.dongworry.customview.CButton;
-import com.dev.dongworry.managers.login.LoginManager;
 import com.dev.dongworry.models.LoginModel;
 import com.dev.dongworry.utils.CommonUtils;
-import com.dev.dongworry.utils.MD5Utils;
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
+import com.dev.dongworry.utils.RSAUtils;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.greenrobot.event.EventBus;
+import static com.dev.dongworry.consts.ControlState.MODEL_LOGIN;
+import static com.dev.dongworry.consts.ControlState.VIEW_LOGIN_SUCCESS;
 
 /**
  * “登录界面”的Activity
@@ -59,7 +52,7 @@ public class LoginActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		setContentView(R.layout.activity_login);
 
-		setModelDelegate(new LoginModel(handler));
+		setModelDelegate(new LoginModel(handler,this));
 		setViewChangeListener(this);
 
 		TextView tv_title = (TextView)findViewById(R.id.tv_common_title);
@@ -175,35 +168,13 @@ public class LoginActivity extends BaseActivity {
 			case R.id.button_sureLogin:
 				final String phone = editText_phone.getText().toString();
 				final String pwd = editText_pwd.getText().toString().toLowerCase();
-				showLoadingDialog();
 				if(canLogin(phone,pwd)){
-					EMClient.getInstance().login(phone,pwd,new EMCallBack() {//回调
-						@Override
-						public void onSuccess() {
-							dismissLoadingDialog();
-							EMClient.getInstance().groupManager().loadAllGroups();
-							EMClient.getInstance().chatManager().loadAllConversations();
-							Log.d("main", "登录聊天服务器成功！");
-							LoginInfo info = new LoginInfo();
-							info.phoneNum = phone;
-							info.userName = "邓某";
-							info.pwd = MD5Utils.getMD5(pwd);
-							LoginManager.getInstance().saveUserInfo(info);
-							EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
-							finish();
-						}
-
-						@Override
-						public void onProgress(int progress, String status) {
-
-						}
-
-						@Override
-						public void onError(int code, String message) {
-							dismissLoadingDialog();
-							Log.d("main", "登录聊天服务器失败！");
-						}
-					});
+					showLoadingDialog();
+					HashMap<String,String> params = new HashMap<>();
+					params.put("mobile", RSAUtils.encryptAndToHex(phone));
+					params.put("password",RSAUtils.encryptAndToHex(pwd));
+					params.put("client_id", BaseConfig.getClientId());
+					notifyModel(Message.obtain(handler, MODEL_LOGIN, params));
 				}
 				break;
 
@@ -224,9 +195,42 @@ public class LoginActivity extends BaseActivity {
 		}
 		return false;
 	}
+
 	@Override
 	public void onViewChange(Message msg) {
-
+		switch (msg.what){
+			case VIEW_LOGIN_SUCCESS:
+				dismissLoadingDialog();
+				finish();
+//					EMClient.getInstance().login(params.get("mobile"), pwd, new EMCallBack() {//回调
+//						@Override
+//						public void onSuccess() {
+//							dismissLoadingDialog();
+//							EMClient.getInstance().groupManager().loadAllGroups();
+//							EMClient.getInstance().chatManager().loadAllConversations();
+//							Log.d("main", "登录聊天服务器成功！");
+//							LoginInfo info = new LoginInfo();
+//							info.phoneNum = phone;
+//							info.userName = "邓某";
+//							info.pwd = MD5Utils.getMD5(pwd);
+//							LoginManager.getInstance().saveUserInfo(info);
+//							EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
+//							finish();
+//						}
+//
+//						@Override
+//						public void onProgress(int progress, String status) {
+//
+//						}
+//
+//						@Override
+//						public void onError(int code, String message) {
+//							dismissLoadingDialog();
+//							Log.d("main", "登录聊天服务器失败！");
+//						}
+//					});
+				break;
+		}
 	}
 
 }

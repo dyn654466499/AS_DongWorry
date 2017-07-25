@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import com.baidu.mapapi.model.LatLng;
 import com.dev.dongworry.beans.login.LoginInfo;
+import com.dev.dongworry.managers.AppManager;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -132,5 +133,18 @@ public class SPUtils {
 			e.printStackTrace();
 		}
 		return userInfo;
+	}
+
+	public static void setToken(Context context,String token){
+		SharedPreferences preferences = context.getSharedPreferences(ACCESS_TOKEN, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(ACCESS_TOKEN, token);
+		editor.commit();
+	}
+
+	public static String getToken(){
+		Context context = AppManager.getInstance().getAppContext();
+		SharedPreferences preferences = context.getSharedPreferences(ACCESS_TOKEN, Context.MODE_PRIVATE);
+		return preferences.getString(ACCESS_TOKEN, "");
 	}
 }

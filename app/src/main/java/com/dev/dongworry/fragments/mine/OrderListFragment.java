@@ -23,6 +23,10 @@ public class OrderListFragment extends BaseFragment implements SwipeRefreshLayou
         this.requestKey = requestKey;
     }
 
+    public OrderListFragment() {
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

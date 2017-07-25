@@ -87,5 +87,7 @@ public class Constants {
      public static final String APK_DOWNLOAD_URL = "http://shouji.baidu.com/software/item?docid=8889113&from=as";
      public static final String APK_LOGO_URL = "http://img.r1.market.hiapk.com/data/upload/2014/08_22/23/72_72_201408222330557854.png";
      public static final String APK_MOBILE_DOWNLOAD_URL = "http://shouji.baidu.com/software/item?docid=8889113&from=as";
-     
+
+
+     public static final String ACCESS_TOKEN = "access_token";
 }

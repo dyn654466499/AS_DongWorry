@@ -147,7 +147,7 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
      * 需设置model代理后，才能给给model转发请求，通过封装Message传递参数
      * @param changeStateMessage
      */
-	public void notifyModelChange(final Message changeStateMessage) {
+	public void notifyModel(final Message changeStateMessage) {
 		// TODO Auto-generated method stub
 		/**
 		 * 交付给子线程做业务逻辑计算
@@ -168,7 +168,7 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 	 * 需设置model代理后，才能给model转发请求
 	 * @param changeState
 	 */
-	public void notifyModelChange(final int changeState) {
+	public void notifyModel(final int changeState) {
 		// TODO Auto-generated method stub
 		/**
 		 * 交付给子线程做业务逻辑计算

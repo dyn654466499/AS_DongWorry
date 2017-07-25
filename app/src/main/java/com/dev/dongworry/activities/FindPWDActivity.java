@@ -145,7 +145,7 @@ public class FindPWDActivity extends BaseActivity {
 
 				case R.id.button_getVcode:
 					button_getVcode.setTag("clicked");
-					notifyModelChange(ControlState.MODEL_GET_VCODE);
+					notifyModel(ControlState.MODEL_GET_VCODE);
 					button_getVcode.setEnabled(false);
 
 					break;

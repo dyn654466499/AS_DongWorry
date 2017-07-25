@@ -4,22 +4,20 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.dev.dongworry.consts.BaseConfig;
 import com.dev.dongworry.consts.ControlState;
+import com.dev.dongworry.volley.MyStringRequest;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER;
+import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER_SUCCESS;
 import static com.dev.dongworry.consts.ControlState.VIEW_VCODE_CHANGE;
 
 /**
@@ -67,13 +65,14 @@ public class RegisterModel extends BaseModel{
 		switch (changeStateMessage.what) {
 			case ControlState.MODEL_SURE_REGISTER:
 				RequestQueue queue = Volley.newRequestQueue(mContext);
-				StringRequest request = new StringRequest(
+				MyStringRequest request = new MyStringRequest(
 						Request.Method.POST,
 						BaseConfig.getRegisterUrl(),
+						(Map<String, String>)changeStateMessage.obj,
 						new Response.Listener<String>() {
 							@Override
 							public void onResponse(String object) {
-								Message.obtain(handler,VIEW_REGISTER,object).sendToTarget();
+								Message.obtain(handler, VIEW_REGISTER_SUCCESS,object).sendToTarget();
 							}
 						},
 						new Response.ErrorListener() {
@@ -81,19 +80,7 @@ public class RegisterModel extends BaseModel{
 							public void onErrorResponse(VolleyError volleyError) {
 
 							}
-						}){
-					@Override
-					protected Map<String, String> getParams() throws AuthFailureError {
-						Map<String, String> params = (Map<String, String>)changeStateMessage.obj;
-						return params;
-					}
-
-					@Override
-					public Map<String, String> getHeaders() throws AuthFailureError {
-						HashMap<String,String> params = new HashMap<>();
-						return params;
-					}
-				};
+						});
 				queue.add(request);
 				break;
 			default:

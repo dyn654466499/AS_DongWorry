@@ -7,8 +7,6 @@ package com.dev.dongworry.consts;
  */
 public class ControlState {
 	
-	public static final int MODEL_SURE_REGISTER = 1;
-	
 	/**
 	 * setting model control state
 	 */
@@ -18,14 +16,17 @@ public class ControlState {
 	/**
 	 * Model 天气查询
 	 */
-	public static final int MODEL_WEATHER_QUERY = 200;
-	
+	public static final int MODEL_SURE_REGISTER = 1;
+	public static final int MODEL_WEATHER_QUERY = 2;
+	public static final int MODEL_GET_VCODE = 3;
+	public static final int MODEL_LOGIN = 4;
 	/**
 	 * View 天气查询 
 	 */
 	public static final int VIEW_WEATHER_QUERY = 300;
-
-	public static final int MODEL_GET_VCODE = 401;
-	public static final int VIEW_VCODE_CHANGE = 402;
-	public static final int VIEW_REGISTER = 403;
+	public static final int VIEW_VCODE_CHANGE = 301;
+	public static final int VIEW_REGISTER_SUCCESS = 302;
+	public static final int VIEW_REGISTER_FAIL = 303;
+	public static final int VIEW_LOGIN_SUCCESS = 304;
+	public static final int VIEW_LOGIN_FAIL = 305;
 }
