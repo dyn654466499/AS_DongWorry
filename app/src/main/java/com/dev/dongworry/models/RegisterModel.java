@@ -9,14 +9,23 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.dev.dongworry.beans.login.LoginInfo;
 import com.dev.dongworry.consts.BaseConfig;
 import com.dev.dongworry.consts.ControlState;
+import com.dev.dongworry.consts.ResponseCode;
+import com.dev.dongworry.managers.login.LoginManager;
+import com.dev.dongworry.volley.ListenerFactory;
 import com.dev.dongworry.volley.MyStringRequest;
+
+import org.json.JSONObject;
 
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.dev.dongworry.consts.ControlState.VIEW_LOGIN_FAIL;
+import static com.dev.dongworry.consts.ControlState.VIEW_LOGIN_SUCCESS;
+import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER_FAIL;
 import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER_SUCCESS;
 import static com.dev.dongworry.consts.ControlState.VIEW_VCODE_CHANGE;
 
@@ -72,15 +81,22 @@ public class RegisterModel extends BaseModel{
 						new Response.Listener<String>() {
 							@Override
 							public void onResponse(String object) {
-								Message.obtain(handler, VIEW_REGISTER_SUCCESS,object).sendToTarget();
+								try{
+									JSONObject jsonObject = new JSONObject(object);
+									switch (jsonObject.optString("code")){
+										case ResponseCode.SUCCESS:
+											Message.obtain(handler, VIEW_REGISTER_SUCCESS).sendToTarget();
+											break;
+										default:
+											Message.obtain(handler, VIEW_REGISTER_FAIL, jsonObject.optString("msg")).sendToTarget();
+											break;
+									}
+								}catch (Exception e){
+									e.printStackTrace();
+								}
 							}
 						},
-						new Response.ErrorListener() {
-							@Override
-							public void onErrorResponse(VolleyError volleyError) {
-
-							}
-						});
+						ListenerFactory.getBaseErrorListener());
 				queue.add(request);
 				break;
 			default:

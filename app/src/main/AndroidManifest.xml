@@ -405,7 +405,9 @@
         <activity
             android:name=".activities.HomeActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|adjustPan"></activity>
+            android:windowSoftInputMode="adjustResize|adjustPan"
+            android:launchMode="singleTask"
+            />
     </application>
 
 </manifest>

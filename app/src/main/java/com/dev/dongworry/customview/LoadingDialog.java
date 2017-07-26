@@ -4,31 +4,14 @@ package com.dev.dongworry.customview;
  * Created by dengyaoning on 17/6/18.
  */
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.StringRes;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.dev.dongworry.R;
 
 /**
- * 标准控件之加载中对话框
- *
- * @author guhaoxin
- * @version 1.0.0
- * @date 2016.02.25
  */
 public class LoadingDialog extends AlertDialog {
     private static final String TAG = LoadingDialog.class.getSimpleName();
@@ -41,7 +24,7 @@ public class LoadingDialog extends AlertDialog {
      * @param isModal 是否模态
      */
     public LoadingDialog(Context context, boolean isModal) {
-        super(context);
+        super(context, R.style.loadingDialog);
         mParentActivity = (Activity)context;
         setCanceledOnTouchOutside(!isModal);
         setCancelable(false);  // 默认不支持撤销
@@ -54,7 +37,7 @@ public class LoadingDialog extends AlertDialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setMessage("正在加载...");
+        setContentView(R.layout.layout_dialog_progress);
     }
 
     public void setLoadingText(String text){

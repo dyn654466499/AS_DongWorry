@@ -7,8 +7,27 @@ import java.io.Serializable;
  */
 
 public class LoginInfo implements Serializable{
-    public String phoneNum = "";
-    public String imageUrl = "";
-    public String userName = "";
-    public String pwd = "";
+    public String mobile = "";
+//    public String imageUrl = "";
+//    public String userName = "";
+//    public String pwd = "";
+    public String access_token = "";
+
+    public String getAccess_token() {
+        return access_token;
+    }
+
+    public LoginInfo setAccess_token(String access_token) {
+        this.access_token = access_token;
+        return this;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public LoginInfo setMobile(String mobile) {
+        this.mobile = mobile;
+        return this;
+    }
 }

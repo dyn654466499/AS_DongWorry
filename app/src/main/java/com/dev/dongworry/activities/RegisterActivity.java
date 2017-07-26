@@ -1,5 +1,6 @@
 package com.dev.dongworry.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import com.dev.dongworry.R;
+import com.dev.dongworry.consts.Constants;
 import com.dev.dongworry.consts.ControlState;
 import com.dev.dongworry.models.RegisterModel;
 import com.dev.dongworry.utils.RSAUtils;
@@ -18,7 +20,10 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
+import de.greenrobot.event.EventBus;
+
 import static com.dev.dongworry.consts.ControlState.MODEL_SURE_REGISTER;
+import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER_FAIL;
 import static com.dev.dongworry.consts.ControlState.VIEW_REGISTER_SUCCESS;
 import static com.dev.dongworry.consts.ControlState.VIEW_VCODE_CHANGE;
 
@@ -79,9 +84,9 @@ public class RegisterActivity extends BaseActivity {
 			case R.id.button_sureRegister:
 				showLoadingDialog();
 				params = new HashMap<>();
-				params.put("password", RSAUtils.encryptAndToHex(editText_pwd.getText().toString()));
-				params.put("mobile",editText_phone.getText().toString());
-				notifyModel(Message.obtain(handler,MODEL_SURE_REGISTER,params));
+				params.put("password", RSAUtils.encryptByPublicKey(editText_pwd.getText().toString()));
+				params.put("mobile",RSAUtils.encryptByPublicKey(editText_phone.getText().toString()));
+				notifyModel(Message.obtain(handler, MODEL_SURE_REGISTER, params));
 				break;
 			default:
 
@@ -107,13 +112,17 @@ public class RegisterActivity extends BaseActivity {
 
 			case VIEW_REGISTER_SUCCESS:
 				dismissLoadingDialog();
+				HashMap<String,String> params = new HashMap<>();
+				params.put("password", RSAUtils.encryptByPublicKey(editText_pwd.getText().toString()));
+				params.put("mobile",editText_phone.getText().toString());
+				EventBus.getDefault().post(Message.obtain(null, ControlState.MODEL_LOGIN, params));
+				finish();
+				break;
+
+			case VIEW_REGISTER_FAIL:
+				dismissLoadingDialog();
 				if(msg.obj instanceof String){
-					String json = (String)msg.obj;
-					try {
-						JSONObject jsonObject = new JSONObject(json);
-					} catch (JSONException e) {
-						e.printStackTrace();
-					}
+					showTip((String)msg.obj);
 				}
 				break;
 			default:

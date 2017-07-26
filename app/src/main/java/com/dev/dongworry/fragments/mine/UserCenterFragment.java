@@ -96,29 +96,31 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 						.setNegativeButton("确定", new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
-								showLoadingDialog();
-								EMClient.getInstance().logout(true, new EMCallBack() {
-
-									@Override
-									public void onSuccess() {
-										// TODO Auto-generated method stub
-										dismissLoadingDialog();
-										LoginManager.getInstance().logout();
-										EventBus.getDefault().post(Message.obtain(null,LoginEvent.DO_LOGOUT));
-									}
-
-									@Override
-									public void onProgress(int progress, String status) {
-										// TODO Auto-generated method stub
-
-									}
-
-									@Override
-									public void onError(int code, String message) {
-										// TODO Auto-generated method stub
-										dismissLoadingDialog();
-									}
-								});
+								LoginManager.getInstance().logout();
+								EventBus.getDefault().post(Message.obtain(null,LoginEvent.DO_LOGOUT));
+//								showLoadingDialog();
+//								EMClient.getInstance().logout(true, new EMCallBack() {
+//
+//									@Override
+//									public void onSuccess() {
+//										// TODO Auto-generated method stub
+//										dismissLoadingDialog();
+//										LoginManager.getInstance().logout();
+//										EventBus.getDefault().post(Message.obtain(null,LoginEvent.DO_LOGOUT));
+//									}
+//
+//									@Override
+//									public void onProgress(int progress, String status) {
+//										// TODO Auto-generated method stub
+//
+//									}
+//
+//									@Override
+//									public void onError(int code, String message) {
+//										// TODO Auto-generated method stub
+//										dismissLoadingDialog();
+//									}
+//								});
 							}
 						})
 						.setPositiveButton("取消", new DialogInterface.OnClickListener() {
@@ -175,9 +177,9 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 		LinearLayout llayout_usercenter_info = (LinearLayout)rootView.findViewById(R.id.llayout_usercenter_info);
 		llayout_usercenter_info.setVisibility(View.VISIBLE);
 		TextView tv_usercenter_name = (TextView) rootView.findViewById(R.id.tv_usercenter_name);
-		tv_usercenter_name.setText(LoginManager.getInstance().getUserInfo().userName);
+		tv_usercenter_name.setText("");
 		TextView tv_usercenter_phone = (TextView) rootView.findViewById(R.id.tv_usercenter_phone);
-		tv_usercenter_phone.setText(CommonUtils.formatPhoneNum(LoginManager.getInstance().getUserInfo().phoneNum));
+		tv_usercenter_phone.setText(CommonUtils.formatPhoneNum(LoginManager.getInstance().getUserInfo().mobile));
 		TextView tv_usercenter_credibility = (TextView) rootView.findViewById(R.id.tv_usercenter_credibility);
 		tv_usercenter_credibility.setText("9");
 	}

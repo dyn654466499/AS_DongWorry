@@ -256,7 +256,7 @@ public class RSAUtils {
 	}
 
 	// 公钥加密=================
-	public static String encryptAndToHex(String string) {
+	public static String encryptByPublicKey(String string) {
 		String hexStr = null;
 		try {
 			loadPublicKey(publicKeyStr);

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.consts.BaseConfig;
+import com.dev.dongworry.consts.login.LoginEvent;
 import com.dev.dongworry.customview.CButton;
 import com.dev.dongworry.models.LoginModel;
 import com.dev.dongworry.utils.CommonUtils;
@@ -24,7 +25,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.greenrobot.event.EventBus;
+
 import static com.dev.dongworry.consts.ControlState.MODEL_LOGIN;
+import static com.dev.dongworry.consts.ControlState.VIEW_LOGIN_FAIL;
 import static com.dev.dongworry.consts.ControlState.VIEW_LOGIN_SUCCESS;
 
 /**
@@ -45,9 +49,15 @@ public class LoginActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initView();
+		EventBus.getDefault().register(this);
 	}
 
-	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		EventBus.getDefault().unregister(this);
+	}
+
 	public void initView() {
 		// TODO Auto-generated method stub
 		setContentView(R.layout.activity_login);
@@ -171,8 +181,8 @@ public class LoginActivity extends BaseActivity {
 				if(canLogin(phone,pwd)){
 					showLoadingDialog();
 					HashMap<String,String> params = new HashMap<>();
-					params.put("mobile", RSAUtils.encryptAndToHex(phone));
-					params.put("password",RSAUtils.encryptAndToHex(pwd));
+					params.put("mobile", phone);
+					params.put("password",RSAUtils.encryptByPublicKey(pwd));
 					params.put("client_id", BaseConfig.getClientId());
 					notifyModel(Message.obtain(handler, MODEL_LOGIN, params));
 				}
@@ -201,6 +211,7 @@ public class LoginActivity extends BaseActivity {
 		switch (msg.what){
 			case VIEW_LOGIN_SUCCESS:
 				dismissLoadingDialog();
+				EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
 				finish();
 //					EMClient.getInstance().login(params.get("mobile"), pwd, new EMCallBack() {//回调
 //						@Override
@@ -230,7 +241,24 @@ public class LoginActivity extends BaseActivity {
 //						}
 //					});
 				break;
+
+			case VIEW_LOGIN_FAIL:
+				dismissLoadingDialog();
+				if(msg.obj instanceof String){
+					showTip((String)msg.obj);
+				}
+				break;
 		}
 	}
 
+	public void onEventMainThread(Message msg){
+		switch (msg.what){
+			case MODEL_LOGIN:
+				showLoadingDialog();
+				HashMap<String,String> params = (HashMap<String,String>)msg.obj;
+				params.put("client_id", BaseConfig.getClientId());
+				notifyModel(Message.obtain(handler, MODEL_LOGIN, params));
+				break;
+		}
+	}
 }

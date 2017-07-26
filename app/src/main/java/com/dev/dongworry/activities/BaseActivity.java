@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.dev.dongworry.R;
 import com.dev.dongworry.customview.LoadingDialog;
+import com.dev.dongworry.events.HttpEvent;
 import com.dev.dongworry.fragments.BaseFragment;
 import com.dev.dongworry.interfaces.ViewChangeListener;
 import com.dev.dongworry.models.BaseModel;
@@ -28,6 +29,8 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * 该Activity作为controler的抽象类，负责向model转发view的业务逻辑计算请求，并通知view改变其状态。
@@ -85,7 +88,10 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 			}
 		};
 		mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
+
 	}
+
+
 
 	public void setTitle(String title){
 		TextView tv_common_title = (TextView)findViewById(R.id.tv_common_title);
@@ -211,9 +217,16 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 			// app 从后台唤醒，进入前台
 			isActive = true;
 		}
+		EventBus.getDefault().register(mEventBusReceiver);
 	}
 
-    /**
+	@Override
+	protected void onPause() {
+		super.onPause();
+		EventBus.getDefault().unregister(mEventBusReceiver);
+	}
+
+	/**
      * 程序是否在前台运行
      * 
      * @return
@@ -282,4 +295,23 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 			mLoadingDialog = null;
 		}
 	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+
+	}
+
+	private class EventBusReceiver {
+		public void onEventMainThread(HttpEvent event){
+			switch (event.getEventFlag()){
+				case HttpEvent.NETWORK_ERROR:
+					dismissLoadingDialog();
+					showTip("网络异常，请检查网络情况");
+					break;
+			}
+		}
+	}
+
+	private EventBusReceiver mEventBusReceiver = new EventBusReceiver();
 }

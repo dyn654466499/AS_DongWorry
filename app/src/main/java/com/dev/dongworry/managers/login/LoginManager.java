@@ -61,4 +61,12 @@ public class LoginManager {
         SPUtils.setUserInfo(mContext,new LoginInfo());
         SPUtils.setIsLogin(mContext,false);
     }
+
+    public String getToken(){
+        LoginInfo info = SPUtils.getUserInfo(mContext);
+        if(info != null){
+            return info.getAccess_token();
+        }
+        return "";
+    }
 }
