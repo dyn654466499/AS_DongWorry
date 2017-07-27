@@ -4,37 +4,23 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import Decoder.BASE64Encoder;
+
 public class MD5Utils {
-	public static String getMD5(String string) {
-
-		byte[] hash;
-
+	public static String getMd5(String encryptText){
+		String encryptStr = "";
+		//确定计算方法
 		try {
-
-			hash = MessageDigest.getInstance("MD5").digest(
-					string.getBytes("UTF-8"));
-
-		} catch (NoSuchAlgorithmException e) {
-
-			throw new RuntimeException("Huh, MD5 should be supported?", e);
-
-		} catch (UnsupportedEncodingException e) {
-
-			throw new RuntimeException("Huh, UTF-8 should be supported?", e);
-
+			MessageDigest md5 = MessageDigest.getInstance("MD5");
+			BASE64Encoder base64en = new BASE64Encoder();
+			//加密后的字符串
+			encryptStr=base64en.encode(md5.digest(encryptText.getBytes("utf-8")));
+		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
 		}
-		StringBuilder hex = new StringBuilder(hash.length * 2);
-
-		for (byte b : hash) {
-
-			if ((b & 0xFF) < 0x10)
-				hex.append("0");
-
-			hex.append(Integer.toHexString(b & 0xFF));
-
-		}
-
-		return hex.toString();
-
+		return encryptStr;
 	}
 }

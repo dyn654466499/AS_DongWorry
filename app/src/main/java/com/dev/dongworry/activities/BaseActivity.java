@@ -299,7 +299,7 @@ public abstract class BaseActivity extends FragmentActivity implements OnClickLi
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-
+		handler.removeCallbacksAndMessages(null);
 	}
 
 	private class EventBusReceiver {

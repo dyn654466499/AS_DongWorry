@@ -113,7 +113,7 @@ public class RegisterActivity extends BaseActivity {
 			case VIEW_REGISTER_SUCCESS:
 				dismissLoadingDialog();
 				HashMap<String,String> params = new HashMap<>();
-				params.put("password", RSAUtils.encryptByPublicKey(editText_pwd.getText().toString()));
+				params.put("password", editText_pwd.getText().toString());
 				params.put("mobile",editText_phone.getText().toString());
 				EventBus.getDefault().post(Message.obtain(null, ControlState.MODEL_LOGIN, params));
 				finish();

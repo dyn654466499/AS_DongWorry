@@ -19,6 +19,7 @@ import com.dev.dongworry.consts.login.LoginEvent;
 import com.dev.dongworry.customview.CButton;
 import com.dev.dongworry.models.LoginModel;
 import com.dev.dongworry.utils.CommonUtils;
+import com.dev.dongworry.utils.LogUtils;
 import com.dev.dongworry.utils.RSAUtils;
 
 import java.util.HashMap;
@@ -182,7 +183,7 @@ public class LoginActivity extends BaseActivity {
 					showLoadingDialog();
 					HashMap<String,String> params = new HashMap<>();
 					params.put("mobile", phone);
-					params.put("password",RSAUtils.encryptByPublicKey(pwd));
+					params.put("password",pwd);
 					params.put("client_id", BaseConfig.getClientId());
 					notifyModel(Message.obtain(handler, MODEL_LOGIN, params));
 				}
@@ -213,33 +214,7 @@ public class LoginActivity extends BaseActivity {
 				dismissLoadingDialog();
 				EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
 				finish();
-//					EMClient.getInstance().login(params.get("mobile"), pwd, new EMCallBack() {//回调
-//						@Override
-//						public void onSuccess() {
-//							dismissLoadingDialog();
-//							EMClient.getInstance().groupManager().loadAllGroups();
-//							EMClient.getInstance().chatManager().loadAllConversations();
-//							Log.d("main", "登录聊天服务器成功！");
-//							LoginInfo info = new LoginInfo();
-//							info.phoneNum = phone;
-//							info.userName = "邓某";
-//							info.pwd = MD5Utils.getMD5(pwd);
-//							LoginManager.getInstance().saveUserInfo(info);
-//							EventBus.getDefault().post(Message.obtain(null, LoginEvent.DO_LOGIN));
-//							finish();
-//						}
-//
-//						@Override
-//						public void onProgress(int progress, String status) {
-//
-//						}
-//
-//						@Override
-//						public void onError(int code, String message) {
-//							dismissLoadingDialog();
-//							Log.d("main", "登录聊天服务器失败！");
-//						}
-//					});
+				LogUtils.d("登录成功");
 				break;
 
 			case VIEW_LOGIN_FAIL:
@@ -247,6 +222,7 @@ public class LoginActivity extends BaseActivity {
 				if(msg.obj instanceof String){
 					showTip((String)msg.obj);
 				}
+				LogUtils.d("登录失败");
 				break;
 		}
 	}
@@ -256,6 +232,8 @@ public class LoginActivity extends BaseActivity {
 			case MODEL_LOGIN:
 				showLoadingDialog();
 				HashMap<String,String> params = (HashMap<String,String>)msg.obj;
+				editText_phone.setText(params.get("mobile"));
+				editText_pwd.setText(params.get("password"));
 				params.put("client_id", BaseConfig.getClientId());
 				notifyModel(Message.obtain(handler, MODEL_LOGIN, params));
 				break;
